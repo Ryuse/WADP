@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Welcome to GoGreenFriendly Website/Study_Planner</title>
+<link rel="stylesheet" type="text/css" href="StudyPlanWADP.css">
+<div id="main">
+    <img src="logo.png" max-height="75px">
+        <nav>
+            <ul>
+                <li> <a href="#top"> Home </a></li>
+                <li> <a href="#main">Map </a></li>
+                <li> <a href="#trivia">Trivia </a></li>
+                <li class="current"> <a href=""> Study Tracker</a></li>
+                <li> <a href=""> About </a></li>
+				<li> <a href="">Welcome </a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+<body>
+<table border="1">
+<tr>
+<th id="month" colspan="7">October 2018
+<button onclick="lastmth()" id="previous">Previous month</button>
+<button onclick="nextmth()" id="next">Next month</button>
+</th>
+</tr>
+<tr>
+<th id="weekend">Sun</th>
+<th>Mon</th>
+<th>Tue</th>
+<th>Wed</th>
+<th>Thu</th>
+<th>Fri</th>
+<th>Sat</th>
+</tr>
+<tr>
+<td class="lastmth"><a id="lastmth" href="./SepMthWADP.html">30</td></a>
+<td id="holiday"><a href="">1</td></a>
+<td id="holiday"><a href="">2</td></a>
+<td id="holiday"><a href="">3</td></a>
+<td id="holiday"><a href="">4</td></a>
+<td id="holiday"><a href="">5</td></a>
+<td id="holiday"><a href="">6</td></a>
+</tr>
+<tr>
+<td id="holiday" id="weekend"><a class="weekend" href="">7</td></a>
+<td id="holiday"><a href="">8</td></a>
+<td id="holiday"><a href="">9</td></a>
+<td id="holiday"><a href="">10</td></a>
+<td id="holiday"><a href="">11</td></a>
+<td id="holiday"><a href="">12</td></a>
+<td id="holiday"><a href="">13</td></a>
+</tr>
+<tr>
+<td id="holiday" id="weekend"><a class="weekend" href="">14</td></a>
+<td><a href="">15</td></a>
+<td><a href="">16</td></a>
+<td><a href="">17</td></a>
+<td><a href="">18</td></a>
+<td><a href="">19</td></a>
+<td><a href="">20</td></a>
+</tr>
+<tr>
+<td id="weekend"><a class="weekend" href="">21</td></a>
+<td><a href="">22</td></a>
+<td><a href="">23</td></a>
+<td><a href="">24</td></a>
+<td><a href="">25</td></a>
+<td><a href="">26</td></a>
+<td><a href="">27</td></a>
+</tr>
+<tr>
+<td id="weekend"><a class="weekend" href="">28</td></a>
+<td><a href="">29</td></a>
+<td><a href="">30</td></a>
+<td><a href="">31</td></a>
+<td class="nextmth"><a id="nextmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">1</td></a>
+<td class="nextmth"><a id="nextmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">2</td></a>
+<td class="nextmth"><a id="nextmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">3</td></a>
+</tr>
+</table>
+<script>
+function lastmth(){
+     window.location.replace("file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/SepMthWADP.html");
+}
+function nextmth(){
+     window.location.replace("file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html");
+}
+</script>
+</body>
+</html>

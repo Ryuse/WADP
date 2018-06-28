@@ -1,0 +1,125 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: Verdana;
+	
+	
+}
+
+/* Navigation Bar */
+
+	#main{
+		width:100%;
+		height:10vh;
+		background-color: whitesmoke;
+		opacity: 0.8;
+		top:0px;
+		z-index:100;
+		overflow: hidden;
+		position: fixed;
+		
+		box-sizing: border-box;
+		border-bottom: 2px solid lightgray;
+		/* background-image: url("plant.jpg"); */
+		/* background-repeat: no-repeat; */
+	}
+
+	
+	#main a>img, .imglink{
+		float:left;
+		height: 10vh;
+		width: auto;
+		display:block;
+		padding:0px 10px;
+	}	
+
+	nav {
+	width: 100%;
+	height: 80px;
+	background-color: whitesmoke;
+	line-height:80px;
+
+	}
+
+	nav ul{
+	float: left;
+	margin-left:10px;
+	}
+
+	nav ul li{
+	list-style-type:none;
+	display: inline-block;
+	transition: 0.8s all;
+	
+
+	}
+
+	nav ul li:hover{
+	background-color:#3fac14;
+	
+
+	}
+
+	nav ul li a{
+	text-decoration:none;
+	color:rgb(0, 0, 0);
+	padding:30px;
+	margin: 0px;
+	}
+
+	/* nav ul li.current{
+		background-color:#3fac14;
+		
+	} */
+	.current{
+		background-color:#3fac14;
+		color:white;
+	
+	/* Login */
+	
+	}
+	#loginbutton{
+		width: 150px;
+		float: right;
+		/* background-color:#ffffff; */
+		text-align: center;
+		
+	}
+
+	#loginbutton:hover{
+		cursor: pointer;
+		
+	}
+
+	#loginbutton > p{
+		font-size: 1.2em;
+
+	}
+
+	#loginbutton > p:hover{
+		color:rgb(255, 255, 255);
+	}
+
+	/*Custom scrollbar(Only works for chrome)*/
+
+	/* width */
+	::-webkit-scrollbar {
+	width: 20px;
+	}
+	
+	/* Track */
+	::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+	}
+	
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	background: green;
+	border-radius: 10px;
+	}
+	
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	background: #017013;
+	}

@@ -1,0 +1,254 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+html{
+	font-family:Verdana, sans serif;
+}
+#main{
+    width:100%;
+    height:80px;
+    background-color: black;
+    top:0px;
+    z-index:100;
+    overflow: hidden;
+    /* background-image: url("plant.jpg"); */
+    /* background-repeat: no-repeat; */
+}
+#main>img{
+    float:left;
+    margin-left: 20px;
+    height: 80px;
+}    
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    line-height:80px;
+
+}
+nav ul{
+    float: left;
+    margin-left:30px;
+}
+nav ul li{
+    list-style-type:none;
+    display: inline-block;
+    transition: 0.8s all;
+	border-radius:20px 20px 20px 20px;
+}
+nav ul li:hover{
+    background-color:#33641f;
+}
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    padding:30px;
+}
+#ok, #cancel, #retry{
+	font-weight:bold;
+	font-size:20px;
+	border-radius:15px;
+	width:110px;
+	margin-top:40px;
+	margin-left:30px;
+	padding:10px;
+}
+#retry{
+	background-color:red;
+}
+#ok:hover{
+	background-color:#4dff4d;
+}
+#cancel:hover{
+	background-color:#cc0000;
+}
+div.todolist{
+	margin-top:50px;
+    padding:20px;
+	border-radius:15px;
+	font-size:40px;
+	font-weight:bold;
+    text-align:center;
+	height:70px;
+}
+#buttons{
+	background-color:#006600;
+	text-align:right;
+	padding:20px;
+	height:70px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	border:1px solid black;
+}
+#left{
+	width:90px;
+	height:80px;
+	float:left;
+}
+#right{
+	width:90px;
+	height:80px;
+	float:right;
+}
+button{
+	float:right;
+}
+.next{
+	float:right;
+	padding:13px;
+	font-size:15px;
+	border-radius:13px;
+}
+.last{
+	float:left;
+	padding:13px;
+	font-size:15px;
+	border-radius:13px;
+}
+div.days{
+	display:inline-block;
+	text-align:center;
+	margin-right:95px;
+	margin-left:57px;
+	border:1px solid black;
+	padding:12px;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+div.month{
+	background-color:#006600;
+	padding:15px;
+	text-align:center;
+}
+#last{
+	float:left;
+	padding:10px;
+	border-radius:15px;
+	font-weight:bold;
+}
+#next{
+	float:right;
+	padding:10px;
+	border-radius:15px;
+	font-weight:bold;
+}
+#days{
+	display:inline-block;
+	text-align:center;
+}
+p{
+	font-weight:bold;
+}
+div.week{
+	border:3px solid black;
+	background-color:#595959;
+}
+#weekday{
+	text-decoration:none;
+	color:black;
+}
+#weekend{
+	text-decoration:none;
+	color:red;
+}
+#weekend:hover, #weekday:hover{
+	color:white;
+}
+div.days:hover{
+	background-color:green;
+}
+table{
+	border-collapse:collapse;
+	border-top:1px solid white;
+	width:1520px;
+	border-right:3px solid black;
+}
+td{
+	padding:15px;
+	margin:7px;
+	border:1px solid black;
+}
+input{
+	width:1364px;
+	height:40px;
+	font-size:21px;
+	border:1.4px solid black;
+	padding-left:6px;
+}
+#time{
+	padding-right:7px;
+	font-weight:bold;
+}
+.week1, .week3, .week4, .week5{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:103px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+}
+.week1:hover, .week3:hover, .week4:hover, .week5:hover{
+	background-color:green;
+}
+.week1, .week3, .week4, .week5{
+	margin-right:95px;
+	margin-left:57px;
+}
+#lastWD, #nextWD{
+	color:#808080;
+	text-decoration:none;
+}
+.lw, .nw{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+	margin-right:95px;
+	margin-left:57px;
+}
+th{
+	padding:20px;
+	font-size:25px;
+	border:1.4px solid black;
+}
+#current{
+	margin-left:57px;
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:96px;
+	margin-bottom:10px;
+	margin-top:14px;
+	text-align:center;
+	background-color:green;
+}
+.lw, .week1, .days, .week3, .week4, .week5, .nw{
+	background-color:white;
+}
+.week6{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:94px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+	background-color:white;
+	margin-left:57px;
+}
+.week6:hover{
+	background-color:green;
+}
+tr.time:nth-child(even), th{
+	background-color:#33ff33;
+}
+tr.time:nth-child(odd){
+	background-color:green;
+}
+h1{
+	text-shadow:3px 3px 4px white;
+}
