@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title> Home </title>
+
+		
+		<link href="../css/Nav.css" rel="stylesheet">
+		<link href="../css/Home.css" rel="stylesheet"> 
+		<link href="../css/login.css" rel="stylesheet">
+		<link rel="icon" href="../images/logo.png">
+
+
+		<script src="../data/userdata.js"></script>
+		
+
+		
+	</head>
+	
+	<body>
+
+	<!-- Nav bar-->
+
+	<div id="main">
+		<a href="Home.html" class="imglink current"> <img src="../images/whitelogo.png"> </a>
+		
+		<nav>
+			<ul>
+				
+				<li> <a href="Map.html">Map </a></li>
+				<li> <a href=".trivia">Trivia </a></li>
+				<li> <a href="./Ian/StudyPlannerProjectAugMthWADP.html"> Study Tracker</a></li>
+				<li> <a href="About.html"> About </a> </li>
+				<li> <a href="Slideshow.html"> Welcome </a></li>
+				
+
+			</ul>
+
+			<div id="loginbutton">
+				<p onclick="showlogin()">Login</p>
+			</div>
+		
+		</nav>
+		
+	</div>
+	
+	<!-- Login-->
+
+	<div id="logincontainer">
+		<div id="login">
+			<form>
+				
+				<p class="close" onclick="closelogin()">&times;</p>
+				<input type="text" placeholder="Username" value="" id="username" onkeydown="checkEnter(event)">
+
+				<br>
+
+				<input type="password" placeholder="Password" value="" id="password" onkeydown="checkEnter(event)">
+
+				<br>
+
+				<input type="button" value="Login" onclick="gologin()"> 
+
+				<br>
+				<hr>
+				<br>
+
+				<a href="SignUp.html"> <input type="button" value="Sign Up"> </a>
+
+			</form>
+		</div>
+	</div>	
+
+	<!-- Slideshow -->
+
+	<div id="container">
+		<div id="resizer">
+			<div id="slideshow">
+				<img src="../images/Map/map.png" class="map fade" onmouseover="stop()">
+				<img src="../images/Map/map2.png" class="map fade" onmouseover="stop()">
+				<img src="../images/Map/map3.png" class="map fade" onmouseover="stop()">
+				<img src="../images/Map/map4.png" class="map fade" onmouseover="stop()">
+				
+				<!-- <button class="btn1" onclick="plusIndex(-2)">&#10094;</button>
+				<button class="btn2" onclick="plusIndex(1)">&#10095;</button> -->
+			</div>
+		</div>	
+	</div>
+	
+	
+		
+	
+		<!-- Random content -->
+		<div id="test">
+			<div id="faq">
+				<h1>FAQ</h1>
+
+				<div class="question1">
+				<p id="question1"> Question 1</p>
+
+				<p class="pointer"  onclick="answer(0)">&#10095;</p>
+				<p class="back"  onclick="question(0)">&#10094;</p>
+
+
+				</div>
+
+				<div class="question2">
+				<p id="question2"> Question 2</p>
+				<p class="pointer"  onclick="answer(1)">&#10095;</p>
+				<p class="back"  onclick="question(1)">&#10094;</p>
+				</div>
+
+				<div class="question3">
+				<p id="question3"> Question 3</p>
+				<p class="pointer"  onclick="answer(2)">&#10095;</p>
+				<p class="back"  onclick="question(2)">&#10094;</p>
+
+				</div>
+
+				<div class="question4">
+				<p id="question4"> Question 4	</p>
+				<p class="pointer"  onclick="answer(3)">&#10095;</p>
+				<p class="back"  onclick="question(3)">&#10094;</p>
+
+				</div>
+			</div>
+				
+			<div class="trivia">
+				<h1> Trivia of the day: </h1>
+				<p> It takes more than 3 gallons of water to make a single sheet of paper</p>
+			</div>
+		</div>
+
+		<div id="earthday">
+			<img src="../images/Animals/Tiger.jpg">
+			<h1> Earth Day</h1>
+			<p>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi adipisci officiis mollitia ducimus ipsum deserunt dignissimos sint voluptates assumenda corrupti excepturi officia eos, nesciunt quae nobis sunt neque velit nemo?
+			</p>
+		</div>
+
+		<script src="../js/login.js"></script>
+		<script src="../js/question.js"></script>	
+	</body>
+
+		
+
+		
+
+
+</html>
