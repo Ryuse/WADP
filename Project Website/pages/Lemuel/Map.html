@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Page Title</title>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/Nav.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/map.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css" />
+
+   
+</head>
+
+<body>
+	<!-- Nav bar-->
+
+	<div id="main">
+            <a href="Home.html" class="imglink"> <img src="../../images/logo.png"> </a>
+            
+            <nav>
+                <ul>
+                    
+                    <li> <a href="Map.html" class="current">Map </a></li>
+                    <li> <a href=".trivia">Trivia </a></li>
+                    <li> <a href=""> Study Tracker</a></li>
+                    <li> <a href="About.html"> About </a> </li>
+                    <li> <a href="Slideshow.html"> Welcome </a></li>
+                    
+    
+                </ul>
+    
+                <div id="loginbutton">
+                    <p onclick="showlogin()">Login</p>
+                </div>
+            
+            </nav>
+            
+        </div>
+        
+        <!-- Login-->
+    
+        <div id="logincontainer">
+            <div id="login">
+                <form>
+                    
+                    <p class="close" onclick="closelogin()">&times;</p>
+                    <input type="text" placeholder="Username" value="" id="username" onkeydown="checkEnter(event)">
+    
+                    <br>
+    
+                    <input type="password" placeholder="Password" value="" id="password" onkeydown="checkEnter(event)">
+    
+                    <br>
+    
+                    <input type="button" value="Login" onclick="gologin()"> 
+    
+                    <br>
+                    <hr>
+                    <br>
+    
+                    <a href="SignUp.html"> <input type="button" value="Sign Up"> </a>
+    
+                </form>
+            </div>
+        </div>	
+
+    <!-- Map -->
+
+    <div id="scroll">
+        <form>
+            <input type="text" placeholder="Search" class="search"> 
+        </form>
+    </div>
+
+    <div id="map">
+
+    </div>
+
+    <script src="../../js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHH-O8TE_tctZZt8XHpr1LNLHgfvWkxPg&callback=initMap"
+    async defer></script>
+    <script src="../../js/login.js"></script>
+</body>
+
+</html>

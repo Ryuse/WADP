@@ -1,0 +1,86 @@
+<!-- Made by Lemuel >:D -->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title> Home </title>
+
+		
+		<link href="../../css/Nav.css" rel="stylesheet">
+		<link href="../../css/about.css" rel="stylesheet">
+		<link href="../../css/login.css" rel="stylesheet"> 
+
+		<link rel="icon" href="../../images/logo.png">
+		
+		
+	</head>
+	
+	<body>
+
+		<!-- Nav bar-->
+
+		<div id="main">
+			<a href="Home.html" class="imglink"> <img src="../../images/logo.png"> </a>
+			
+			<nav>
+				<ul>
+					
+					<li> <a href="Map.html">Map </a></li>
+					<li> <a href=".trivia">Trivia </a></li>
+					<li> <a href="./Ian/StudyPlannerProjectAugMthWADP.html"> Study Tracker</a></li>
+					<li> <a href="About.html" class="current"> About </a> </li>
+					<li> <a href="Slideshow.html"> Welcome </a></li>
+					
+
+				</ul>
+
+				<div id="loginbutton">
+					<p onclick="showlogin()">Login</p>
+				</div>
+			
+			</nav>
+			
+		</div>
+		
+		<!-- Login-->
+
+		<div id="logincontainer">
+			<div id="login">
+				<form>
+					
+					<p class="close" onclick="closelogin()">&times;</p>
+					<input type="text" placeholder="Username" value="" id="username" onkeydown="checkEnter(event)">
+
+					<br>
+
+					<input type="password" placeholder="Password" value="" id="password" onkeydown="checkEnter(event)">
+
+					<br>
+
+					<input type="button" value="Login" onclick="gologin()"> 
+
+					<br>
+					<hr>
+					<br>
+
+					<a href="SignUp.html"> <input type="button" value="Sign Up"> </a>
+
+				</form>
+			</div>
+		</div>	
+
+		<div id="container">
+			<h1>About Us</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus veniam, dolorem eveniet commodi rem similique
+				cum perferendis rerum, distinctio odit consequatur laudantium maiores animi unde corrupti expedita, hic quas quam vitae
+				omnis ducimus. Error quibusdam similique doloribus sequi eius modi dicta? Nostrum autem ducimus numquam blanditiis quam
+				reprehenderit dolore?
+			</p>
+		</div>
+
+	
+		<script src="../../js/login.js"></script>
+	</body>
+</html>

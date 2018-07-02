@@ -1,0 +1,105 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: Verdana;
+	
+	
+}
+
+
+#bgcolor{
+	background-color: rgb(0,100,0);
+}
+
+#faqtop{
+    background-color: rgb(0, 255, 0);
+    border: 1px solid black;
+    /* position: relative; */
+    margin-top:10vh;
+}
+
+#prompt p{
+    padding: 10px;
+	
+    width: 90%;
+    clear:both;
+}
+
+div p a{
+	text-decoration: none;
+}
+
+#imggallery{
+    /* width: 100%; */
+	margin-top: 5px;
+	margin-bottom: 5px;
+    margin-left: 50%;
+    transform: translateX(-37.5%);
+}
+
+#image{
+	float: left;
+	border: 1px solid black;
+	margin-bottom: 10px;
+	width: 180px;
+	height: 100px;
+	margin-right: 10px;
+}
+
+#image:hover {
+	border: 1px solid red;
+}
+
+#prompt{
+	margin-top: 150px;
+	margin-left: 200px;
+}
+
+#trivia{
+	background-color: rgb(52, 119, 4);
+	font-family: Verdana;
+}
+
+
+#edcaption{
+	background-color: rgb(52, 119, 4);
+	font-family: Verdana;
+	border: none;
+}
+
+span.number{
+	font-weight: bold;
+	font-style: italic;
+	color: red;
+}
+
+#play{
+    background-color: rgb(52, 119, 4);
+    border: none;
+	margin-bottom: 50px;
+}
+
+div button{
+	display: block;
+}
+
+#myDIV,  #myDIV2, #myDIV3, #myDIV4, #myDIV5, #myDIV6, #myDIV7, #myDIV8, #myDIV9, #myDIV10{
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lime;
+    margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid black;
+}
+
+textarea {
+	width: 700px;
+	margin-left: 40px;
+}
+
+#buttons {
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
