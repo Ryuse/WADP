@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8"/>
 <title>EcoOverdose Trivia</title>
-
+<link href="logo.png" rel="icon">
 <link href="WADP project CSS.css" rel="stylesheet" type="text/css">
 
 <link href="WADP project javascript.js" rel="stylesheet" type="text/javascript">
-<link href="../../js/login.js" rel="stylesheet" type="text/javascript">
-<link href="../../css/login.css" rel="stylesheet">
-<link href="../../css/Nav.css" rel="stylesheet">
+<link href="login.js" rel="stylesheet" type="text/javascript">
+<link href="login.css" rel="stylesheet">
+<link href="Nav.css" rel="stylesheet">
 </head>
 
 <body>
 <!-- Nav bar-->
 
 <div id="main">
-    <a href="../Lemuel/Home.html" class="imglink "> <img src="../../images/logo.png"> </a>
+    <a href="Home.html" class="imglink current"> <img src="./logo.png"> </a>
     
     <nav>
         <ul>
             
-            <li> <a href="../Lemuel/Map.html">Map </a></li>
-            <li> <a href="" class="current">Trivia </a></li>
-            <li> <a href=""> Study Tracker</a></li>
-            <li> <a href="../Lemuel/About.html"> About </a> </li>
-            <li> <a href="../Lemuel/Slideshow.html"> Welcome </a></li>
+            <li> <a href="Map.html">Map </a></li>
+            <li> <a href=".trivia">Trivia </a></li>
+            <li> <a href="./Ian/StudyPlannerProjectAugMthWADP.html"> Study Tracker</a></li>
+            <li> <a href="About.html"> About </a> </li>
+            <li> <a href="Slideshow.html"> Welcome </a></li>
             
 
         </ul>
@@ -75,6 +75,9 @@
             <li><img src="https://pixfeeds.com/images/24/548784/1200-485699620-land-pollutants.jpg"><span class="listlink"><a href="#land">Land</a></span></li>
         </ol>
     </div>
+    <div id="daily">
+        <p id="dailyheader">Trivia of the day</p>
+    </div>
     <div id="methodlist">
         <ol class="lists">
             <li><img src="http://edwinno.com/images/easyblog_articles/640/reuse.jpeg"><span calss="listlink"><a href="#reuse">Reuse</a></span></li>
@@ -83,30 +86,33 @@
         </ol>
     </div>
     <div id="browsecreate">
-        <button class="button" id="browse" onclick="redirectlist()">Browse quizzes</button>
-        <button class="button" id="create" onclick="redirectquiz()">Create your own quiz!</button>
+        <a href="#quizlist"><button class="button" id="browse">Browse quizzes</button></a>
+        <a href="#createquiz"><button class="button" id="create">Create your own quiz!</button></a>
     </div>
-    <div id="images">
+    <!-- <div id="images">
         <img src="https://www.discovertheforest.org/wp-content/uploads/2018/01/06.jpg">
         <img src="http://www.digitalistmag.com/files/2015/11/forest.jpg">
-    </div>
+    </div> -->
 </div>
 <!-- Trivias -->
 <div class="pages" id="air">
-
+    <a href="#topnav"><button id="back2" class="button">Back</button></a>
 </div>
 <!-- The quizlist -->
 <div class="pages" id="quizlist">
-<h1>Welcome to the quizlist!</h1>
-<button class="button" id="back1" onclick="back()">Back</button>
+    <h1>Welcome to the quizlist!</h1>
+    <a href="#topnav "><button class="button" id="back1">Back</button></a>
 <!-- The searchbar -->
-<form class="searchbars" action="action_page.php">
-    <input type="text" placeholder="Type in keywords..." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+    <form class="searchbars" action="action_page.php">
+        <input type="text" placeholder="Type in keywords..." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
 <!-- Quiz display -->
 </div>
-
+<!-- Create your own quizzes -->
+<div class="pages" id="createquiz">
+    <h1>Create your own quiz!</h1>
+</div>
 <script src="login.js"></script>
 </body>
 </html>
