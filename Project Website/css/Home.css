@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(218, 218, 218);
 }	
 
 /* Slideshow */
@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	top:10vh;
 	background-color: #fff;
-	height:80vh;
+	max-height:80vh;
 	margin:auto;
 	position: relative;
 	overflow: hidden;
@@ -133,7 +133,7 @@ body {
 .question1 p, .question2 p, .question3 p, .question4 p{
 	text-align: left;
 	color: black;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	
 	position: absolute;
     top: 50%;
@@ -210,7 +210,7 @@ p.back{
 
 #earthday{
 	width: 98.5%;
-	height: 90vh;
+	height: 100vh;
 	border: 2px solid lightgray;
 	box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
@@ -218,9 +218,9 @@ p.back{
 	background-color: rgb(255, 255, 255);
 
 }
-#earthday >img{
+#earthday > iframe{
 	width: 50%;
-	height: auto;
+	height: 60%;
 	margin: 3vh auto;
 	display: block;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
@@ -232,4 +232,20 @@ p.back{
 
 	margin: auto;
 }
+
+#earthday a{
+	text-decoration: none;
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	border:1px solid black;
+	padding: 10px;
+	color:black;
+}
+
+#earthday a:hover{
+	border: 1px solid lightgray;
+	color: lightgray;
+}
+
 

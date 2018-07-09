@@ -19,7 +19,7 @@
 		position: fixed;
 		
 		box-sizing: border-box;
-		border-bottom: 2px solid lightgray;
+		border-bottom: 1px solid lightgray;
 		/* background-image: url("plant.jpg"); */
 		/* background-repeat: no-repeat; */
 	}
@@ -100,6 +100,9 @@
 		color:rgb(255, 255, 255);
 	}
 
+	#loggedinusername{
+		display: none;
+	}
 	/*Custom scrollbar(Only works for chrome)*/
 
 	/* width */
