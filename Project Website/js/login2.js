@@ -32,25 +32,25 @@ function gologin(){
 
     for(i = 0; i < users.length; i++){
         if(inputUsername.toLowerCase() == users[i].toLowerCase() && inputPassword == password[i]){
-
-            logincontainer.style.display = "none";
-            login.style.display = "none";
-            document.querySelector("#login h1.invalid").style.display = "none"; 
-            currentuser = inputUsername;
-
+            currentuser = users[i]  ;
             logintouser()
-
             localStorage.setItem("currentuser", JSON.stringify(currentuser)); //stores currentuser
+            $("#myModal").modal("hide"); //Closes bootstrap modal 
+
+            
         }
         else{
             console.log("Fail")
-            document.querySelector("#login h1.invalid").style.display = "block";
+            document.querySelector(".invalid").style.display = "block";
         }
         
     }
 
 }
-
+//Closes incorrect username or password
+// function closeincorrect(){
+//     document.querySelector(".invalid").style.display = "none";
+// }
 //Checks enter
 
 function checkEnter(event){
@@ -62,9 +62,10 @@ function checkEnter(event){
 //Changes Login button to username
 
 function logintouser(){
-
-    var loginbutton = document.querySelector("#loginbutton p");
-    loginbutton.innerHTML = String(currentuser);
+    var loginbutton = document.querySelector("#loginbutton")
+    loginbutton.style.display = "none";
+    var loggedinusername = document.querySelector("#loggedinusername");
+    loggedinusername.innerHTML = String(currentuser);
 
     //Calls showprofilemenu
     loginbutton.onclick = function(){
@@ -95,7 +96,7 @@ function logout(){
 
 // Unnecessary codes
 
-//Close and open modal (Not needed since bootstrap)
+//Close and open modal (Not needed cuz bootstrap)
 
 // var logincontainer = document.getElementById("logincontainer");
 // var login = document.getElementById("login");
