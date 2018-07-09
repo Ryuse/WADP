@@ -25,25 +25,26 @@
     </div>
 
     <div id="content">
-        <div id="signup">
+        <div id="signup" >
             <p>Sign Up</p>
-            <form>
-                <input type="text" name="name" id="username" placeholder="Username">
+            <p class="signupinv">Please fill in the form</p>
+            <form  method="post">
+                <input type="text" name="name" id="username" placeholder="Username" required onkeydown="checkEnter(event)">
 
                 <br>
 
-                <input type="text" name="pw" id="password" placeholder="Password">
+                <input type="text" name="pw" id="password" placeholder="Password" required onkeydown="checkEnter(event)">
 
                 <br>
 
-                <input type="text" name="pw" id="confirmPassword" placeholder="Confirm Password">
+                <input type="text" name="pw" id="confirmPassword" placeholder="Confirm Password" required onkeydown="checkEnter(event)">
 
                 <br>
                 <hr>
                 <br>
 
-                <input type="email" name="email" id="email" placeholder="Email">
-
+                <input type="email" name="email" id="email" placeholder="Email" required onkeydown="checkEnter(event)">
+                
                 <br>
                 
                 <input type="button" value="Sign Up" class="right" onclick="signup()">

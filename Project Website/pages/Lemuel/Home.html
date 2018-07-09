@@ -1,58 +1,92 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title> Home </title>
+<head>
 
-		
-		<link href="../../css/Nav.css" rel="stylesheet">
-		<link href="../../css/Home.css" rel="stylesheet"> 
-		<link href="../../css/login.css" rel="stylesheet">
-		<link rel="icon" href="../../images/logo.png">
+	<title> Home </title>
 
 
-		<script src="../../data/userdata.js"></script>
-		
+	<link href="../../css/Nav.css" rel="stylesheet">
+	<link href="../../css/Home.css" rel="stylesheet">
+	<link href="../../css/login.css" rel="stylesheet">
+	<link href="../../css/loading.css" rel="stylesheet">
+	<link rel="icon" href="../../images/logo.png">
 
-		
-	</head>
-	
-	<body>
+
+	<script src="../../data/userdata.js"></script>
+	<script src="../../js/loadingscreen.js"></script>
+
+	<!-- Bootstrap-->
+
+	<!-- <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+
+</head>
+
+
+<body onload="ifloggedin()">
+
+	<!-- Loading screen -->
+
+	<div id="overlay">
+		<div id="spinner"></div>
+	</div>
 
 	<!-- Nav bar-->
 
 	<div id="main">
-		<a href="Home.html" class="imglink current"> <img src="../../images/whitelogo.png"> </a>
-		
+		<a href="Home.html" class="imglink current">
+			<img src="../../images/whitelogo.png"> </a>
+
 		<nav>
 			<ul>
-				
-				<li> <a href="Map.html">Map </a></li>
-				<li> <a href="../Joshua/WADP Trivia.html">Trivia </a></li>
-				<li> <a href="../Ian/Calendar/StudyPlannerProjectAugMthWADP.html"> Study Tracker</a></li>
-				<li> <a href="About.html"> About </a> </li>
-				<li> <a href="Slideshow.html"> Welcome </a></li>
-				
+
+				<li>
+					<a href="Map.html">Map </a>
+				</li>
+				<li>
+					<a href="../Joshua/WADP Trivia.html">Trivia </a>
+				</li>
+				<li>
+					<a href="../Ian/Calendar/Study Planner.html"> Study Tracker</a>
+				</li>
+				<li>
+					<a href="About.html"> About </a>
+				</li>
+				<li>
+					<a href="Slideshow.html"> Welcome </a>
+				</li>
+
 
 			</ul>
 
 			<div id="loginbutton">
 				<p onclick="showlogin()">Login</p>
+				<!-- <p id="loggedinusername" onclick="showprofilemenu()"></p> -->
 			</div>
-		
+
+
+
 		</nav>
-		
+
 	</div>
-	
+
 	<!-- Login-->
 
 	<div id="logincontainer">
 		<div id="login">
+
+			<h1 class="login"> Login </h1>
+			<h1 class="invalid"> Invalid Username or Password provided. Please try again.</h1>
 			<form>
-				
+
 				<p class="close" onclick="closelogin()">&times;</p>
-				<input type="text" placeholder="Username" value="" id="username" onkeydown="checkEnter(event)">
+				<input type="text" placeholder="Username" value="" id="username1" onkeydown="checkEnter(event)">
 
 				<br>
 
@@ -60,17 +94,48 @@
 
 				<br>
 
-				<input type="button" value="Login" onclick="gologin()"> 
+				<input type="button" value="Login" onclick="gologin()">
 
 				<br>
 				<hr>
 				<br>
 
-				<a href="SignUp.html"> <input type="button" value="Sign Up"> </a>
+				<a href="SignUp.html">
+					<input type="button" value="Sign Up"> </a>
 
 			</form>
 		</div>
-	</div>	
+	</div>
+
+	<div id="profileoptions">
+		<div id="username">
+			<img src="../../images/logo.png">
+			<p id="name"> placeholder </p>
+		</div>
+		<div id="bottom">
+
+			<div id="profile">
+				<img src="../../images/Profile/no_avatar.jpg">
+				<p> My Profile </p>
+			</div>
+
+			<div id="mail">
+				<img src="../../images/Profile/Message.png">
+				<p> My Mail </p>
+			</div>
+
+			<div id="notification">
+				<img src="../../images/Profile/Bell.png">
+				<p> Notifications </p>
+			</div>
+
+			<div id="logout" onclick="logout()">
+				<img src="../../images/Profile/Logout.png">
+				<p onclick="logout()"> Log out </p>
+			</div>
+
+		</div>
+	</div>
 
 	<!-- Slideshow -->
 
@@ -81,72 +146,79 @@
 				<img src="../../images/Map/map2.png" class="map fade" onmouseover="stop()">
 				<img src="../../images/Map/map3.png" class="map fade" onmouseover="stop()">
 				<img src="../../images/Map/map4.png" class="map fade" onmouseover="stop()">
-				
+
 				<!-- <button class="btn1" onclick="plusIndex(-2)">&#10094;</button>
 				<button class="btn2" onclick="plusIndex(1)">&#10095;</button> -->
 			</div>
-		</div>	
+		</div>
 	</div>
-	
-	
-		
-	
-		<!-- Random content -->
-		<div id="test">
-			<div id="faq">
-				<h1>FAQ</h1>
 
-				<div class="question1">
+
+
+
+	<!-- Random content -->
+	<div id="test">
+		<div id="faq">
+			<h1>FAQ</h1>
+
+			<div class="question1">
 				<p id="question1"> Question 1</p>
 
-				<p class="pointer"  onclick="answer(0)">&#10095;</p>
-				<p class="back"  onclick="question(0)">&#10094;</p>
+				<p class="pointer" onclick="answer(0)">&#10095;</p>
+				<p class="back" onclick="question(0)">&#10094;</p>
 
 
-				</div>
+			</div>
 
-				<div class="question2">
+			<div class="question2">
 				<p id="question2"> Question 2</p>
-				<p class="pointer"  onclick="answer(1)">&#10095;</p>
-				<p class="back"  onclick="question(1)">&#10094;</p>
-				</div>
+				<p class="pointer" onclick="answer(1)">&#10095;</p>
+				<p class="back" onclick="question(1)">&#10094;</p>
+			</div>
 
-				<div class="question3">
+			<div class="question3">
 				<p id="question3"> Question 3</p>
-				<p class="pointer"  onclick="answer(2)">&#10095;</p>
-				<p class="back"  onclick="question(2)">&#10094;</p>
+				<p class="pointer" onclick="answer(2)">&#10095;</p>
+				<p class="back" onclick="question(2)">&#10094;</p>
 
-				</div>
-
-				<div class="question4">
-				<p id="question4"> Question 4	</p>
-				<p class="pointer"  onclick="answer(3)">&#10095;</p>
-				<p class="back"  onclick="question(3)">&#10094;</p>
-
-				</div>
 			</div>
-				
-			<div class="trivia">
-				<h1> Trivia of the day: </h1>
-				<p> It takes more than 3 gallons of water to make a single sheet of paper</p>
+
+			<div class="question4">
+				<p id="question4"> Question 4 </p>
+				<p class="pointer" onclick="answer(3)">&#10095;</p>
+				<p class="back" onclick="question(3)">&#10094;</p>
+
 			</div>
 		</div>
 
-		<div id="earthday">
-			<img src="../../images/Animals/Tiger.jpg">
-			<h1> Earth Day</h1>
-			<p>
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi adipisci officiis mollitia ducimus ipsum deserunt dignissimos sint voluptates assumenda corrupti excepturi officia eos, nesciunt quae nobis sunt neque velit nemo?
-			</p>
+		<div class="trivia">
+			<h1> Trivia of the day: </h1>
+			<p> It takes more than 3 gallons of water to make a single sheet of paper</p>
 		</div>
+	</div>
 
-		<script src="../../js/login.js"></script>
-		<script src="../../js/question.js"></script>	
-	</body>
+	<div id="earthday">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/RS7IzU2VJIQ" frameborder="0" allow="autoplay; encrypted-media"
+		 allowfullscreen></iframe>
+		<h1> Earth Day</h1>
+		<p>
+			Earth Day is an annual event, celebrated on April 22, on which day events worldwide are held to demonstrate support for environmental
+			protection. It was first celebrated in 1970, and is now coordinated globally by the Earth Day Network and celebrated in
+			more than 193 countries each year.
+		</p>
+		<br>
+		<a href="../Manfred/Earth Day.html">Learn More</a>
+	</div>
 
-		
 
-		
+	<script src="../../js/login.js"></script>
+	<script src="../../js/question.js"></script>
+
+</body>
+
+
+
+
 
 
 </html>

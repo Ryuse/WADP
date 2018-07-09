@@ -1,0 +1,187 @@
+<!-- Made by Lemuel >:D -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Home </title>
+
+
+	<link href="../../css/Nav2.css" rel="stylesheet">
+	<link href="../../css/about2.css" rel="stylesheet">
+	<link href="../../css/login2.css" rel="stylesheet">
+
+	<link rel="icon" href="../../images/logo.png">
+	<script src="../../js/loadingscreen.js"></script>
+
+	<!-- Bootstrap -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="ifloggedin()">
+	<!-- Loading screen -->
+
+	<div id="overlay">
+		<div id="spinner"></div>
+	</div>
+
+	<!-- Nav bar-->
+
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+		<a class="navbar-brand current" href="Home.html">
+			<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> EcoDose
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarText">
+
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a href="Map.html" class="nav-link"> Map
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Trivia </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Study Tracker </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link active" href="#"> About </a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li id="loginbutton" data-toggle="modal" data-target="#myModal" onclick="closeincorrect()">
+					Login
+				</li>
+
+				<li id="loggedinusername" onclick="showprofilemenu()">
+
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<!-- Modal -->
+
+	<div class="modal" id="myModal">
+
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Login</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p class="invalid"> Incorrect Username or Password</p>
+
+					<form>
+						<div class="form-group">
+							<label for="username1"> Username: </label>
+							<input type="text" placeholder="Enter username" id="username1" class="form-control" onkeydown="checkEnter(event)" required>
+						</div>
+
+						<div class="form-group">
+							<label for="password"> Username: </label>
+							<input type="password" placeholder="Password" class="form-control" id="password" onkeydown="checkEnter(event)" required>
+						</div>
+
+					</form>
+					<hr>
+					<button type="button" class="btn btn-primary btn-block" onclick="gologin()"> Log in </button>
+
+					<br>
+
+					<a href="../Lemuel2/SignUp.html">
+						<button type="button" class="btn btn-primary btn-block">Sign Up </button>
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Options -->
+	<div id="profileoptions">
+		<div id="username">
+			<img src="../../images/logo.png">
+			<p id="name"> placeholder </p>
+		</div>
+		<div id="bottom">
+
+			<div id="profile">
+				<img src="../../images/Profile/no_avatar.jpg">
+				<p> My Profile </p>
+			</div>
+
+			<div id="mail">
+				<img src="../../images/Profile/Message.png">
+				<p> My Mail </p>
+			</div>
+
+			<div id="notification">
+				<img src="../../images/Profile/Bell.png">
+				<p> Notifications </p>
+			</div>
+
+			<div id="logout" onclick="logout()">
+				<img src="../../images/Profile/Logout.png">
+				<p onclick="logout()"> Log out </p>
+			</div>
+
+		</div>
+	</div>
+	<div id="container">
+		<h1>About Us</h1>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus veniam, dolorem eveniet commodi rem similique
+			cum perferendis rerum, distinctio odit consequatur laudantium maiores animi unde corrupti expedita, hic quas quam vitae
+			omnis ducimus. Error quibusdam similique doloribus sequi eius modi dicta? Nostrum autem ducimus numquam blanditiis quam
+			reprehenderit dolore?
+		</p>
+
+		<h1> Want to know how about the site? </h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus veniam, dolorem eveniet commodi rem similique
+			cum perferendis rerum, distinctio odit consequatur laudantium maiores animi unde corrupti expedita, hic quas quam vitae
+			omnis ducimus. Error quibusdam similique doloribus sequi eius modi dicta? Nostrum autem ducimus numquam blanditiis quam
+			reprehenderit dolore?
+		</p>
+		
+	</div>
+
+
+	<script src="../../js/login2.js"></script>
+</body>
+
+</html>
