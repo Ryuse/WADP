@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Welcome!
+        </title>
+
+        <meta charset="UTF-8">
+        <link href="../../css/Slideshow.css" rel="stylesheet" type="text/css">
+        <script src="../../js/loading.js"></script>
+    </head>
+
+    <body>
+        
+        <div id="overlay">
+            <div id="spinner"></div>          
+        </div>
+        
+
+        <div id="welcome">
+            <div id="right">
+                <span onclick="goright()"> 	&#10095; </span>
+            </div>
+
+            <div id="left">
+                    <span onclick="goleft()"> 	&#10094; </span>
+            </div>
+            <div id="slider">
+            
+            <!-- Contents -->
+            <div id="welcometext" class="slide">
+                <h1> Welcome to our website!</h1>
+                <p> We are a site dedicated to helping polytechnic students save the environment. <br>
+                    Let's guide you along!
+                </p>       
+            </div>
+
+            <div id="welcome2" class="slide">
+                <p> On this website we have a map of dustbin locations.</p>
+                <p> You can throw your rubbish at ninja dustbins now.</p>
+                <img src="../../images/Wireframes/map.png" class="map">
+            </div>
+
+            <div id="welcome3">
+                <p> We have a study tracker and adjustable timetable for you that <br> will plant virtual trees for each uninterrupted study session.</p>
+                <img src="../../images/Wireframes/Study tracker.png" class="study">
+            </div>
+
+            <div id="welcome32">
+                <p> Too busy? Learn quick easy tips and tricks on saving the <br>environment through 
+                    our quick trivia and quizzes!
+                </p>
+                <img src="../../images/Wireframes/Trivia.png">
+                <img src="../../images/Wireframes/quiz.png">
+            </div>
+
+            <div id="welcome322">
+                <p> Want to know more about Earth day? We have it here! <br>
+                    If you have any questions you can go to our FAQ section.
+                </p>
+                <img src="../../images/Wireframes/Earthday.png">
+                <img src="../../images/Wireframes/FAQ.png">
+            </div>
+
+            <div id="welcome4" class="slide">
+                <p> What are you waiting for? <br>Go and help save the environment effortlessly while having fun!</p>
+                <div id="welcome4text">
+                <a href="Home.html"class="start" onclick="goUp()"> Get Started</a>
+                </div>
+            </div>         
+        </div>
+        
+        
+        <script src="../../js/scroll.js"></script>
+    </body>
+</html>

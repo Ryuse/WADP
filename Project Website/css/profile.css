@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    margin-top:12vh;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+#container #col1> div, #container #col2 > div{
+    border:1px solid lightgray;
+	box-shadow: 3px 3px 5px lightgray;
+    border-radius: 1%;
+    box-sizing: border-box;
+  
+}
+
+#profiledetails{
+    margin-bottom: 20px;
+    min-height: 50vh;
+}
+
+#recentactivity{
+    margin-bottom: 20px;
+    min-height: 80vh;
+    padding-bottom: 50px;
+}
+
+#titles{
+    min-height: 50vh;
+    max-height: 80vh;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+#badges{
+    min-height: 20vh;
+    padding-bottom: 50px;
+}
+
+/* Profile Details */
+
+#profiledetails img{
+    width: auto;
+    max-height: 200px;
+   
+}
+
+#profiledetails img:hover{
+    cursor: pointer;
+}
+
+#detailname{
+    font-size:28px;
+}
+
+#changepicbutton{
+    margin-top:10px;
+}
+/* Modal */
+
+.imgcontainer{
+    width:100px;
+    height: 100px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+
+#imglist img{
+    width:auto;
+    height: 100px;
+    padding:10px;
+}
+
+#imglist img:hover{
+    cursor: pointer;
+}
+
+/* Title */
+
+#titleslist{
+    border: 1px solid gray;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: auto;
+    height: 300px;
+}
+
+/*Recent Activity*/
+
+#activites{
+    border: 1px solid gray;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}
+
+#friendlist{
+    border: 1px solid gray;
+    height: 100px;
+}
+
+/* Badge */
+
+#badgelist{
+    border: 1px solid gray;
+    height: 100px;
+}
+
+#badgelist img{
+    height: 80px;
+}
+
+

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title> Home </title>
+
+	<!-- CSS stuff -->
+
+	<link href="../../css/Nav2.css" rel="stylesheet">
+	<link href="../../css/Home2.css" rel="stylesheet">
+	<!-- <link href="../../css/login2.css" rel="stylesheet"> -->
+	<link href="../../css/loading.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/dropdownprofile.css">
+	<link rel="icon" href="../../images/logo.png">
+
+	<!-- preload javascript -->
+
+	<script src="../../js/loadingscreen.js"></script>
+
+	<!-- Bootstrap-->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
+
+</head>
+
+
+<body onload="ifloggedin()">
+	<!-- runs ifloggedin() function once loaded to check whether user is logged in-->
+
+	<!-- Loading screen -->
+
+	<div id="overlay">
+		<div id="spinner"></div>
+	</div>
+
+	<!-- Nav bar (Got this from bootstrap) -->
+
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+		<!-- Icon and word -->
+
+		<a class="navbar-brand current" href="#">
+			<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> EcoDose
+		</a>
+
+		<!-- Collapses navbar contents when screen is smaller -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+		 aria-expanded="false" aria-label="Toggle navigation">
+
+			<span class="navbar-toggler-icon"></span>
+
+		</button>
+
+		<!-- Navbar contents and links -->
+
+		<div class="collapse navbar-collapse" id="navbarText">
+
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item">
+					<a href="Map.html" class="nav-link"> Map
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="About.html"> About </a>
+				</li>
+
+			</ul>
+
+
+			<ul class="navbar-nav float-right">
+				<li id="loginbutton" data-toggle="modal" data-target="#myModal" onclick="closeincorrect()">
+					Login
+				</li>
+
+				<li id="loggedinusername" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+				</li>
+
+				<div class="dropdown">
+					<div style="min-width: 250px; overflow: hidden;" class="dropdown-menu dropdown-menu-right" aria-labelledby="loggedinusername">
+
+						<a id="header" class="dropdown-header" href="profile.html">
+							<img src="../../images/Profile Pictures/Tree.png" id="profilepic" alt="">
+							<p id="name" class="text-justify"> placeholder </p>
+						</a>
+						<div class="dropdown-divider"></div>
+
+						<a id="profile" class="dropdown-item" href="profile.html">
+							<img src="../../images/Profile/no_avatar.jpg" alt="">
+							<p> My Profile </p>
+						</a>
+						<a id="logout" class="dropdown-item" href="#" onclick="logout()">
+							<img src="../../images/Profile/Logout.png" alt="">
+							<p> Log out </p>
+						</a>
+					</div>
+				</div>
+			</ul>
+
+		</div>
+	</nav>
+
+
+
+	<!-- Bootstrap Modal For login-->
+
+	<div class="modal" id="myModal">
+
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+
+				<div class="modal-header">
+					<h4 class="modal-title">Login</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+
+				<div class="modal-body ">
+
+					<!-- This only shows up when they can't log in -->
+					<p class="invalid"> Incorrect Username or Password</p>
+
+					<!-- The form for log in-->
+
+					<form>
+						<div class="form-group">
+							<label for="username1"> Username: </label>
+							<input type="text" placeholder="Enter username" id="username1" class="form-control" onkeydown="checkEnter(event)" required>
+						</div>
+
+						<div class="form-group">
+							<label for="password"> Username: </label>
+							<input type="password" placeholder="Password" class="form-control" id="password" onkeydown="checkEnter(event)" required>
+						</div>
+
+					</form>
+
+					<hr>
+
+					<!-- Logs in -->
+					<button type="button" class="btn btn-primary btn-block" onclick="gologin()"> Log in </button>
+
+					<br>
+
+					<!-- Signs up -->
+
+					<a href="../Lemuel2/SignUp.html">
+						<button type="button" class="btn btn-primary btn-block"> Sign Up </button>
+					</a>
+					<br>
+
+					<a href="#">
+						<p class="text-center">Forgot your password? </p>
+					</a>
+
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Options -->
+
+	<!-- <div id="profileoptions">
+		<div id="username">
+			<img src="../../images/logo.png">
+			<p id="name"> placeholder </p>
+		</div>
+		<div id="bottom">
+
+			<a href="profile.html">
+				<div id="profile">
+					<img src="../../images/Profile/no_avatar.jpg">
+					<p>My Profile</p>
+				</div>
+			</a>
+
+			<a href="#">
+				<div id="mail">
+					<img src="../../images/Profile/Message.png">
+					<p> My Mail </p>
+				</div>
+			</a>
+
+			<a href="#">
+				<div id="notification">
+					<img src="../../images/Profile/Bell.png">
+					<p>Notifications </p>
+				</div>
+			</a>
+
+			<div id="logout" onclick="logout()">
+				<img src="../../images/Profile/Logout.png">
+				<p>Log out </p>
+			</div>
+
+		</div>
+	</div> -->
+
+	<!-- Bootstrap Slideshow/Carousel -->
+
+	<!-- Container is fluid so it takes the whole width of screen-->
+
+	<div id="map" class="container-fluid">
+
+		<div id="maps" class="carousel slide" data-ride="carousel">
+
+			<!-- Indicators -->
+			<ul class="carousel-indicators">
+				<li data-target="#maps" data-slide-to="0" class="active"></li>
+				<li data-target="#maps" data-slide-to="1"></li>
+				<li data-target="#maps" data-slide-to="2"></li>
+			</ul>
+
+			<!-- The slideshow -->
+			<div class="carousel-inner">
+				<div class="carousel-item active map">
+					<img src="../../images/Map/map.png" alt="Map 1" class="map">
+				</div>
+				<div class="carousel-item">
+					<img src="../../images/Map/map.png" alt="Map 2" class="map">
+				</div>
+				<div class="carousel-item">
+					<img src="../../images/Map/map.png" alt="Map 3" class="map">
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#maps" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#maps" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+
+		</div>
+	</div>
+
+
+	<!-- Middle content -->
+	<div id="test" class="container-fluid">
+		<div class="row justify-content-between">
+			<div id="faq" class="col-lg-8 col-md-8 col-sm-12 col-xs-12 between">
+				<h1>FAQ</h1>
+
+				<br>
+
+				<button data-toggle="collapse" data-target="#q1" class="btn btn-block text-left">Question 1 </button>
+
+				<div id="q1" class="collapse">
+					Lorem ipsum dolor text....
+				</div>
+
+				<br>
+
+				<button data-toggle="collapse" data-target="#q2" class="btn btn-block text-left">Question 2 </button>
+
+				<div id="q2" class="collapse">
+					Lorem ipsum dolor text....
+				</div>
+
+				<br>
+
+				<button data-toggle="collapse" data-target="#q3" class="btn btn-block text-left">Question 3 </button>
+
+				<div id="q3" class="collapse">
+					Lorem ipsum dolor text....
+				</div>
+
+				<br>
+
+				<button data-toggle="collapse" data-target="#q4" class="btn btn-block text-left">Question 4 </button>
+
+				<div id="q4" class="collapse">
+					Lorem ipsum dolor text....
+				</div>
+
+				<br>
+
+				<button data-toggle="collapse" data-target="#q5" class="btn btn-block text-left">Question 5 </button>
+
+				<div id="q5" class="collapse">
+					Lorem ipsum dolor text....
+				</div>
+
+
+			</div>
+
+			<div class="trivia col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<h1> Trivia of the day: </h1>
+				<p> It takes more than 3 gallons of water to make a single sheet of paper</p>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Earth Day -->
+	<div id="earthday" class="container-fluid mh-100">
+		<h1> Earth Day</h1>
+
+		<div class="row justify-content-center godown">
+			<div class="col-md-6 col-sm-12 align-self-center">
+				<div id="video" class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/RS7IzU2VJIQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row justify-content-center godown">
+			<div class="col-12 text-center">
+
+				<p>
+					Earth Day is an annual event, celebrated on April 22, on which day events worldwide are held to demonstrate support for environmental
+					protection. It was first celebrated in 1970, and is now coordinated globally by the Earth Day Network and celebrated
+					in more than 193 countries each year.
+				</p>
+				<a href="../Manfred/Earth Day.html">Learn More</a>
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<!-- load javascript -->
+	<script src="../../js/login2.js"></script>
+	<script src="../../js/question2.js"></script>
+
+</body>
+
+
+
+
+
+
+</html>

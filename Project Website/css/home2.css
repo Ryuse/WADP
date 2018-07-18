@@ -1,53 +1,142 @@
-#logincontainer{
-	width: 100%;
-	height: 100vh;
-	position: relative;
-	opacity: 0.6;
+*{
+	margin:0px;
+	padding: 0px;
+}
+body {
+	background-color: rgb(218, 218, 218);
+}	
+
+/* Slideshow */
+
+#map{
+	margin-top:12vh;
+	width: 98.5%;
 	background-color:black;
+	border:1px solid lightgray;
+	box-shadow: 0px 0px 5px gray;
+
+	overflow: hidden;
 }
 
-#login{
-	background-color:white;
+.map{
+	width: 80%;
+	display: block;
+	margin: auto;
+}
+
+/* Test */
+
+#test{
+    width: 98.5%;
+	position: relative;
+	margin: 5vh auto;
+	border:1px solid lightgray;
+	box-shadow: 0px 0px 5px gray;
 	border-radius: 1%;
+	overflow: hidden;
+}
 
-	width: 30%;
-	height: 50vh;
 
-	position: absolute;
-	top:15%;
-	left:50%;
-	transform: translateX(-50%);
+/* FAQ */
 
+#faq {
+	min-height: 60vh;		
+	background-color: rgb(255, 255, 255);
+	border:1px solid lightgray;
+	padding:20px;
+}
+
+
+#faq h1{
 	text-align: center;
-	padding: 20px;
-	padding-top: 130px;
 }
 
-input{
-	width: 100%;
-	height: 50px;
-	margin: 10px 0px;
-	font-size: 1.5em;
 
+#faq button{
+	min-height: 50px;
 }
 
-input[type="button"]{
-	margin: 20px 0px;
-	background-color:whitesmoke;
+
+
+
+
+/* Trivia*/
+
+.trivia{
+	min-height: 80vh;
+	background-color: rgb(255, 255, 255);
+	border:1px solid lightgray;
+	/* background-color: #000; */
+
+}
+	
+.trivia h1{
+	margin-top: 20px;
+	text-align: center;
+	color: green;
+	font-size: 40px;
+}
+
+.trivia p{
+	text-align:center;
+	font-size: 20px;
+	font-weight: bold;
+	transition: all .5s ease;
+}
+
+/* Earth Day*/
+
+#earthday{
+	width: 98.5%;
+	min-height: 85vh;
 	border: 2px solid lightgray;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+	
+	border-radius: 10px;
+	margin:2vh auto;
+	padding-top:20px;
+
+	background-color: rgb(255, 255, 255);
+	overflow: hidden;
+
+}
+#earthday iframe{
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+	min-width: 80%;
+	
+	
+}
+#earthday > h1, #earthday p, #earthday a{
+	text-align: center;
+
+
 }
 
-#login hr{
-	margin: 0px auto;
-}
-p.close{
-	position: absolute;
-	top: 10px;
-	right: 10px;
 
-	font-size: 30px;
+
+#earthday p{
+	font-size: 16px;
 }
 
-p.close:hover{
-	cursor: pointer;
+#earthday h1{
+	font-size: 6vh;
 }
+
+
+#earthday a{
+	text-decoration: none;
+	border:1px solid black;
+	padding: 10px;
+	color:black;
+	
+}
+
+#earthday a:hover{
+	border: 1px solid lightgray;
+	color: lightgray;
+}
+
+.godown{
+	margin-top:30px;
+}
+

@@ -2,8 +2,8 @@
 
 //Retrieving data from local storage
 
-var users = JSON.parse(localStorage.getItem("username")); 
-var password = JSON.parse(localStorage.getItem("password"));
+var users = JSON.parse(localStorage.getItem("users")); 
+// var password = JSON.parse(localStorage.getItem("password"));
 var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 
 //placeholder to make them global
@@ -11,15 +11,17 @@ var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 var inputUsername; 
 var inputPassword; 
 
+var pagename = window.location.pathname; //Gets the pathname
+var file = pagename.split("/").pop(); //Gets the filename
 
 // Checks if user is logged in before
 function ifloggedin(){
     if(currentuser !== undefined && currentuser !== null){
         logintouser();
     }
-    else{
-        profilemenu.style.display = "none";
-    }
+    // else{
+    //     profilemenu.style.display = "none";
+    // }
 }
 
 
@@ -31,8 +33,8 @@ function gologin(){
     inputPassword = document.getElementById("password").value;
 
     for(i = 0; i < users.length; i++){
-        if(inputUsername.toLowerCase() == users[i].toLowerCase() && inputPassword == password[i]){
-            currentuser = users[i]  ;
+        if(inputUsername.toLowerCase() == users[i].username.toLowerCase() && inputPassword == users[i].password){
+            currentuser = users[i].username;
             logintouser()
             localStorage.setItem("currentuser", JSON.stringify(currentuser)); //stores currentuser
             $("#myModal").modal("hide"); //Closes bootstrap modal 
@@ -47,10 +49,8 @@ function gologin(){
     }
 
 }
-//Closes incorrect username or password
-// function closeincorrect(){
-//     document.querySelector(".invalid").style.display = "none";
-// }
+
+
 //Checks enter
 
 function checkEnter(event){
@@ -64,33 +64,34 @@ function checkEnter(event){
 function logintouser(){
     var loginbutton = document.querySelector("#loginbutton")
     loginbutton.style.display = "none";
+
     var loggedinusername = document.querySelector("#loggedinusername");
     loggedinusername.innerHTML = String(currentuser);
 
-    //Calls showprofilemenu
-    loginbutton.onclick = function(){
-        showprofilemenu();
-    }
+    var profileusername = document.getElementById("name")
+    profileusername.innerHTML = currentuser;
+
 }
 
-function showprofilemenu(){
-    var profilemenu = document.getElementById("profileoptions");
-    
-    if (profilemenu.style.display === "block")
-    {
-        profilemenu.style.display = "none";
-    }
-    else
-    {
-        profilemenu.style.display = "block";
-    }
-}
+
 //Logs out
 
 function logout(){
-    console.log(localStorage.removeItem('currentuser'));
-    location.reload();
+    var ans = confirm("Are you sure you want to log out?")
+    if(ans){
+        console.log(localStorage.removeItem('currentuser'));
+    if (file == "profile.html"){
+        window.location.href = "home2.html"
+    }
+    else{
+        location.reload();
+    }
+    
 
+    }
+    else{
+        
+    }
 }
 
 
@@ -110,3 +111,28 @@ function logout(){
 //     logincontainer.style.display = "none";
 //     login.style.display = "none";
 // }
+
+// function showprofilemenu(){
+    
+    
+//     if (profilemenu.style.display === "block")
+//     {
+//         profilemenu.style.display = "none";
+//     }
+//     else
+//     {
+//         profilemenu.style.display = "block";
+//     }
+// }
+
+//Closes incorrect username or password
+
+// function closeincorrect(){
+//     document.querySelector(".invalid").style.display = "none";
+// }
+
+    //Calls showprofilemenu
+
+    // loginbutton.onclick = function(){
+    //     showprofilemenu();
+    // }
