@@ -32,6 +32,7 @@
     max-height: 80vh;
     margin-bottom: 20px;
     padding-bottom: 50px;
+    
 }
 
 #badges{
@@ -57,6 +58,10 @@
 
 #changepicbutton{
     margin-top:10px;
+}
+
+#addfriend{
+    margin-bottom:20px;
 }
 /* Modal */
 
@@ -88,6 +93,10 @@
     height: 300px;
 }
 
+#titlebutton{
+    float: right;
+    transform: translateY(-5px);
+}
 /*Recent Activity*/
 
 #activites{
@@ -97,10 +106,49 @@
     height: 400px;
 }
 
+/*Friends */
+
 #friendlist{
-    border: 1px solid gray;
-    height: 100px;
+
+    height: 150px;
+    overflow-y: hidden;
 }
+
+#friendlisttable{
+    border: 1px solid gray;
+    height: 150px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;    
+    
+}
+
+#friendlisttable > div{
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+#friendimages{
+    width: 80px;
+    height: auto;
+    border:1px solid white;
+
+}
+
+#friendinfowords{
+    font-size:15px;
+}
+
+#plus{
+    font-size: 50px;
+    font-weight: bold;
+    width: 85px;
+    margin-left:20px;
+    margin-top: 50%;
+    transform: translateY(-25%)
+    
+}
+
 
 /* Badge */
 
@@ -112,5 +160,4 @@
 #badgelist img{
     height: 80px;
 }
-
 

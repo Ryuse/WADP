@@ -6,6 +6,9 @@ var users = JSON.parse(localStorage.getItem("users"));
 // var password = JSON.parse(localStorage.getItem("password"));
 var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 
+var currenttitle = users[account()].currenttitle;
+
+
 //placeholder to make them global
 
 var inputUsername; 
@@ -38,7 +41,7 @@ function gologin(){
             logintouser()
             localStorage.setItem("currentuser", JSON.stringify(currentuser)); //stores currentuser
             $("#myModal").modal("hide"); //Closes bootstrap modal 
-
+            location.reload();
             
         }
         else{
@@ -69,7 +72,7 @@ function logintouser(){
     loggedinusername.innerHTML = String(currentuser);
 
     var profileusername = document.getElementById("name")
-    profileusername.innerHTML = currentuser;
+    profileusername.innerHTML = currentuser + ' the ' + currenttitle;
 
 }
 
@@ -80,18 +83,19 @@ function logout(){
     var ans = confirm("Are you sure you want to log out?")
     if(ans){
         console.log(localStorage.removeItem('currentuser'));
-    if (file == "profile.html"){
-        window.location.href = "home2.html"
-    }
-    else{
-        location.reload();
-    }
+        window.location.href = "home2.html"}
+    // if (file == "profile.html" || file == "visituser.html"){
+        
+    // }
+    // else{
+    //     location.reload();
+    // }
     
 
-    }
-    else{
+    // }
+    // else{
         
-    }
+    // }
 }
 
 

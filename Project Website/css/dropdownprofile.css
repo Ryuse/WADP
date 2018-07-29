@@ -20,8 +20,8 @@
 #header p{
     text-decoration: none;
     float: right;
-    font-size: 22px;
-    transform: translateY(6px)
+    font-size: 14px;
+    transform: translateY(14px) translateX(12px);
 }
 
 /* Profile */
@@ -45,6 +45,24 @@
     transform: translateY(5px)
 }
 
+/*Messages*/
+
+#messages{
+    height: 50px;
+}
+
+#messages img{
+    width: 40px;
+    height: 40px;
+    float: left;
+    transform: translateX(-10px);
+    border:1px solid darkgreen;
+}
+#messages p{
+    float: right;
+    font-size:18px;
+    transform: translateY(5px)
+}
 /* Logout */
 
 #logout{
@@ -64,4 +82,29 @@
     float: right;
     font-size:18px;
     transform: translateY(5px)
+}
+
+@media screen and (max-width: 767px) {
+    #header p{
+        text-decoration: none;
+        float: right;
+        font-size: 17px;
+        transform: translateY(6px)
+    }
+    #header img{
+        width:auto;
+        height: 40px;
+        float: left;
+        transform: translateX(-23px)
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+
 }

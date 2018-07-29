@@ -55,9 +55,10 @@
                     <h1 class="text-center" class="col-12"> Profile </h1>
                     <br>
                     <div id="picture" class="col-12">
-                        <img src="../../images/Profile Pictures/Tree.png" class="img-fluid img-thumbnail mx-auto d-block" data-toggle="modal" data-target="#picchange">
+                        <img src="../../images/Profile Pictures/Tree.png" class="img-fluid img-thumbnail mx-auto d-block">
 
                     </div>
+
 
 
                     <!-- <button id="changepicbutton" class="btn btn-success col-5" data-toggle="modal" data-target="#picchange">Change Picture</button> -->
@@ -65,6 +66,7 @@
                     <div id="details" class="col-10">
                         <h1 id="detailname" class="text-center"> Placeholder </h1>
                         <hr>
+
                         <p>
                             <b>Level:</b>
                             <span id="level"> 1 </span>
@@ -86,12 +88,17 @@
                             <b>Badges:</b>
                             <span id="badges"> 0</span>
                         </p>
+
+                        <hr>
                     </div>
+                    <button id="addfriend" class="btn btn-success col-7" onclick="sendrequest()"> Add as friend </button>
 
                 </div>
 
                 <div id="titles" class="row justify-content-center">
+
                     <h1 class="text-center col-12"> Titles </h1>
+
                     <div id="titleslist" class="col-10" onload="showtitle()">
                         <br>
 
@@ -107,7 +114,6 @@
                     <h1 class="text-center col-12"> Recent Activities </h1>
                     <div id="activites" class="col-10">
                         <br>
-
                     </div>
                     <h1 class="text-center col-12 col-xs-12"> Friends </h1>
 
@@ -115,12 +121,7 @@
 
 
                         <div id="friendlisttable" class="col-12 justify-content-start">
-                            <div>
-                                <a href="users.html">
-                                    <button id="plus" class="btn btn-success btn-sm align-middle">+</button>
-                                </a>
 
-                            </div>
                         </div>
 
 
@@ -138,49 +139,13 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div id="picchange" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Change Picture</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                    </div>
-
-                    <div class="modal-body row justify-content-start" id="imglist">
-                        <div class="imgcontainer ">
-                            <img src="../../images/Profile Pictures/Cloud.png" class="mx-auto d-block" alt="" onclick="changepic(0)" data-dismiss="modal">
-                        </div>
-
-                        <div class="imgcontainer">
-                            <img src="../../images/Profile Pictures/Earth.png" class="mx-auto d-block" alt="" onclick="changepic(1)" data-dismiss="modal">
-                        </div>
-                        <div class="imgcontainer">
-                            <img src="../../images/Profile Pictures/Leaf.png" class="mx-auto d-block" alt="" onclick="changepic(2)" data-dismiss="modal">
-                        </div>
-                        <div class="imgcontainer">
-                            <img src="../../images/Profile Pictures/Plant.png" class="mx-auto d-block" alt="" onclick="changepic(3)" data-dismiss="modal">
-                        </div>
-                        <div class="imgcontainer">
-                            <img src="../../images/Profile Pictures/Tree.png" class="mx-auto d-block" alt="" onclick="changepic(4)" data-dismiss="modal">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
         <!-- Loaded javascripts (The order is important) -->
         <script src="../../js/essentials.js"></script>
         <script src="../../js/login2.js"></script>
-        <script src="../../js/profile.js"></script>
+        <script src="../../js/visitprofile.js"></script>
 
 </body>
 

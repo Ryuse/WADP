@@ -184,7 +184,7 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
         + navitems + //Gives me the option to choose which page I'm at
 
 
-        '<ul class="navbar-nav float-right">\
+        '<ul id="rightsidenav" class="navbar-nav float-right">\
 				<li id="loginbutton" data-toggle="modal" data-target="#myModal" onclick="closeincorrect()">\
 					Login\
 				</li>\
@@ -194,7 +194,7 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 				</li>\
 \
 				<div class="dropdown">\
-					<div style="min-width: 250px; overflow: hidden;" class="dropdown-menu dropdown-menu-right" aria-labelledby="loggedinusername">\
+					<div style="min-width: 300px; overflow: hidden;" class="dropdown-menu dropdown-menu-right" aria-labelledby="loggedinusername">\
 \
 						<a id="header" class="dropdown-header" href="profile.html">\
 							<img src="../../images/Profile Pictures/Tree.png" id="profilepic" alt="">\
@@ -205,7 +205,11 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 						<a id="profile" class="dropdown-item" href="profile.html">\
 							<img src="../../images/Profile/no_avatar.jpg" alt="">\
 							<p> My Profile </p>\
-						</a>\
+                        </a>\
+                        <a id="messages" class="dropdown-item" href="messages.html">\
+                        <img src="../../images/profile/message.png" alt="">\
+                            <p> Messages </p>\
+                        </a>\
 						<a id="logout" class="dropdown-item" href="#" onclick="logout()">\
 							<img src="../../images/Profile/Logout.png" alt="">\
 							<p> Log out </p>\

@@ -1,0 +1,5 @@
+To add navbar, link:
+
+-essentials.js
+-Nav2.css
+-dropdownprofile.css

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> Home </title>
+
+    <!-- CSS stuff -->
+
+    <link href="../../css/Nav2.css" rel="stylesheet">
+    <link href="../../css/profile.css" rel="stylesheet">
+    <link href="../../css/dropdownprofile.css" rel="stylesheet">
+    <link href="../../css/loading.css" rel="stylesheet">
+    <link rel="icon" href="../../images/logo.png">
+
+    <!-- preload javascript -->
+
+    <script src="../../js/loadingscreen.js"></script>
+
+    <!-- Bootstrap-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+        <!-- Icon and word -->
+
+        <a class="navbar-brand current" href="home2.html">
+            <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> EcoDose
+        </a>
+
+        <!-- Collapses navbar contents when screen is smaller -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar contents and links -->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="Map.html" class="nav-link"> Map
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html"> About </a>
+                </li>
+            </ul>
+
+
+
+            <ul class="navbar-nav float-right">
+
+                <li id="loginbutton" data-toggle="modal" data-target="#myModal" onclick="closeincorrect()"> Login
+                </li>
+
+                <li id="loggedinusername" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </li>
+
+                <div class="dropdown">
+                    <div style="min-width: 300px; overflow: hidden;" class="dropdown-menu dropdown-menu-right" aria-labelledby="loggedinusername">
+                        <a id="header" class="dropdown-header" href="profile.html">
+                            <img src="../../images/Profile Pictures/Tree.png" id="profilepic" alt="">
+                            <p id="name" class="text-justify"> placeholder </p>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a id="profile" class="dropdown-item" href="profile.html">
+                            <img src="../../images/Profile/no_avatar.jpg" alt="">
+                            <p> My Profile </p>
+                        </a>
+                        <a id="logout" class="dropdown-item" href="#" onclick="logout()">
+                            <img src="../../images/Profile/Logout.png" alt="">
+                            <p> Log out </p>
+                        </a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <!-- Bootstrap Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body ">
+                    <!-- This only shows up when they can't log in -->
+                    <p class="invalid"> Incorrect Username or Password</p>
+                    <!-- The form for log in-->
+                    <form>
+                        <div class="form-group">
+                            <label for="username1"> Username: </label>
+                            <input type="text" placeholder="Enter username" id="username1" class="form-control" onkeydown="checkEnter(event)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"> Password: </label>
+                            <input type="password" placeholder="Password" class="form-control" id="password" onkeydown="checkEnter(event)" required>
+                        </div>
+                    </form>
+                    <hr>
+                    <!-- Logs in -->
+                    <button type="button" class="btn btn-primary btn-block" onclick="gologin()"> Log in </button>
+                    <br>
+                    <!-- Signs up -->
+                    <a href="../Lemuel2/SignUp.html">
+                        <button type="button" class="btn btn-primary btn-block">
+                            Sign Up </button>
+                    </a>
+                    <br>
+
+                    <a href="#">
+                        <p class="text-center">Forgot your password? </p>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="../../js/login2.js"></script>
+
+</body>
+
+
+
+
+
+
+</html>

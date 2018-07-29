@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title> Sign Up </title>
+
+		
+		<link href="../../css/signup.css" rel="stylesheet">
+
+		
+		<link rel="icon" href="../../images/logo.png">
+
+        <script src="../../data/userdata.js"></script>
+		<script src="../../js/signup.js"></script>
+		
+		
+	</head>
+	
+	<body>
+		
+    <div id="nav">
+        <a href="Home.html"><img src="../../images/logo.png"> </a>
+
+    </div>
+
+    <div id="content">
+        <div id="signup" >
+            <p>Sign Up</p>
+            <p class="signupinv">Please fill in the form</p>
+            <form  method="post">
+                <input type="text" name="name" id="username" placeholder="Username" required onkeydown="checkEnter(event)">
+
+                <br>
+
+                <input type="text" name="pw" id="password" placeholder="Password" required onkeydown="checkEnter(event)">
+
+                <br>
+
+                <input type="text" name="pw" id="confirmPassword" placeholder="Confirm Password" required onkeydown="checkEnter(event)">
+
+                <br>
+                <hr>
+                <br>
+
+                <input type="email" name="email" id="email" placeholder="Email" required onkeydown="checkEnter(event)">
+                
+                <br>
+                
+                <input type="button" value="Sign Up" class="right" onclick="signup()">
+                
+            </form>
+        </div>
+    </div>
+	
+	</body>
+
+</html>
