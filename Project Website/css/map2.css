@@ -6,12 +6,16 @@
 #map{
     height: 90vh;
     float: right;
+    box-sizing: border-box;
+    border:2px solid springgreen;
 }
 
 #container{
     width: 100%;
     min-height: 90vh;
     margin-top:10vh;
+    box-sizing: border-box;
+    border:2px solid springgreen;
 }
 /* Scroll */
 
