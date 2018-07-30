@@ -61,7 +61,7 @@ function setAttributes(el, attrs) {
 function creating() {
   var parent = document.getElementById("creating");
   var create = document.createElement("input");
-  setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "question", "placeholder": "Type your question here" });
+  setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "question", "placeholder": "Type your question here..." });
   parent.appendChild(create);
 };
 
@@ -72,7 +72,7 @@ function setoption() {
     setAttributes(radio, { "class": "form-control pull-left", "type": "radio", "name": "options", "style": "width: 1.2em; height: 1.2em;" });
     parent.appendChild(radio);
     var create = document.createElement("input");
-    setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "setoption" });
+    setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "setoption", "placeholder":"Type your options here..."});
     parent.appendChild(create);
   }
 };
@@ -80,7 +80,10 @@ function clickcounter() {
   var questions = document.getElementById("qnnum").value;
   var clicks = 0;
   for (clicks = 0; clicks < questions; clicks++) {
-    if (clicks == 1 || 3 || 5 || 7 || 9 || 11 || 13 || 15 || 17 || 19 && (clicks == 2 || 4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20)) {
+    if (clicks<=20) {
+      var create = document.createElement("p");
+      create.innerText = `Question ${clicks+1}:`;
+      document.getElementById("creating").appendChild(create);
       creating();
       setoption();
     }
