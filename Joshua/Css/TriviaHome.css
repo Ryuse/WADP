@@ -15,7 +15,7 @@
 }
 .list-group{
     list-style-position: inside;
-    list-style-image: url("test.jpg")
+    list-style-image: url("../Images/test.jpg")
 }
 #dailyheader{
     font-size: 20px;
