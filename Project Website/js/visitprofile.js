@@ -46,6 +46,7 @@ function account() {
 
 requestbutton = document.getElementById("addfriend")
 
+//changes button to already friends or request sent
 if(users[account()].friends.indexOf(users[visituser].username) != -1 && users[visituser].friends.indexOf(users[account()].username) != -1 )
 {
     requestbutton.innerHTML = "Already Friends"

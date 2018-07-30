@@ -224,6 +224,12 @@ for(f = 0; f < users[account()].friends.length; f++){
         friendcontainer.appendChild(img)
         friendcontainer.appendChild(friendusername)
 
+        friendcontainer.onclick = function (){
+            friends = findaccount(users[account()].friends[orange])
+            console.log(friends)
+            localStorage.setItem("visituser", JSON.stringify(friends));
+            window.location.href = "visitprofile.html"
+        }
         table.insertBefore(friendcontainer, table.firstChild)
     })(f);
 }

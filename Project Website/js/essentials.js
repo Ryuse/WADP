@@ -4,10 +4,12 @@ var users = JSON.parse(localStorage.getItem("users"));
 var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 
 //Getting elements
-
 var body = document.getElementsByTagName("BODY")[0];
+
+//Navbar stuff
 var essentials = document.createElement('div')
 essentials.className = "essentials"
+
 // var essentialscontainer = document.getElementById("essentials")
 var navitems;
 

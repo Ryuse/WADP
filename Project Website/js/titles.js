@@ -17,7 +17,7 @@ var popup = document.getElementById("popup");
 
 //Shows and adds Curious title to user
 function curioustitle(){
-    if(currentuser !== undefined && currentuser !== null && titles.indexOf('Curious') == -1){
+    if(currentuser != undefined && currentuser != null && titles.indexOf('Curious') == -1){
 
         popup.style.display = "block"
         titles.push('Curious');
