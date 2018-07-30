@@ -1,0 +1,304 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+html{
+	font-family:Verdana, sans serif;
+}
+/*
+#main{
+    width:100%;
+    height:80px;
+    background-color: black;
+    top:0px;
+    z-index:100;
+    overflow: hidden;
+    /* background-image: url("plant.jpg"); */
+    /* background-repeat: no-repeat; */
+/*
+}
+#main>img{
+    float:left;
+    margin-left: 20px;
+    height: 80px;
+}    
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    line-height:80px;
+
+}
+nav ul{
+    float: left;
+    margin-left:30px;
+}
+nav ul li{
+    list-style-type:none;
+    display: inline-block;
+    transition: 0.8s all;
+	border-radius:20px 20px 20px 20px;
+}
+nav ul li:hover{
+    background-color:#33641f;
+}
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    padding:30px;
+}
+*/
+/* the three buttons below */
+#ok, #cancel, #retry{
+	font-weight:bold;
+	font-size:20px;
+	border-radius:15px;
+	width:110px;
+	margin-top:40px;
+	margin-left:30px;
+	padding:10px;
+}
+/* style the background color of the button id:retry */
+#retry{
+	background-color:red;
+}
+/* on hover on the button id:ok, change the background color */
+#ok:hover{
+	background-color:#4dff4d;
+}
+/* on hover on the button id:cancel change the background color */
+#cancel:hover{
+	background-color:#cc0000;
+}
+/* the top which have the two images */
+div.todolist{
+	margin-top:50px;
+    padding:20px;
+	border-radius:15px;
+	font-size:40px;
+	font-weight:bold;
+    text-align:center;
+	height:70px;
+}
+/* div which holds the three buttons below */
+#buttons{
+	background-color:#006600;
+	text-align:right;
+	padding:20px;
+	height:70px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	border:1px solid black;
+}
+/* image to be on the top left */
+#left{
+	width:90px;
+	height:80px;
+	float:left;
+}
+/* image to be on top right */
+#right{
+	width:90px;
+	height:80px;
+	float:right;
+}
+/* make the buttons below to be on the right */
+button{
+	float:right;
+}
+/* style the button with class:next */
+.next{
+	float:right;
+	padding:13px;
+	font-size:15px;
+	border-radius:13px;
+}
+/* style the button with class:last */
+.last{
+	float:left;
+	padding:13px;
+	font-size:15px;
+	border-radius:13px;
+}
+div.days{
+	display:inline-block;
+	text-align:center;
+	margin-right:94px;
+	margin-left:57px;
+	border:1px solid black;
+	padding:12px;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+div.month{
+	background-color:#006600;
+	padding:15px;
+	text-align:center;
+}
+#last{
+	float:left;
+	padding:10px;
+	border-radius:15px;
+	font-weight:bold;
+}
+#next{
+	float:right;
+	padding:10px;
+	border-radius:15px;
+	font-weight:bold;
+}
+#days{
+	display:inline-block;
+	text-align:center;
+}
+p{
+	font-weight:bold;
+}
+div.week{
+	border:3px solid black;
+	background-color:#595959;
+}
+#weekday{
+	text-decoration:none;
+	color:black;
+}
+#weekend{
+	text-decoration:none;
+	color:red;
+}
+#weekend:hover, #weekday:hover{
+	color:white;
+}
+div.days:hover{
+	background-color:green;
+}
+/* style the table which require people to set their to-do-lists */
+table{
+	border-collapse:collapse;
+	border-top:1px solid white;
+	width:1520px;
+	border-right:3px solid black;
+}
+/* all the td in the table */
+td{
+	padding:15px;
+	margin:7px;
+	border:1px solid black;
+}
+/*  */
+#plans{
+	width:1364px;
+	height:40px;
+	font-size:21px;
+	border:1.4px solid black;
+	padding-left:6px;
+}
+/* style the table row with id:time */
+#time{
+	padding-right:7px;
+	font-weight:bold;
+}
+/* all the div with class:week1, week3, week4, week5 in that current calendar */
+.week1, .week3, .week4, .week5{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:93px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+	margin-left:57px;
+}
+/* on hover to change the div with class:week1, week3, week4, week5 */
+.week1:hover, .week3:hover, .week4:hover, .week5:hover{
+	background-color:green;
+}
+/* the links inside the div with id:lastWD and nextWD */
+#lastWD, #nextWD{
+	color:#808080;
+	text-decoration:none;
+}
+/* style the div with class:lw, nw */
+.lw, .nw{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+	margin-right:95px;
+	margin-left:57px;
+}
+/* style all the th inside the table */
+th{
+	padding:20px;
+	font-size:25px;
+	border:1.4px solid black;
+}
+/* the cuurent day in that particular week */
+#current{
+	margin-left:57px;
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:89px;
+	margin-bottom:10px;
+	margin-top:14px;
+	text-align:center;
+	background-color:green;
+}
+/* all the div with the given class */
+.lw, .week1, .days, .week3, .week4, .week5, .nw{
+	background-color:white;
+}
+/* style the div with class:week6 */
+.week6{
+	display:inline-block;
+	border:1px solid black;
+	padding:12px;
+	margin-right:89px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+	background-color:white;
+	margin-left:57px;
+}
+/* on hover the div of class:week6 */
+.week6:hover{
+	background-color:green;
+}
+/* style all the even tr inside the table and also the th */
+tr.time:nth-child(even), th{
+	background-color:#33ff33;
+}
+/* style all the odd tr inside the table */
+tr.time:nth-child(odd){
+	background-color:green;
+}
+/* style the name of the current month */
+h1{
+	text-shadow:3px 3px 4px white;
+}
+/*Custom scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: green; 
+    border-radius: 10px;
+	border:5px solid black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #017013; 
+}

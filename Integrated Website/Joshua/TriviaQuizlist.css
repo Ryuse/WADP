@@ -1,0 +1,45 @@
+#search{
+    width:75%;
+}
+
+#quizlist{
+    min-height: 35vh;
+}
+/* Style the search field */
+form.searchbars input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  /* Style the submit button */
+  form.searchbars button {
+    float: left;
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid grey;
+    /* border-left: none;Prevent double borders */
+     cursor: pointer;
+  } 
+  
+  form.searchbars button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.searchbars::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* #quizdisplay{
+    position: relative;
+    top: 50px;
+  } */
+  /* #quizdisplay .panel{
+    width: 50%;
+  } */
