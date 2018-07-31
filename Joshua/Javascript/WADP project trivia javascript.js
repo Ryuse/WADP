@@ -61,7 +61,7 @@ function setAttributes(el, attrs) {
 function creating() {
   var parent = document.getElementById("creating");
   var create = document.createElement("input");
-  setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "question", "placeholder": "Type your question here..." });
+  setAttributes(create, { "class": "form-control input-md questions", "type": "text", "name": "question", "placeholder": "Type your question here..." });
   parent.appendChild(create);
 };
 
@@ -72,7 +72,7 @@ function setoption() {
     setAttributes(radio, { "class": "form-control pull-left", "type": "radio", "name": "options", "style": "width: 1.2em; height: 1.2em;" });
     parent.appendChild(radio);
     var create = document.createElement("input");
-    setAttributes(create, { "class": "form-control input-md", "type": "text", "name": "setoption", "placeholder":"Type your options here..."});
+    setAttributes(create, { "class": "form-control input-md options", "type": "text", "name": "setoption", "placeholder":"Type your options here..."});
     parent.appendChild(create);
   }
 };
@@ -89,6 +89,8 @@ function clickcounter() {
     }
   }
 };
+localStorage.setItem("questions",document.getElementsByClassName("questions").value);
+localStorage.setItem("options",document.getElementsByClassName("options").value);
 // function start() {
 //   document.getElementById("creating").reset();
 // };

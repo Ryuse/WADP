@@ -1,0 +1,131 @@
+.quizlist_panel_panel a, .quizlist_panel_panel a:active,.quizlist_panel_panel a:hover,.quizlist_panel_panel a:link,.quizlist_panel_panel a:visited {
+    outline-style: none;
+}
+div[class="quizlist_content"]{
+    position: relative;
+}
+/* Positions image in center */
+img[class="quizlist_images"]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  
+  div[class="quizlist_panel_panel"]{
+    -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+      box-shadow: 0 1px 3px rgba(0,0,0,.25);
+      border-radius: 4px;
+      width: 100%;
+      background: #fff;
+  }
+  div[class="quizlist_items,.quizlist_items_row"]{
+    display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  }
+  div[class="quizlist_items"]{
+    /* margin: -5px; */
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  }
+  div[class="quizlist_items_row"]{
+    width:100%;
+    position: relative;
+  }
+  div[class="quizlist_item"]{
+    margin: 5px;
+    -ms-flex: none;
+    flex: none;
+    width: calc(100% - 10px);
+  }
+  div[class="quizlist_panel"]{
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    color: #555;
+  }
+  /* Fade on hover over image*/
+  div[class="quizlist_panel_image_overlay"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: " ";
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.1)),to(rgba(0,0,0,.7)));
+    background-image: linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.7));
+  }
+  /* Count box on top right of evry quiz */
+  div[class="quizlist_count_box"]{
+    position: absolute;
+      right: 10px;
+      top: 10px;
+  }
+  div[class="quizlist_count"]{
+    display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+  }
+  /* Adjust number */
+  span[class="playcount"]{
+    padding-right: 5px;
+  }
+  a[class="quizlist_panel_header"]{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,.75);
+    /* background-image: url(/images/layout/beatmaps/default-bg.png); */
+    background-position: 50%;
+    background-size: cover;
+    font-weight: 400;
+    font-style: italic;
+    height: 120px;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+  }
+  div[class="quiz_title"]{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+  }
+  div[class="title_text"]{
+    font-size: 130%;
+    text-shadow: 0 2px 4px rgba(0,0,0,.75);
+    font-weight: 600;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+  }
+  /* Quiz info panel */
+div[class="quiz_panel_content"]{
+    height: 75px;
+    padding: 10px;
+}
+div[class="content_row"]{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+div[class="source_box"]{
+    font-size: 70%;
+    font-weight: 600;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+}
+div[class="user"]{
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+}

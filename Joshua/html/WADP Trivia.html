@@ -12,6 +12,7 @@
     <link href="../Css/TriviaCreate.css" rel="stylesheet" type="text/css">
     <link href="../Css/TriviaHome.css" rel="stylesheet" type="text/css">
     <link href="../Css/Trivias.css" rel="stylesheet" type="text/css">
+    <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -274,22 +275,60 @@
             <button class="btn btn-md btn-success">Back</button>
         </a>
         <!-- The searchbar -->
-        <form class="searchbars col-lg-12" action="action_page.php">
-            <input type="text" placeholder="Type in keywords..." name="search" class="form-control input-lg" id="search">
-            <button class="btn btn-info btn-sm pull-right searchbars" type="submit">
-                <div><i class="glyphicon glyphicon-search"> Search</i></div>
-            </button>
-        </form>
+        <div>
+            <form class="searchbars col-lg-12" action="action_page.php">
+                <input type="text" placeholder="Type in keywords..." name="search" class="form-control input-lg" id="search">
+                <button class="btn btn-info btn-sm pull-right searchbars" type="submit">
+                    <div>
+                        <i class="glyphicon glyphicon-search"> Search</i>
+                    </div>
+                </button>
+            </form>
+        </div>
         <!-- Quiz display -->
         <div id="quizdisplay">
-            <div class="panel panel-default col-sm-6">
-                <div class="panel-body">
-                    <img class="img-responsive" src="https://guardian.ng/wp-content/uploads/2018/06/Air-pollution.-Photo-The-Asian-Age..jpeg">
-                </div>
-            </div>
-            <div class="panel panel-default col-sm-6">
-                <div class="panel-body">
-
+            <div class="quizlist_content">
+                <div style="height: 1230px; padding-top: 0px; box-sizing: border-box;">
+                    <div class="quizlist_items">
+                        <div class="quizlist_items_row">
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Airquiz" class="quizlist_panel_header">
+                                            <img src="https://guardian.ng/wp-content/uploads/2018/06/Air-pollution.-Photo-The-Asian-Age..jpeg" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div style="color:white;" class="title_text">
+                                                    Air pollution
+                                                </div>
+                                            </div>
+                                            <div class="quizlist_count_box">
+                                                <div class="quizlist_count">
+                                                    <span class="playcount" style="color:white;">0</span>
+                                                    <i style="color:white;" class="glyphicon glyphicon-play-circle">
+                                                    </i>
+                                                </div>
+                                                <div class="quizlist_fav_count">
+                                                    <span class="favcount" style="color:white;">0</span>
+                                                    <i class="glyphicon glyphicon-heart" style="color:white;"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        Done by:
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -310,7 +349,7 @@
             <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions
                 <span class="caret"></span>
             </button>
-            <div id="questions" class="dropdown-content shadow-sm bg-white rounded">
+            <div id="questions" class="dropdown-contentshadow-sm bg-white rounded">
                 <a href="#createquiz" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
                 <a href="#createquiz" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
                 <a href="#createquiz" onclick="store(this)">Write down one way which you cna help the environment.</a>
