@@ -18,7 +18,7 @@
 #keys{
     margin-bottom:18px;
 	margin-left:38px;
-	border:1px solid black
+	border:2px solid black
 }
 #phrases{
     font-weight:bold;
@@ -33,14 +33,11 @@
 	text-decoration:none;
 }
 #allmths > a:hover, #current > a:hover{
-    color:black;
+    color:rgb(0, 0, 0);
 	text-decoration:none;
 }
 #displayInstruct{
     margin-top:16px;
-}
-#smallCal{
-    max-width:1390px;
 }
 #displayDate{
     font-family:Cooper Black;
@@ -75,26 +72,28 @@
 </tr>
 </table>
 </div>
+<br>
 
-<div align="center" class="container col-sm-" style="border: 2px solid black">
+<!--<div align="center" class="container col-sm-" style="border: 2px solid black">
 <h3>Legend:</h3>
     <div id="Hol" class="p-3 mb-2 bg-info text-dark" data-toggle="tooltip" title="School Holidays">
-       <div id="holidays">
+       <div>
            <p>14</p>
        </div>
     </div>
     <div id="Public-H" class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
-       <div id="PH">
+       <div>
           <p>9</p>
        </div>
 	</div>
 	
     <div id="last-next" class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
-       <div id="lastORnext">
+       <div>
           <p>24</p>
        </div>
 	</div>
-</div>
+</div>-->
+
 <div id="keys">
 <h4>KeyQuotes/Phrases for the Day!</h4>
 <p id="phrases" class="text-danger"></p>
@@ -124,17 +123,16 @@
 <!-- End of the dropdown of the months in the year -->
 
 <!-- Displaying the calendar button -->
-<button onclick="show()" type="button" class="btn btn-info">
-    <span class="glyphicon glyphicon-calendar"></span> Display Calendar
+<button onclick="showhide()" type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar
 </button>
 
-<!-- Hiding the calendar button -->
-<button onclick="hid()" type="button" class="btn btn-danger">Hide Calendar</button>
-
-<h3 style="margin-left:38px">Month/Year: <span class="important">August/2018</span></h3>
+<h3 style="margin-left:38px">Month/Year: <span class="important">August / 2018</span></h3>
 <h4 style="margin-left:37px">Current Date: <span id="displayDate"></span></h4>
 
-<table id="smallCal" class="table table-striped">
+<div id="container" class="container-fluid row justify-content-around">
+            
+    <table id="smallCal" class="table table-striped col-8">
 <tr>
 <th id="month" colspan="7">August 2018
 <button class="btn btn-success" onclick="lastmth()" id="previous">&#10094;</button>
@@ -153,9 +151,9 @@
 </tr>
 
 <tr>
-<td class="lastmth"><a id="lastmth" href="">29</td></a>
-<td class="lastmth"><a id="lastmth" href="">30</td></a>
-<td class="lastmth"><a id="lastmth" href="">31</td></a>
+<td class="lastmth"><a href="../pages/JulMthWADP.html">29</td></a>
+<td class="lastmth"><a href="../pages/JulMthWADP.html">30</td></a>
+<td class="lastmth"><a href="../pages/JulMthWADP.html">31</td></a>
 <td class="success"><a href="../pages/ToDoList1Aug.html">1</td></a>
 <td><a href="../pages/ToDoList2Aug.html">2</td></a>
 <td class="success"><a href="../pages/ToDoList3Aug.html">3</td></a>
@@ -199,10 +197,33 @@
 <td class="success"><a href="">29</td></a>
 <td><a href="">30</td></a>
 <td class="success"><a href="">31</td></a>
-<td class="nextmth"><a id="nextmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/SepMthWADP.html">1</td>
+<td class="nextmth"><a id="nextmth" href="../pages/SepMthWADP.html">1</td>
 </tr>
 </table>
 
+<div id="legend" class="col-3 ">
+
+    <h3>Legend(Hover over the dates to get the details on what the color represents):</h3>
+
+    <div class="p-3 mb-2 bg-info text-dark" data-toggle="tooltip" title="School Holidays">
+        <div id="holidays">
+            <p class="text-center">14</p>
+        </div>
+    </div>
+
+    <div class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
+        <div id="PH">
+            <p class="text-center">9</p>
+        </div>
+    </div>
+
+    <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
+        <div id="lastORnext">
+            <p class="text-center">24</p>
+        </div>
+    </div>
+
+</div>
 
 <script>
 function lastmth(){
@@ -212,13 +233,16 @@ function nextmth(){
      window.location.replace("../pages/SepMthWADP.html");
 }
 
-function show(){
-     document.getElementById("smallCal").style.display = "block";
+function showhide(){
+     var cal = document.getElementById("smallCal");
+	 if (cal.style.display === "none"){
+	      cal.style.display = "block";
+	 }
+	 else{
+	      cal.style.display = "none";
+	 }
 }
 
-function hid(){
-     document.getElementById("smallCal").style.display = "none";
-}
 var today = new Date();
 document.getElementById("displayDate").innerHTML = today.toDateString();
 

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/ToDoList.css">
+<style>
+#previous{
+    float:left;
+}
+#next{
+    float:right;
+}
+#namemth, #AugMth{
+    border-bottom:1px solid black;
+}
+</style>	
+</head>
+<body>
+<div>
+	<img id="left" src="../images/To-do_List.png">
+	<img id="right" src="../images/To-do_List.png">
+	<h3>To-Do-Lists Planner<br>Plan all your to-do-lists over here</h3>
+</div>
+<div class="month">
+
+<div class="namemth" class="p-3 mb-2 bg-success">
+<h3><button id="previous" class="btn btn-info">&#10094;</button>July 2018<button id="next" class="btn btn-info">&#10095;</button></h3>
+</div>
+
+<div class="pagination">
+<div id="week1">
+<a id="lastwk" onclick="" class="text-secondary">&laquo;</a>
+<a id="Sun" href="" class="text-danger">Sunday<br>1</a>
+<a id="Mon" href="">Monday<br>2</a>
+<a id="Tue" href="">Tuesday<br>3</a>
+<a id="Wed" href="">Wednesday<br>4</a>
+<a id="Thu" href="">Thursday<br>5</a>
+<a id="Fri" href="">Friday<br>6</a>
+<a id="Sat" href="">Saturday<br>7</a>
+<a id="nextwk" onclick="showtwo()" class="text-secondary">&raquo;</a>
+</div>
+
+<div id="week2" style="display:none">
+<a id="lastwk" onclick="backfirst()" class="text-secondary">&laquo;</a>
+<a id="Sun" href="" class="text-danger">Sunday<br>8</a>
+<a id="Mon" href="">Monday<br>9</a>
+<a id="Tue" href="">Tuesday<br>10</a>
+<a id="Wed" href="">Wednesday<br>11</a>
+<a id="Thu" href="">Thursday<br>12</a>
+<a id="Fri" href="">Friday<br>13</a>
+<a id="Sat" href="">Saturday<br>14</a>
+<a id="nextwk" onclick="showthree()" class="text-secondary">&raquo;</a>
+</div>
+
+<div id="week3" style="display:none">
+<a id="lastwk" onclick="backtwo()" class="text-secondary">&laquo;</a>
+<a id="Sun" href="" class="text-danger">Sunday<br>15</a>
+<a id="Mon" href="">Monday<br>16</a>
+<a id="Tue" href="">Tuesday<br>17</a>
+<a id="Wed" href="">Wednesday<br>18</a>
+<a id="Thu" href="">Thursday<br>19</a>
+<a id="Fri" href="">Friday<br>20</a>
+<a id="Sat" href="">Saturday<br>21</a>
+<a id="nextwk" onclick="showfour()" class="text-secondary">&raquo;</a>
+</div>
+
+<div id="week4" style="display:none">
+<a id="lastwk" onclick="backthree()" class="text-secondary">&laquo;</a>
+<a id="Sun" href="" class="text-danger">Sunday<br>22</a>
+<a id="Mon" href="">Monday<br>23</a>
+<a id="Tue" href="">Tuesday<br>24</a>
+<a id="Wed" href="">Wednesday<br>25</a>
+<a id="Thu" href="">Thursday<br>26</a>
+<a id="Fri" href="">Friday<br>27</a>
+<a id="Sat" href="">Saturday<br>28</a>
+<a id="nextwk" onclick="showfive()" class="text-secondary">&raquo;</a>
+</div>
+
+<div id="week5" style="display:none">
+<a id="lastwk" onclick="backfour()" class="text-secondary">&laquo;</a>
+<a id="Sun" href="" class="text-danger">Sunday<br>29</a>
+<a id="Mon" href="">Monday<br>30</a>
+<a id="Tue" href="">Tuesday<br>31</a>
+<a id="Wed" href="" class="text-secondary">Wednesday<br>1</a>
+<a id="Thu" href="" class="text-secondary">Thursday<br>2</a>
+<a id="Fri" href="" class="text-secondary">Friday<br>3</a>
+<a id="Sat" href="" class="text-secondary">Saturday<br>4</a>
+<a id="nextwk" onclick="showAug()" class="text-secondary">&raquo;</a>
+</div>
+
+
+<script>
+function showtwo(){
+     var wk1 = document.getElementById("week1");
+	 var wk2 = document.getElementById("week2");
+	 wk1.style.display = "none";
+	 wk2.style.display = "block";
+}
+
+function backfirst(){
+     var wk1 = document.getElementById("week1");
+	 var wk2 = document.getElementById("week2");
+	 wk1.style.display = "block";
+	 wk2.style.display = "none";
+}
+
+function backtwo(){
+     var wk2 = document.getElementById("week2");
+	 var wk3 = document.getElementById("week3"); 
+	 wk3.style.display = "none";
+	 wk2.style.display = "block";
+}
+
+function showthree(){
+     var wk2 = document.getElementById("week2");
+	 var wk3 = document.getElementById("week3");
+	 wk2.style.display = "none";
+	 wk3.style.display = "block";
+}
+
+function showfour(){
+     var wk3 = document.getElementById("week3");
+	 var wk4 = document.getElementById("week4");
+	 wk3.style.display = "none";
+	 wk4.style.display = "block";
+}
+
+function backthree(){
+    var wk4 = document.getElementById("week4");
+	var wk3 = document.getElementById("week3");
+	wk4.style.display = "none";
+	wk3.style.display = "block";
+}
+
+function showfive(){
+    var wk5 = document.getElementById("week5");
+	var wk4 = document.getElementById("week4");
+	wk4.style.display = "none";
+	wk5.style.display = "block";
+}
+
+function backfour(){
+    var wk4 = document.getElementById("week4");
+	var wk5 = document.getElementById("week5");
+	wk4.style.display = "block";
+	wk5.style.display = "none";
+}
+</script>
+</body>
+</html>

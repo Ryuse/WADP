@@ -17,7 +17,7 @@
 #keys{
     margin-bottom:18px;
 	margin-left:38px;
-	border:1px solid black
+	border:2px solid black
 }
 #phrases{
     font-weight:bold;
@@ -37,9 +37,6 @@
 }
 #displayInstruct{
     margin-top:16px;
-}
-#smallCal{
-    max-width:1390px;
 }
 #displayDate{
     font-family:Cooper Black;
@@ -74,6 +71,7 @@
 </tr>
 </table>
 </div>
+<br>
 
 <div align="center" class="container" style="border: 2px solid black">
 <h3>Legend:</h3>
@@ -121,12 +119,10 @@
 	<li><button class="btn btn-warning">2018</button><button onclick="goto19()" class="btn btn-default">2019</button><button onclick="goto20" class="btn btn-default">2020</button><button onclick="goto21" class="btn btn-default" disabled>2021</button></li>
     </ul>
 
-<button onclick="show()" type="button" class="btn btn-info">
-    <span class="glyphicon glyphicon-calendar"></span> Display Calendar
+<button onclick="showhide()" type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar
 </button>
 
-<!-- Hiding the calendar button -->
-<button onclick="hid()" type="button" class="btn btn-danger">Hide Calendar</button>
 <h3 style="margin-left:37px">Month/Year: <span class="important">December/2018</span></h3>
 <h4 style="margin-left:37px">Current Date: <span id="displayDate"></span></h4>
 
@@ -147,12 +143,12 @@
 <th>Sat</th>
 </tr>
 <tr>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">25</td></a>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">26</td></a>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">27</td></a>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">28</td></a>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">29</td></a>
-<td class="lastmth"><a id="lastmth" href="file:///C:/Poly%20notes/WADP%20Project/WADP%20Study%20Planner%20web/NovMthWADP.html">30</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">25</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">26</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">27</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">28</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">29</td></a>
+<td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">30</td></a>
 <td><a href="">1</td></a>
 </tr>
 <tr>
@@ -194,11 +190,11 @@
 <tr>
 <td id="holiday"><a class="text-danger" href="">30</td></a>
 <td id="holiday"><a href="">31</td></a>
-<td class="nextmth" data-toggle="tooltip" title="New Year Day"><a id="nextmth" href="">1</td></a>
-<td class="nextmth"><a id="nextmth" href="">2</td></a>
-<td class="nextmth"><a id="nextmth" href="">3</td></a>
-<td class="nextmth"><a id="nextmth" href="">4</td></a>
-<td class="nextmth"><a id="nextmth" href="">5</td></a>
+<td class="nextmth" data-toggle="tooltip" title="New Year Day"><a id="nextmth" href="../pages/2019JanMthWADP.html">1</td></a>
+<td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">2</td></a>
+<td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">3</td></a>
+<td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">4</td></a>
+<td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">5</td></a>
 </tr>
 </table>
 </script>
@@ -210,12 +206,14 @@ function nextmth(){
      window.location.replace("../pages/2019JanMthWADP.html");
 }
 
-function show(){
-     document.getElementById("smallCal").style.display = "block";
-}
-
-function hid(){
-     document.getElementById("smallCal").style.display = "none";
+function showhide(){
+     var cal = document.getElementById("smallCal");
+	 if (cal.style.display === "none"){
+	      cal.style.display = "block";
+	 }
+	 else{
+	      cal.style.display = "none";
+	 }
 }
 
 var today = new Date();

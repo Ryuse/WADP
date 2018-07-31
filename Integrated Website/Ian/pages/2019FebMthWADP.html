@@ -17,7 +17,7 @@
 #keys{
     margin-bottom:18px;
 	margin-left:38px;
-	border:1px solid black
+	border:2px solid black
 }
 #phrases{
     font-weight:bold;
@@ -37,9 +37,6 @@
 }
 #displayInstruct{
     margin-top:16px;
-}
-#smallCal{
-    max-width:1390px;
 }
 </style>
 </head>
@@ -68,6 +65,7 @@
 </tr>
 </table>
 </div>
+<br>
 
 <div align="center" class="container" style="border: 2px solid black">
 <h3>Legend:</h3>
@@ -115,12 +113,10 @@
 	<li><button onclick="goto18()" class="btn btn-default">2018</button><button class="btn btn-warning">2019</button><button onclick="goto20" class="btn btn-default">2020</button><button onclick="goto21" class="btn btn-default" disabled>2021</button></li>
     </ul>
 
-<button onclick="show()" type="button" class="btn btn-info">
-    <span class="glyphicon glyphicon-calendar"></span> Display Calendar
+<button onclick="showhide()" type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar
 </button>
 
-<!-- Hiding the calendar button -->
-<button onclick="hid()" type="button" class="btn btn-danger">Hide Calendar</button>
 <h3 style="margin-left:37px">Month/Year: <span class="important">February/2019</span></h3>
 
 <table id="smallCal" class="table table-striped">
@@ -194,13 +190,16 @@ function nextmth(){
      window.location.replace("");
 }
 
-function show(){
-     document.getElementById("smallCal").style.display = "block";
+function showhide(){
+     var cal = document.getElementById("smallCal");
+	 if (cal.style.display === "none"){
+	      cal.style.display = "block";
+	 }
+	 else{
+	      cal.style.display = "none";
+	 }
 }
 
-function hid(){
-     document.getElementById("smallCal").style.display = "none";
-}
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
