@@ -1,6 +1,6 @@
 //Retrieving data from local storage
 
-var users = JSON.parse(localStorage.getItem("users")); 
+var users = JSON.parse(localStorage.getItem("users"));
 var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 
 //Getting elements
@@ -16,7 +16,7 @@ var navitems;
 var pagename = window.location.pathname; //Gets the pathname
 var file = pagename.split("/").pop(); //Gets the filename
 
-if(file == "Home2.html"){
+if (file == "Home2.html") {
     navitems = '<a class="navbar-brand current" href="#">\
 <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
@@ -50,12 +50,16 @@ aria-expanded="false" aria-label="Toggle navigation">\
         <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
     </li>\
 \
+<li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
     <li class="nav-item">\
         <a class="nav-link" href="About.html"> About </a>\
     </li>\
 </ul>'
 }
-else if(file === "Map.html"){
+else if (file === "Map.html") {
     navitems = '<a class="navbar-brand current" href="Home2.html">\
     <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
@@ -89,13 +93,17 @@ else if(file === "Map.html"){
             <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
         </li>\
     \
+    <li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
         <li class="nav-item">\
             <a class="nav-link" href="About.html"> About </a>\
         </li>\
     </ul>'
 
 }
-else if(file === "About.html"){
+else if (file === "About.html") {
     navitems = '<a class="navbar-brand current" href="Home2.html">\
     <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
@@ -129,15 +137,63 @@ else if(file === "About.html"){
             <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
         </li>\
     \
+    <li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
         <li class="nav-item">\
             <a class="nav-link active" href="About.html"> About </a>\
         </li>\
     </ul>'
 }
 
-else if(file == "Earth%20Day.html"){
+else if(file == "video.html"){
+    navitems = '<a class="navbar-brand current" href="Home2.html">\
+    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link  active" href="video.html"> Videos </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+    </ul>'
+}
 
-    navitems = '<a class="navbar-brand current" href="../../Lemuel/pages/Lemuel2/home2.html">\
+else if (file == "Earth%20Day.html") {
+
+    navitems = '<a class="navbar-brand current" href="../../Lemuel/pages/Lemuel2/Home2.html">\
     <img src="../../Lemuel/images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
@@ -170,13 +226,17 @@ else if(file == "Earth%20Day.html"){
             <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
         </li>\
     \
+    <li class="nav-item">\
+    <a class="nav-link " href="video.html"> Videos </a>\
+    </li>\
+    \
         <li class="nav-item">\
             <a class="nav-link" href="About.html"> About </a>\
         </li>\
         </ul>'
 }
-else{
-    
+else {
+
     navitems = '<a class="navbar-brand current" href="home2.html">\
 <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
@@ -210,6 +270,10 @@ aria-expanded="false" aria-label="Toggle navigation">\
         <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
     </li>\
 \
+<li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
     <li class="nav-item">\
         <a class="nav-link" href="About.html"> About </a>\
     </li>\
@@ -221,14 +285,14 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 \
 	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> \
 \
-        <!-- Icon and word -->' 
-        
-        
-        
-        + navitems + //Gives me the option to choose which page I'm at
+        <!-- Icon and word -->'
 
 
-        '<ul id="rightsidenav" class="navbar-nav float-right">\
+
+    + navitems + //Gives me the option to choose which page I'm at
+
+
+    '<ul id="rightsidenav" class="navbar-nav float-right">\
 				<li id="loginbutton" data-toggle="modal" data-target="#myModal" onclick="closeincorrect()">\
 					Login\
 				</li>\
@@ -328,17 +392,17 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 	</div>\
 \
 '
-    
+
 // Back slashes are used to escape line breaks 
 
 
 essentials.innerHTML = htmlstuff; //Changes the inside of #essentials to htmlstuff
 body.appendChild(essentials)
 
-function account(){
-    for(i=0; i<users.length; i++){
-        if(currentuser == users[i].username)
-        return i
+function account() {
+    for (i = 0; i < users.length; i++) {
+        if (currentuser == users[i].username)
+            return i
     }
 }
 

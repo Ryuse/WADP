@@ -28,11 +28,10 @@ var tree = "../../images/Profile Pictures/Tree.png"
 var pictures = [cloud, earth, leaf, plant, tree]
 
 //Functions
-
 function changepic(i) {
-
-    pictureContainer.src = pictures[i]
-    users[account()].picture = pictures[i]
+    console.log(i.src)
+    pictureContainer.src = i.src
+    users[account()].picture = i.src
     document.getElementById("profilepic").src = users[account()].picture
     localStorage.setItem("users", JSON.stringify(users));
 
@@ -43,6 +42,22 @@ function account() {
         if (currentuser == users[i].username)
             return i
     }
+}
+
+for(img = 0; img < users[account()].availablepictures.length; img++){
+    imgcontlist = document.getElementById("imglist")
+    
+    imgcont = document.createElement("div")
+    imgcont.className = "imgcontainer"
+
+    imgs = document.createElement("img")
+    imgs.src = users[account()].availablepictures[img].src
+    imgs.className = "mx-auto d-block"
+    imgs.setAttribute("data-dismiss", "modal")
+    imgs.setAttribute("onclick", "changepic(this)")
+    
+    imgcont.appendChild(imgs)
+    imgcontlist.appendChild(imgcont)
 }
 
 // Printing titles in the title container
@@ -232,6 +247,34 @@ for(f = 0; f < users[account()].friends.length; f++){
         }
         table.insertBefore(friendcontainer, table.firstChild)
     })(f);
+}
+
+//Printing Badges in profile
+
+for(b = 0; b < users[account()].availablepictures.length; b++){
+    (function(kiwi){
+        badgecontainer = document.getElementById("badgelist")
+
+        imagecontainer = document.createElement('div');
+        imagecontainer.id = "badgeimgcontainer"
+
+        description = document.createElement('div')
+        description.id = "badgeoverlay"
+
+        p = document.createElement("p")
+        p.innerHTML = users[account()].availablepictures[kiwi].desc
+        p.id = "pictext"
+
+        image = document.createElement("img");
+        image.src = users[account()].availablepictures[kiwi].src;
+        image.id = "badgesimages"
+
+        description.appendChild(p)
+
+        imagecontainer.appendChild(image);
+        imagecontainer.appendChild(description)
+        badgecontainer.appendChild(imagecontainer)
+    })(b);
 }
 
 

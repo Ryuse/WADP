@@ -21,4 +21,15 @@
 
 #container p{
     text-align: center; 
+    color:brown;
+}
+
+#email{
+    color:blue;
+    text-decoration: underline;
+    
+}
+
+#email:hover{
+    cursor: pointer;
 }

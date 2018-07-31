@@ -11,6 +11,7 @@
 	<link href="../../css/Nav2.css" rel="stylesheet">
 	<link href="../../css/about2.css" rel="stylesheet">
 	<link href="../../css/dropdownprofile.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/popup.css">
 
 	<link rel="icon" href="../../images/logo.png">
 	<script src="../../js/loadingscreen.js"></script>
@@ -38,29 +39,50 @@
 	</div>
 
 	<div id="essentials">
-		
+
 	</div>
 	<div id="container">
-		<h1>About Us</h1>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus veniam, dolorem eveniet commodi rem similique
-			cum perferendis rerum, distinctio odit consequatur laudantium maiores animi unde corrupti expedita, hic quas quam vitae
-			omnis ducimus. Error quibusdam similique doloribus sequi eius modi dicta? Nostrum autem ducimus numquam blanditiis quam
-			reprehenderit dolore?
+		<h1 class="text-left">About the Website</h1>
+		<p class="text-left">
+			This website is created for our school project to encourage polytechnic students to care more about the environment.
+			<br> Users can collect titles by doing certain things and badges when they get enough titles.
+			<br> Titles can be used to show the accomplishment of the user.
+			<br> Badges can be used as a profile picture for users.
+			<br> Badges also show how many titles they got I guess.
 		</p>
 
-		<h1> Want to know how about the site? </h1>
+		<br>
+		<br>
+		<br>
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima accusamus veniam, dolorem eveniet commodi rem similique
-			cum perferendis rerum, distinctio odit consequatur laudantium maiores animi unde corrupti expedita, hic quas quam vitae
-			omnis ducimus. Error quibusdam similique doloribus sequi eius modi dicta? Nostrum autem ducimus numquam blanditiis quam
-			reprehenderit dolore?
+		<h1 class="text-right"> About Us </h1>
+		<p class="text-right">
+			This website has been created by a group of polytechnic students.
+			<br> We tried.
+			<br> Contact our leader for more info:
+			<span id="email"> joshdebean@gmail.com </span>
 		</p>
-		
+
 	</div>
 
+	<div class="container-fluid row justify-content-center">
+
+		<div id="popupinformedtitle" class="col-10">
+			<button id="closepopup" class="close" onclick="closepopup(document.getElementById('popupinformedtitle'))">&times;</button>
+			<h1 align="center"> You have gained the title: Informed!</h1>
+			<p> You visited the About page. </p>
+		</div>
+
+		<div id="popupinquisitivetitle" class="col-10">
+			<button id="closepopup" class="close" onclick="closepopup(document.getElementById('popupinquisitivetitle'))">&times;</button>
+			<h1 align="center"> You have gained the title: Inquisitive!</h1>
+			<p> You clicked on an E-mail that doesn't work. </p>
+		</div>
+
+	</div>
 	<script src="../../js/essentials.js"></script>
 	<script src="../../js/login2.js"></script>
+	<script src="../../js/titles.js"></script>
 </body>
 
 </html>

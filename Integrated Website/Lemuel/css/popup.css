@@ -1,4 +1,4 @@
-#popup{
+div[id^="popup"]{
     border: 3px solid rgb(231, 231, 231);
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
@@ -10,7 +10,7 @@
     display: none;
 }
 
-#popup p, #popup h1{
+div[id^="popup"] p, div[id^="popup"] h1{
     text-align: center;
     color: green;
 }

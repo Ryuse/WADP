@@ -1,0 +1,99 @@
+<!-- Made by Lemuel >:D -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Video </title>
+
+
+    <link href="../../css/Nav2.css" rel="stylesheet">
+    <link href="../../css/video.css" rel="stylesheet">
+    <link href="../../css/dropdownprofile.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/popup.css">
+
+    <link rel="icon" href="../../images/logo.png">
+    <script src="../../js/loadingscreen.js"></script>
+    
+    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="ifloggedin()">
+    <!-- Loading screen -->
+
+    <div id="overlay">
+        <div id="spinner"></div>
+    </div>
+
+    <div id="essentials">
+
+    </div>
+
+    <div id="cinema">
+
+    </div>
+    
+    <div id="container" class="container-fluid row justify-content-around">
+        <div id="recommend1" class="col-2">
+            <h2 class="text-center text-success">Playlists</h2>
+            <p class="text-center"> MinuteEarth</p>
+            <img id="MinuteEarthvid" src="http://i3.ytimg.com/vi/TRb52O76HxQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+              onclick="changeplaylist(1)">
+
+              <p class="text-center text-muted">Click the pictures to change playlist</p>
+            <!-- <iframe 
+            draggable="true"
+            ondragstart="drag(event)"
+            class="embed-responsive embed-responsive-16by9" 
+            src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KN1FVFXOZ2o2HIwSyDg0z-s"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen></iframe> 
+        onclick="changeplaylist('https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KN1FVFXOZ2o2HIwSyDg0z-s')"-->
+        </div>
+
+        <div id="video" class="col-7">
+                <h1 id="reminder" class="text-center">Click on a picture to watch a video playlist.</h1>
+            <h1 class="text-center text-success">Environmental Videos</h1>
+            
+            <iframe id="mainvid" class="embed-responsive embed-responsive-16by9" src=""
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
+                
+            <button id="cinemabtn" class="btn btn-success btn-block" onclick="offcinema()">Enter Cinema Mode</button>
+
+        </div>
+
+        <div id="recommend2" class="col-2">
+            <h2 class="text-center text-success">Playlists</h2>
+            <p class="text-center"> Kurzgesagt </p>
+            <img id="Kurzgesagtvid" src="http://i3.ytimg.com/vi/RS7IzU2VJIQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+            onclick="changeplaylist(0)"   >
+            <p class="text-center text-muted">Click the pictures to change playlist</p>
+            <!-- <iframe class="embed-responsive embed-responsive-16by9" src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+             onclick="changeplaylist('https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k')"-->
+        </div>
+    </div>
+
+    <div class="container-fluid row justify-content-center">
+    </div>
+    <script src="../../js/video.js"></script>
+    <script src="../../js/essentials.js"></script>
+    <script src="../../js/login2.js"></script>
+    <script src="../../js/titles.js"></script>
+</body>
+
+</html>

@@ -90,6 +90,7 @@ var activitycontainer = document.getElementById("activites")
 
 for (q = users[visituser].messages.length-1; q > -1; q--) {
     if (users[visituser].messages == []) {
+
         var p = document.createElement("p")
         p.innerHTML = "You have no messages"
         p.className = "text-center"
@@ -97,18 +98,25 @@ for (q = users[visituser].messages.length-1; q > -1; q--) {
         var hr = document.createElement("HR")
         activitycontainer.appendChild(p)
         activitycontainer.appendChild(hr)
+
     }
     else {
+
         (function (i) {
             var p = document.createElement("p")
-            p.innerHTML = users[account()].messages[i];
+            if(users[visituser].messages[i].indexOf("button") == -1){
+                var hr = document.createElement("HR")
+                activitycontainer.appendChild(p)
+                activitycontainer.appendChild(hr)
+            }
+            p.innerHTML = users[visituser].messages[i];
             p.className = "text-center"
 
-            var hr = document.createElement("HR")
-            activitycontainer.appendChild(p)
-            activitycontainer.appendChild(hr)
+            
+
         })(q);
     }
+
 }
 
 //Printing friend in profile
@@ -135,6 +143,21 @@ for(v = 0; v < users[visituser].friends.length; v++){
         friendcontainer.appendChild(img)
         friendcontainer.appendChild(friendusername)
 
+        friendcontainer.onclick = function (){
+
+            friends = findaccount(users[visituser].friends[boat])
+
+            if(users[account()].username != currentuser){
+
+                localStorage.setItem("visituser", JSON.stringify(friends));
+                window.location.href = "visitprofile.html"
+            }
+            else{
+
+                window.location.href = "profile.html"
+            }
+            
+        }
         table.insertBefore(friendcontainer, table.firstChild)
     })(v);
 }
@@ -145,4 +168,32 @@ function findaccount(namee) {
         if (String(namee) == users[i].username)
             return i
     }
+}
+
+//Badges
+
+for(b = 0; b < users[visituser].availablepictures.length; b++){
+    (function(kiwi){
+        badgecontainer = document.getElementById("badgelist")
+
+        imagecontainer = document.createElement('div');
+        imagecontainer.id = "badgeimgcontainer"
+
+        description = document.createElement('div')
+        description.id = "badgeoverlay"
+
+        p = document.createElement("p")
+        p.innerHTML = users[visituser].availablepictures[kiwi].desc
+        p.id = "pictext"
+
+        image = document.createElement("img");
+        image.src = users[visituser].availablepictures[kiwi].src;
+        image.id = "badgesimages"
+
+        description.appendChild(p)
+
+        imagecontainer.appendChild(image);
+        imagecontainer.appendChild(description)
+        badgecontainer.appendChild(imagecontainer)
+    })(b);
 }

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="../../css/map2.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../../css/dropdownprofile.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../../css/loading.css">
-
+	<link rel="stylesheet" href="../../css/popup.css">
 	<script src="../../js/loadingscreen.js"></script>
 	<!-- Bootstrap-->
 
@@ -52,6 +52,8 @@
 			
 		</div> -->
 		<!-- <div id="map" class="col-lg-9 col-md-12"></div> -->
+		<div id="spinner"></div>
+		
 		<div id="map" class="col-lg-12 col-md-12">
 			<!--From Community Walk-->
 			<iframe src="http://www.communitywalk.com/groups/set_commercial_domain/340593" onload="if (this.src.indexOf('http://www.communitywalk.com/view/340593') == -1) this.src='http://www.communitywalk.com/view/340593' + location.hash"
@@ -65,11 +67,22 @@
 		
 	</div>
 
+
+	<div class="container-fluid row justify-content-center">
+
+		<div  id="popupexplorertitle" class="col-10">
+			<button id="closepopup" class="close" onclick="closepopup(document.getElementById('popupexplorertitle'))">&times;</button>
+			<h1 align="center"> You have gained the title: Explorer!</h1>
+			<p> You visited the map for dustbins. </p>
+		</div>
+		
+	</div>
 	<script src="../../js/map.js"></script>
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHH-O8TE_tctZZt8XHpr1LNLHgfvWkxPg&callback=initMap" async
 	 defer></script> -->
 	<script src="../../js/essentials.js"></script>
 	<script src="../../js/login2.js"></script>
+	<script src="../../js/titles.js"></script>
 </body>
 
 </html>

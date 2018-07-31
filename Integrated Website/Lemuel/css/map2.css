@@ -2,12 +2,17 @@
     padding: 0px;
     margin: 0px;
 }
+/* 
+body{
+    overflow-y: hidden;
+} */
 
 #map{
     height: 90vh;
     float: right;
     box-sizing: border-box;
-    border:2px solid springgreen;
+    border:2px solid green;
+    overflow: hidden;
 }
 
 #container{
@@ -15,7 +20,8 @@
     min-height: 90vh;
     margin-top:10vh;
     box-sizing: border-box;
-    border:2px solid springgreen;
+    border:2px solid green;
+    overflow: hidden;
 }
 /* Scroll */
 

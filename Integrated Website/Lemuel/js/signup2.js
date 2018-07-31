@@ -21,6 +21,7 @@ function signup() {
         password: '',
         email: '',
         picture: '../../images/Profile Pictures/Plant.png',
+        availablepictures: [{src:'../../images/Profile Pictures/Plant.png', desc: 'Starter Badge'}],
         level: 1,
         quizdone: 0,
         quizmade: 0,
@@ -41,10 +42,7 @@ function signup() {
     var usernamechar = inusername.split(""); //Turns the username into a list. Makes it easier to check for invalid characters
 
     var invalid = document.querySelector("#signup p.signupinv");
-    if(inusername == "Bryan"){
-        newuser.titles.push("Harem Master");
-        newuser.currenttitle = 'Harem Master';
-    }
+
     if (email == "", inusername == "", inpassword == "") {
         invalid.innerHTML = "Please fill in the form.";
         invalid.style.display = "block";
