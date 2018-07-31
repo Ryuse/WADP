@@ -8,11 +8,8 @@
     <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../Css/TriviaQuizlist.css" rel="stylesheet" type="text/css">
-    <link href="../Css/TriviaCreate.css" rel="stylesheet" type="text/css">
     <link href="../Css/TriviaHome.css" rel="stylesheet" type="text/css">
     <link href="../Css/Trivias.css" rel="stylesheet" type="text/css">
-    <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -75,10 +72,10 @@
                 </ul>
             </div>
             <div id="browsecreate">
-                <a href="#quizlist">
+                <a href="Quizlist.html">
                     <button class="btn btn-md btn-success pull-left" id="browse">Browse quizzes</button>
                 </a>
-                <a href="#createquiz">
+                <a href="Createquiz.html">
                     <button class="btn btn-md btn-success pull-right" id="create">Create your own quiz!</button>
                 </a>
             </div>
@@ -268,95 +265,8 @@
     </div>
     </div>
     </div>
-    <!-- The quizlist -->
-    <div class="well row justify-content-center" id="quizlist">
-        <h1 class="text-center text-success">Welcome to the quizlist!</h1>
-        <a href="#topnav ">
-            <button class="btn btn-md btn-success">Back</button>
-        </a>
-        <!-- The searchbar -->
-        <div>
-            <form class="searchbars col-lg-12" action="action_page.php">
-                <input type="text" placeholder="Type in keywords..." name="search" class="form-control input-lg" id="search">
-                <button class="btn btn-info btn-sm pull-right searchbars" type="submit">
-                    <div>
-                        <i class="glyphicon glyphicon-search"> Search</i>
-                    </div>
-                </button>
-            </form>
-        </div>
-        <!-- Quiz display -->
-        <div id="quizdisplay">
-            <div class="quizlist_content">
-                <div style="height: 1230px; padding-top: 0px; box-sizing: border-box;">
-                    <div class="quizlist_items">
-                        <div class="quizlist_items_row">
-                            <div class="quizlist_item">
-                                <div class="quizlist_panel">
-                                    <div class="quizlist_panel_panel">
-                                        <a href="Airquiz.html" class="quizlist_panel_header">
-                                            <img src="https://guardian.ng/wp-content/uploads/2018/06/Air-pollution.-Photo-The-Asian-Age..jpeg" class="quizlist_images">
-                                            <div class="quizlist_panel_image_overlay">
-                                            </div>
-                                            <div class="quiz_title">
-                                                <div class="title_text">
-                                                    Air pollution
-                                                </div>
-                                            </div>
-                                            <div class="quizlist_count_box">
-                                                <div class="quizlist_count">
-                                                    <span class="playcount">0</span>
-                                                    <i class="glyphicon glyphicon-play-circle">
-                                                    </i>
-                                                </div>
-                                                <div class="quizlist_fav_count">
-                                                    <span class="favcount">0</span>
-                                                    <i class="glyphicon glyphicon-heart"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="quiz_panel_content">
-                                            <div class="content_row">
-                                                <div class="source_box">
-                                                    <div class="user">
-                                                        Done by:
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Create your own quizzes -->
-    <div class="well" id="createquiz">
-        <h1 class="text-center text-success">Create your own quiz!</h1>
-        <a href="#topnav ">
-            <button class="btn btn-md btn-success">Back</button>
-        </a>
-        <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
-        <button class="btn btn-md btn-success pull-right" id="start" onclick="start()">Create New</button>
-        <form id="creating" class="form-group">
-            How many questions are there in your quiz?
-            <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
-        </form>
-        <div class="dropdown">
-            <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions
-                <span class="caret"></span>
-            </button>
-            <div id="questions" class="dropdown-contentshadow-sm bg-white rounded">
-                <a href="#createquiz" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
-                <a href="#createquiz" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
-                <a href="#createquiz" onclick="store(this)">Write down one way which you can help the environment.</a>
-            </div>
-        </div>
-        <button class="btn btn-success btn-md pull-left" onclick="clickcounter()">Set Questions and options</button>
-    </div>
+
     </div>
 
     <script src="../Javascript/WADP project trivia javascript.js"></script>

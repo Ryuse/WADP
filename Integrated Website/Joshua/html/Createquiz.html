@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Airquiz</title>
+    <link href="../Images/logo.png" rel="icon">
+    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/TriviaCreate.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="well" id="createquiz">
+        <h1 class="text-center text-success">Create your own quiz!</h1>
+        <a href="WADP Trivia.html">
+            <button class="btn btn-md btn-success">Back</button>
+        </a>
+        <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
+        <button class="btn btn-md btn-success pull-right" id="start" onclick="start()">Create New</button>
+        <form id="creating" class="form-group">
+            How many questions are there in your quiz?
+            <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
+        </form>
+        <div class="dropdown">
+            <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions
+                <span class="caret"></span>
+            </button>
+            <div id="questions" class="dropdown-contentshadow-sm bg-white rounded">
+                <a href="#createquiz" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
+                <a href="#createquiz" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
+                <a href="#createquiz" onclick="store(this)">Write down one way which you can help the environment.</a>
+            </div>
+        </div>
+        <button class="btn btn-success btn-md pull-left" onclick="clickcounter()">Set Questions and options</button>
+    </div>
+    <!-- <script src="login.js"></script> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

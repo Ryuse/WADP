@@ -129,3 +129,22 @@ div[class="user"]{
     text-overflow: ellipsis!important;
     overflow: hidden!important;
 }
+div[class="search_background"]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .3;
+}
+.search_input{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    padding-right: 55px;
+    font-style: italic;
+    font-weight: lighter;
+}
