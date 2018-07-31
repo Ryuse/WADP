@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Airquiz</title>
+    <title>Quizlist</title>
     <link href="../Images/logo.png" rel="icon">
     <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
-    <link href="../Css/TriviaQuizlist.css" rel="stylesheet" type="text/css">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -19,20 +19,23 @@
             <button class="btn btn-md btn-success">Back</button>
         </a>
         <!-- The searchbar -->
-        <div class="search_background">
-            <form class="searchbars col-lg-12" action="action_page.php">
-                <input type="text" placeholder="Type in keywords..." name="search" class="form-control input-lg search_input" id="search">
-                <button class="btn btn-info btn-sm pull-right searchbars" type="submit">
-                    <div>
-                        <i class="glyphicon glyphicon-search"> Search</i>
+        <div class="layout_section">
+            <div class="search_header">
+                <div class="search_container">
+                    <div class="search_background"></div>
+                    <div class="search_quizzes">
+                        <input type="textbox" placeholder="Type in keywords..." name="search" class="search_input" id="search" value="">
+                        <div class="search_icon">
+                            <i class="glyphicon glyphicon-search icon"></i>
+                        </div>
                     </div>
-                </button>
-            </form>
+                </div>
+            </div>
         </div>
         <!-- Quiz display -->
-        <div id="quizdisplay">
+        <div class="quizlist_undefined">
             <div class="quizlist_content">
-                <div style="height: 1230px; padding-top: 0px; box-sizing: border-box;">
+                <div class="pages">
                     <div class="quizlist_items">
                         <div class="quizlist_items_row">
                             <div class="quizlist_item">
@@ -69,83 +72,86 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="quizlist_panel_shadow"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="quizlist_items_row">
-                            <div class="quizlist_item">
-                                <div class="quizlist_panel">
-                                    <div class="quizlist_panel_panel">
-                                        <a href="Waterquiz.html" class="quizlist_panel_header">
-                                            <img src="http://blog.forumias.com/wp-content/uploads/2017/08/8551403406_997dfd4769_b.jpg" class="quizlist_images">
-                                            <div class="quizlist_panel_image_overlay">
+                    </div>
+                    <div class="quizlist_items_row">
+                        <div class="quizlist_item">
+                            <div class="quizlist_panel">
+                                <div class="quizlist_panel_panel">
+                                    <a href="Waterquiz.html" class="quizlist_panel_header">
+                                        <img src="http://blog.forumias.com/wp-content/uploads/2017/08/8551403406_997dfd4769_b.jpg" class="quizlist_images">
+                                        <div class="quizlist_panel_image_overlay">
+                                        </div>
+                                        <div class="quiz_title">
+                                            <div class="title_text">
+                                                Water pollution
                                             </div>
-                                            <div class="quiz_title">
-                                                <div class="title_text">
-                                                    Water pollution
-                                                </div>
+                                        </div>
+                                        <div class="quizlist_count_box">
+                                            <div class="quizlist_count">
+                                                <span class="playcount">0</span>
+                                                <i class="glyphicon glyphicon-play-circle">
+                                                </i>
                                             </div>
-                                            <div class="quizlist_count_box">
-                                                <div class="quizlist_count">
-                                                    <span class="playcount">0</span>
-                                                    <i class="glyphicon glyphicon-play-circle">
-                                                    </i>
-                                                </div>
-                                                <div class="quizlist_fav_count">
-                                                    <span class="favcount">0</span>
-                                                    <i class="glyphicon glyphicon-heart"></i>
-                                                </div>
+                                            <div class="quizlist_fav_count">
+                                                <span class="favcount">0</span>
+                                                <i class="glyphicon glyphicon-heart"></i>
                                             </div>
-                                        </a>
-                                        <div class="quiz_panel_content">
-                                            <div class="content_row">
-                                                <div class="source_box">
-                                                    <div class="user">
-                                                        Done by:
-                                                    </div>
+                                        </div>
+                                    </a>
+                                    <div class="quiz_panel_content">
+                                        <div class="content_row">
+                                            <div class="source_box">
+                                                <div class="user">
+                                                    Done by:
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="quizlist_panel_shadow"></div>
                             </div>
                         </div>
-                        <div class="quizlist_items_row">
-                            <div class="quizlist_item">
-                                <div class="quizlist_panel">
-                                    <div class="quizlist_panel_panel">
-                                        <a href="Landquiz.html" class="quizlist_panel_header">
-                                            <img src="https://pixfeeds.com/images/topic/8609/1200-8609-land-pollution-photo2.jpg" class="quizlist_images">
-                                            <div class="quizlist_panel_image_overlay">
+                    </div>
+                    <div class="quizlist_items_row">
+                        <div class="quizlist_item">
+                            <div class="quizlist_panel">
+                                <div class="quizlist_panel_panel">
+                                    <a href="Landquiz.html" class="quizlist_panel_header">
+                                        <img src="https://pixfeeds.com/images/topic/8609/1200-8609-land-pollution-photo2.jpg" class="quizlist_images">
+                                        <div class="quizlist_panel_image_overlay">
+                                        </div>
+                                        <div class="quiz_title">
+                                            <div class="title_text">
+                                                Land pollution
                                             </div>
-                                            <div class="quiz_title">
-                                                <div class="title_text">
-                                                    Land pollution
-                                                </div>
+                                        </div>
+                                        <div class="quizlist_count_box">
+                                            <div class="quizlist_count">
+                                                <span class="playcount">0</span>
+                                                <i class="glyphicon glyphicon-play-circle">
+                                                </i>
                                             </div>
-                                            <div class="quizlist_count_box">
-                                                <div class="quizlist_count">
-                                                    <span class="playcount">0</span>
-                                                    <i class="glyphicon glyphicon-play-circle">
-                                                    </i>
-                                                </div>
-                                                <div class="quizlist_fav_count">
-                                                    <span class="favcount">0</span>
-                                                    <i class="glyphicon glyphicon-heart"></i>
-                                                </div>
+                                            <div class="quizlist_fav_count">
+                                                <span class="favcount">0</span>
+                                                <i class="glyphicon glyphicon-heart"></i>
                                             </div>
-                                        </a>
-                                        <div class="quiz_panel_content">
-                                            <div class="content_row">
-                                                <div class="source_box">
-                                                    <div class="user">
-                                                        Done by:
-                                                    </div>
+                                        </div>
+                                    </a>
+                                    <div class="quiz_panel_content">
+                                        <div class="content_row">
+                                            <div class="source_box">
+                                                <div class="user">
+                                                    Done by:
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="quizlist_panel_shadow"></div>
                             </div>
                         </div>
                     </div>
@@ -153,10 +159,10 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- <script src="login.js"></script> -->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
