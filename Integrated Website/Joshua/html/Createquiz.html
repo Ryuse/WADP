@@ -18,9 +18,11 @@
         <a href="WADP Trivia.html">
             <button class="btn btn-md btn-success">Back</button>
         </a>
-        <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
+        <a href="#editquiz">
+            <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
+        </a>
         <button class="btn btn-md btn-success pull-right" id="start" onclick="start()">Create New</button>
-        <form id="creating" class="form-group">
+        <form id="creating" class="form-group" name="asknum">
             How many questions are there in your quiz?
             <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
         </form>
@@ -28,15 +30,24 @@
             <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions
                 <span class="caret"></span>
             </button>
-            <div id="questions" class="dropdown-contentshadow-sm bg-white rounded">
+            <div id="questions" class="dropdown-content shadow-sm bg-white rounded">
                 <a href="#createquiz" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
                 <a href="#createquiz" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
                 <a href="#createquiz" onclick="store(this)">Write down one way which you can help the environment.</a>
             </div>
         </div>
-        <button class="btn btn-success btn-md pull-left" onclick="clickcounter()">Set Questions and options</button>
+        <button class="btn btn-success btn-md pull-left" onclick="checkval()">Set Questions and options</button>
+    </div>
+    <div id="editquiz" class="well">
+        <h2 class="text-success text-center">Your quizzes</h2>
+        <div class="panel">
+            <div class="panel-body" id="storequizzes">
+
+            </div>
+        </div>
     </div>
     <!-- <script src="login.js"></script> -->
+    <script src="../Javascript/TriviaCreate.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

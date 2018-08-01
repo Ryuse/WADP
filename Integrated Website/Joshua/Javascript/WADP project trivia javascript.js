@@ -30,71 +30,11 @@ else if (day == 5) {
 else if (day == 6) {
   document.getElementById("daily").innerHTML = daily[6];
 }
-//Create quiz functions
-function create() {
-  var quizdisplay = document.getElementById("quizdisplay");
-  document.getElementById("quizlist") = document.getElementById("quizlist") + "<div class='quizholders'></div>";
-  // document.getElementById("quizlist").appendChild("quizdisplay");
-}
-function dropdown() {
-  document.getElementById("questions").classList.toggle("show");
-}
-window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 function setAttributes(el, attrs) {
   for (var key in attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
-
-function creating() {
-  var parent = document.getElementById("creating");
-  var create = document.createElement("input");
-  setAttributes(create, { "class": "form-control input-md questions", "type": "text", "name": "question", "placeholder": "Type your question here..." });
-  parent.appendChild(create);
-};
-
-function setoption() {
-  for (i = 0; i < 4; i++) {
-    var parent = document.getElementById("creating");
-    var radio = document.createElement("input");
-    setAttributes(radio, { "class": "form-control pull-left", "type": "radio", "name": "options", "style": "width: 1.2em; height: 1.2em;" });
-    parent.appendChild(radio);
-    var create = document.createElement("input");
-    setAttributes(create, { "class": "form-control input-md options", "type": "text", "name": "setoption", "placeholder":"Type your options here..."});
-    parent.appendChild(create);
-  }
-};
-function clickcounter() {
-  var questions = document.getElementById("qnnum").value;
-  var clicks = 0;
-  for (clicks = 0; clicks < questions; clicks++) {
-    if (clicks<=20) {
-      var create = document.createElement("p");
-      create.innerText = `Question ${clicks+1}:`;
-      document.getElementById("creating").appendChild(create);
-      creating();
-      setoption();
-    }
-  }
-};
-localStorage.setItem("questions",document.getElementsByClassName("questions").value);
-localStorage.setItem("options",document.getElementsByClassName("options").value);
 // function start() {
 //   document.getElementById("creating").reset();
 // };
-function store(mylink) {
-  var option = mylink.innerText;
-  document.getElementById("quest1").value = option;
-};

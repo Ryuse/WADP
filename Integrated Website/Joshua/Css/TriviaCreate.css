@@ -42,3 +42,6 @@
     position: relative;
     left:40%;
 }
+.panel{
+    border: 1px solid black;
+}
