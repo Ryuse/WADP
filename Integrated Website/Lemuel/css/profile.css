@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
 }
+
 #container{
     margin-top:12vh;
     padding-bottom: 50px;
@@ -13,7 +14,6 @@
 	box-shadow: 3px 3px 5px lightgray;
     border-radius: 1%;
     box-sizing: border-box;
-  
 }
 
 #profiledetails{
@@ -42,8 +42,9 @@
 
 /* Profile Details */
 
+
 #profiledetails img{
-    width: auto;
+    width: 200px;
     max-height: 200px;
    
 }
@@ -83,6 +84,12 @@
     cursor: pointer;
 }
 
+#custompic{
+    font-size: 20px;
+    height: 100px;
+    width: 100px;
+}
+
 /* Title */
 
 #titleslist{
@@ -119,7 +126,8 @@
     height: 150px;
     overflow-x: scroll;
     overflow-y: hidden;
-    white-space: nowrap;    
+    white-space: nowrap; 
+    box-sizing: border-box;   
     
 }
 
@@ -130,8 +138,9 @@
 
 #friendimages{
     width: 80px;
-    height: auto;
+    height: 80px;
     border:1px solid white;
+    
 
 }
 
@@ -203,8 +212,13 @@
     left: 50%;
 
     
+
+    /*-webkit- is for Safari and Chrome
+     -moz- is for Firefox
+     -ms- is for Microsoft */
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    
     text-align: center;
 }

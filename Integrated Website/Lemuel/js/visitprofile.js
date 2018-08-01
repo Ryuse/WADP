@@ -142,18 +142,20 @@ for(v = 0; v < users[visituser].friends.length; v++){
 
         friendcontainer.appendChild(img)
         friendcontainer.appendChild(friendusername)
-
+       
         friendcontainer.onclick = function (){
-
+            
             friends = findaccount(users[visituser].friends[boat])
-
-            if(users[account()].username != currentuser){
+            
+            
+            if(users[friends].username != currentuser){
 
                 localStorage.setItem("visituser", JSON.stringify(friends));
                 window.location.href = "visitprofile.html"
+
             }
             else{
-
+           
                 window.location.href = "profile.html"
             }
             

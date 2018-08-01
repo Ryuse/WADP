@@ -74,11 +74,14 @@
 			</div>
 
 			<!-- Left and right controls -->
-			<a id="left" class="carousel-control-prev" href="#maps" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
+
+			<a class="carousel-control-prev text-center" href="#maps" data-slide="prev">
+
+				<span id="left">&#10094;</span>
 			</a>
-			<a id="right" class="carousel-control-next" href="#maps" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
+			<a class="carousel-control-next text-center" href="#maps" data-slide="next">
+
+				<span id="right">&#10095;</span>
 			</a>
 
 		</div>
@@ -93,7 +96,7 @@
 
 				<br>
 
-				<button data-toggle="collapse" data-target="#q1" class="btn btn-block text-left" onclick="curioustitle()">Question 1: Is the Earth flat? </button>
+				<button data-toggle="collapse" data-target="#q1" class="btn btn-block btn-success text-left" onclick="curioustitle()">Question 1: Is the Earth flat? </button>
 
 				<div id="q1" class="collapse">
 					No.
@@ -101,7 +104,7 @@
 
 				<br>
 
-				<button data-toggle="collapse" data-target="#q2" class="btn btn-block text-left" onclick="curioustitle()">Question 2: What can I do here? </button>
+				<button data-toggle="collapse" data-target="#q2" class="btn btn-block btn-success  text-left" onclick="curioustitle()">Question 2: What can I do here? </button>
 
 				<div id="q2" class="collapse">
 					You can use our study tracker to help you study efficiently using the "Pomodoro" method. You can also use our map to find
@@ -110,7 +113,7 @@
 
 				<br>
 
-				<button data-toggle="collapse" data-target="#q3" class="btn btn-block text-left" onclick="curioustitle()">Question 3: Why is this created? </button>
+				<button data-toggle="collapse" data-target="#q3" class="btn btn-block btn-success  text-left" onclick="curioustitle()">Question 3: Why is this created? </button>
 
 				<div id="q3" class="collapse">
 					We created this for a school project. It's to encourage polytechnic students to care more about the environment.
@@ -118,7 +121,7 @@
 
 				<br>
 
-				<button data-toggle="collapse" data-target="#q4" class="btn btn-block text-left" onclick="curioustitle()">Question 4: No question </button>
+				<button data-toggle="collapse" data-target="#q4" class="btn btn-block btn-success text-left" onclick="curioustitle()">Question 4: No question </button>
 
 				<div id="q4" class="collapse">
 					Then no answer.
@@ -126,7 +129,7 @@
 
 				<br>
 
-				<button data-toggle="collapse" data-target="#q5" class="btn btn-block text-left" onclick="curioustitle()">Question 5 </button>
+				<button data-toggle="collapse" data-target="#q5" class="btn btn-block btn-success  text-left" onclick="curioustitle()">Question 5 </button>
 
 				<div id="q5" class="collapse">
 					Lorem ipsum dolor text....
@@ -150,8 +153,8 @@
 		<div class="row justify-content-center godown">
 			<div class="col-md-6 col-sm-12 align-self-center">
 				<div id="video" class="embed-responsive embed-responsive-16by9">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k" 
-					frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k"
+					 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					<!-- <iframe src="https://www.youtube.com/embed/RS7IzU2VJIQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 				</div>
 			</div>
@@ -166,7 +169,7 @@
 					protection. It was first celebrated in 1970, and is now coordinated globally by the Earth Day Network and celebrated
 					in more than 193 countries each year.
 				</p>
-				<a href="../../../Manfred\pages\Earth Day.html">Learn More</a>
+				<a href="../../../Manfred\pages\Earth Day.html" class="btn btn-success">Learn More</a>
 				<br>
 				<br>
 			</div>
@@ -174,13 +177,13 @@
 	</div>
 
 	<div class="container-fluid row justify-content-center">
-		<div  id="popupcurioustitle" class="col-10">
+		<div id="popupcurioustitle" class="col-10">
 			<button id="closepopup" class="close" onclick="closepopup(document.getElementById('popupcurioustitle'))">&times;</button>
 			<h1 align="center"> You have gained the title: Curious</h1>
 			<p> You clicked the FAQ questions. </p>
 		</div>
 	</div>
-	
+
 	<!-- Loaded javascripts (The order is important) -->
 	<script src="../../js/question2.js"></script>
 	<script src="../../js/essentials.js"></script>

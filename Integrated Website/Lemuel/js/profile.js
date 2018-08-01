@@ -37,6 +37,14 @@ function changepic(i) {
 
 }
 
+function custompic(srcs){
+    console.log("hi")
+    pictureContainer.src = srcs
+    users[account()].picture = srcs
+    document.getElementById("profilepic").src = users[account()].picture
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
 function account() {
     for (i = 0; i < users.length; i++) {
         if (currentuser == users[i].username)
@@ -57,8 +65,9 @@ for(img = 0; img < users[account()].availablepictures.length; img++){
     imgs.setAttribute("onclick", "changepic(this)")
     
     imgcont.appendChild(imgs)
-    imgcontlist.appendChild(imgcont)
+    imgcontlist.insertBefore(imgcont, imgcontlist.firstChild)
 }
+
 
 // Printing titles in the title container
 

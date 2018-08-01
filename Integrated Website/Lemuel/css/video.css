@@ -1,58 +1,108 @@
-#container{
-    width:98.5%;
+body{
+    background-image: url("../images/Backgrounds/Greenwhite2.png")
+}
+#container {
+    width: 98.5%;
     min-height: 90vh;
-
-    margin:auto;
-    margin-top:10vh;
-	/* width: 98.5%; */
-	border: 2px solid lightgray;
-	box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
-    /* padding: 20px 40px; */
-    background-color: rgb(0, 182, 0)
+    margin: auto;
+    margin-top: 10vh;    
 }
 
-#cinema{
+#video {
+    min-height: 90vh;
+    border: 1px solid green;
+    
+}
+
+#recommend{
+    height: 90vh;
+    overflow: hidden;
+    border: 1px solid green;
+    box-sizing: border-box;
+}
+
+#playlists2 {
+    height: 90%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: content-box;
+
+
+}
+
+#cinema {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(26, 26, 26);
-    z-index: 10000;
-    position: absolute;
-    top:0;
+    background-color: rgb(0, 0, 0);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.9;
     display: none;
 }
 
-#cinemabtn{
-    z-index: 100002;
+#cinemabtn {
+    z-index: 1001;
     position: relative;
 }
 
-
 #video iframe {
-    z-index: 9000001;
+    z-index: 1000;
     position: relative;
     margin: auto;
     width: 100%;
     height: 80%;
 }
 
-#container div{
-    border: 1px solid gray;
+#container > div {
     background-color: whitesmoke;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    
 }
 
-#container img{
+#container img {
     cursor: pointer;
+    z-index: 1000;
+    max-width: 90%;
+    display: block;
+    margin: auto;
 }
 
-#container img:hover{
+#container img:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
 }
 
-#reminder{
+#reminder {
     position: absolute;
+    color: rgb(0, 95, 16);
+    font-weight: 400;
+    top: 20%;
+    left:50%;
+    transform: translateX(-50%);
+}
 
-    top:20%;  
+#recommend h4, #recommend p, #stuff,#recommend h2{
+    z-index: 1000;
+    position: relative;
+    color: rgb(0, 196, 33);
+    margin: 20px 0px;
+} 
+
+#stuff{
+    margin: 0;
+}
+
+#recommend h2{
+    margin-top:0px;
+    font-weight: 500; 
+    border-bottom: 1px solid green;
+    
+}
+
+
+#recommend p{
+    font-size: 15px;
 }

@@ -11,7 +11,7 @@ body{
     height: 90vh;
     float: right;
     box-sizing: border-box;
-    border:2px solid green;
+    border-top:3px solid rgb(0, 201, 0);
     overflow: hidden;
 }
 
@@ -20,7 +20,8 @@ body{
     min-height: 90vh;
     margin-top:10vh;
     box-sizing: border-box;
-    border:2px solid green;
+    
+
     overflow: hidden;
 }
 /* Scroll */

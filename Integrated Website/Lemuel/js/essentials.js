@@ -360,7 +360,7 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 						</div>\
 \
 						<div class="form-group">\
-							<label for="password"> Username: </label>\
+							<label for="password"> Password: </label>\
 							<input type="password" placeholder="Password" class="form-control" id="password" onkeydown="checkEnter(event)" required>\
 						</div>\
 \
@@ -369,14 +369,14 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 					<hr>\
 \
 					<!-- Logs in -->\
-					<button type="button" class="btn btn-primary btn-block" onclick="gologin()"> Log in </button>\
+					<button type="button" class="btn btn-success btn-block" onclick="gologin()"> Log in </button>\
 \
 					<br>\
 \
 					<!-- Signs up -->\
 					\
 					<a href="../Lemuel2/SignUp.html">\
-						<button type="button" class="btn btn-primary btn-block">\
+						<button type="button" class="btn btn-success btn-block">\
                          Sign Up </button>\
 					</a>\
 					<br>\

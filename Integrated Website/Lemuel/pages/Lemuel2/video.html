@@ -15,7 +15,7 @@
 
     <link rel="icon" href="../../images/logo.png">
     <script src="../../js/loadingscreen.js"></script>
-    
+
     <!-- Bootstrap -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,54 +37,59 @@
     <div id="overlay">
         <div id="spinner"></div>
     </div>
+    <div id="cinema"></div>
 
-    <div id="essentials">
+    <div  class="container-fluid">
 
-    </div>
+        <div id="container" class="row justify-content-around">
 
-    <div id="cinema">
+            <div id="video" class="col-lg-8 col-sm-12">
+                <h2 id="reminder" class="text-center">Click on a picture to watch a video playlist.</h2>
 
-    </div>
-    
-    <div id="container" class="container-fluid row justify-content-around">
-        <div id="recommend1" class="col-2">
-            <h2 class="text-center text-success">Playlists</h2>
-            <p class="text-center"> MinuteEarth</p>
-            <img id="MinuteEarthvid" src="http://i3.ytimg.com/vi/TRb52O76HxQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
-              onclick="changeplaylist(1)">
+                <h1 id="stuff" class="text-center text-capitalize">Environmental Videos</h1>
 
-              <p class="text-center text-muted">Click the pictures to change playlist</p>
-            <!-- <iframe 
-            draggable="true"
-            ondragstart="drag(event)"
-            class="embed-responsive embed-responsive-16by9" 
-            src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KN1FVFXOZ2o2HIwSyDg0z-s"
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen></iframe> 
-        onclick="changeplaylist('https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KN1FVFXOZ2o2HIwSyDg0z-s')"-->
-        </div>
+                <iframe id="mainvid" class="embed-responsive embed-responsive-16by9" src="" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen> </iframe>
 
-        <div id="video" class="col-7">
-                <h1 id="reminder" class="text-center">Click on a picture to watch a video playlist.</h1>
-            <h1 class="text-center text-success">Environmental Videos</h1>
+                <button id="cinemabtn" class="btn btn-success btn-block" onclick="offcinema()">Enter Cinema Mode</button>
+            </div>
+
             
-            <iframe id="mainvid" class="embed-responsive embed-responsive-16by9" src=""
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
-                
-            <button id="cinemabtn" class="btn btn-success btn-block" onclick="offcinema()">Enter Cinema Mode</button>
 
-        </div>
+            <div id="recommend" class="col-lg-3 col-md-10">
+                <div id="playlisthead" class="col">
+                    <h2 class="text-center text-capitalize">Playlists</h2>
+                </div>
 
-        <div id="recommend2" class="col-2">
-            <h2 class="text-center text-success">Playlists</h2>
-            <p class="text-center"> Kurzgesagt </p>
-            <img id="Kurzgesagtvid" src="http://i3.ytimg.com/vi/RS7IzU2VJIQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
-            onclick="changeplaylist(0)"   >
-            <p class="text-center text-muted">Click the pictures to change playlist</p>
-            <!-- <iframe class="embed-responsive embed-responsive-16by9" src="https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
-             onclick="changeplaylist('https://www.youtube.com/embed/videoseries?list=PL3sfFQ0JZ2KMbN0DZ0gXdNh_BEGQiwD5k')"-->
+                <div id="playlists2" class="col">
+                    <h4 class="text-center"> Kurzgesagt </h4>
+
+                    <img id="Kurzgesagtvid" src="http://i3.ytimg.com/vi/RS7IzU2VJIQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+                        onclick="changeplaylist(0)">
+                    
+                    <h4 class="text-center"> MinuteEarth</h4>
+                    <img id="MinuteEarthvid" src="http://i3.ytimg.com/vi/TRb52O76HxQ/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+                        onclick="changeplaylist(1)">
+                    
+
+                    <h4 class="text-center"> AsapScience</h4>
+                    <img id="MinuteEarthvid" src="https://img.youtube.com/vi/b6CPsGanO_U/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+                        onclick="changeplaylist(4)">
+                    
+
+                    <h4 class="text-center"> TED-Ed </h4>
+                    <img id="Kurzgesagtvid" src="https://img.youtube.com/vi/RnvCbquYeIM/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+                        onclick="changeplaylist(2)">
+                    
+
+                    <h4 class="text-center"> TEDx Talks </h4>
+                    <img id="Kurzgesagtvid" src="http://i3.ytimg.com/vi/7Lc_dlVrg5M/maxresdefault.jpg" class="embed-responsive embed-responsive-16by9"
+                        onclick="changeplaylist(3)">
+                    
+                </div>
+            </div>
+
+            
         </div>
     </div>
 
