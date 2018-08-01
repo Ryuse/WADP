@@ -12,13 +12,22 @@
 <link rel="stylesheet" type="text/css" href="../css/ToDoList.css">
 <style>
 #previous{
-    float:left;
+	margin-top:6px;
+	margin-right:590px;
 }
 #next{
-    float:right;
+	margin-top:6px;
+	margin-left:590px;
 }
 #namemth, #AugMth{
     border-bottom:1px solid black;
+}
+#ToDoList{
+	text-align:center;
+	border:2px solid black;
+}
+h2{
+	font-weight:bold;
 }
 </style>	
 </head>
@@ -26,12 +35,15 @@
 <div>
 	<img id="left" src="../images/To-do_List.png">
 	<img id="right" src="../images/To-do_List.png">
-	<h3>To-Do-Lists Planner<br>Plan all your to-do-lists over here</h3>
+	<h3>To-Do-Lists Planner<br>Plan all of your to-do-lists over here</h3>
 </div>
 <div class="month">
 
 <div class="namemth" class="p-3 mb-2 bg-success">
-<h3><button id="previous" class="btn btn-info">&#10094;</button>July 2018<button id="next" class="btn btn-info">&#10095;</button></h3>
+<h3>
+	<button id="previous" class="btn btn-info">&#10094;</button>July 2018
+	<button id="next" class="btn btn-info">&#10095;</button>
+</h3>
 </div>
 
 <div class="pagination">
@@ -94,7 +106,23 @@
 <a id="Sat" href="" class="text-secondary">Saturday<br>4</a>
 <a id="nextwk" onclick="showAug()" class="text-secondary">&raquo;</a>
 </div>
+</div>
 
+<table id="ToDoList" class="table table-striped">
+	<tr>
+		<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
+	</tr>
+	<tr>
+		<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
+		<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
+		<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
+	</tr>
+	<tr>
+		<td><input id="time" type="text"></td>
+		<td><input id="details" type="text"></td>
+		<td><input id="remarks" type="text"></td>
+	</tr>
+</table>
 
 <script>
 function showtwo(){

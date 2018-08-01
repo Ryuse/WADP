@@ -22,7 +22,8 @@
         #keys {
             margin-bottom: 18px;
             margin-left: 38px;
-            border: 2px solid black
+            border: 2px solid black;
+            display: inline-block;
         }
 
         #phrases {
@@ -54,6 +55,21 @@
 
         #displayDate {
             font-family: Cooper Black;
+        }
+
+        #video1,
+        #video2 {
+            display: inline-block;
+            margin-left: 137px;
+            margin-top: 40px;
+        }
+
+        #left{
+            float:left;
+        }
+
+        #right{
+            float:right;
         }
     </style>
 
@@ -96,8 +112,8 @@
             <tr>
                 <th>
                     <li style="float:left">Click on the
-                        <button class="btn btn-danger">Cancel</button> to go back to this page (But BEWARE! Once you click cancel every data that you
-                        have input will be gone</li>
+                        <button class="btn btn-danger">Cancel</button> to go back to this page (But BEWARE! Once you click cancel every data that you have
+                        input will be gone</li>
                 </th>
             </tr>
             <tr>
@@ -109,19 +125,30 @@
 
     </div>
 
-    <br>       
-    <!-- famous quotes div -->
-    <div id="keys">
-        <h4>KeyQuotes/Phrases for the Day!</h4>
-        <p id="phrases" class="text-danger"></p>
+    <div>
+        <!-- famous quotes div -->
+        <div id="keys">
+            <h4>KeyQuote/Phrase of the Day!</h4>
+            <p id="phrases" class="text-danger"></p>
+        </div>
+
+        <div class="pagination" style="display:inline-block">
+            <div>Here are some videos on saving the environment and how to manage time well</div>
+            <div id="video1">
+                <button id="left" class="btn btn-warning" onclick="">&laquo;</button>
+                <button id="right" class="btn btn-warning" onclick="video2()">&raquo;</button>
+                <iframe width="300" height="215" src="https://www.youtube.com/embed/VUk6LXRZMMk" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+            <div id="video2" style="display: none">
+                    <button id="left" class="btn btn-warning" onclick="video1()">&laquo;</button>
+                    <button id="right" class="btn btn-warning" onclick="">&raquo;</button>
+                <iframe width="300" height="215" src="https://www.youtube.com/embed/Vkq_srFGW5I" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-
-    <!--<div class="embed-responsive embed -responsive-16by9">
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</div>-->
-
-
-
+    <br>
     <!-- Dropdown of the months in a year -->
     <button id="showAllMth" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Display ALL the months in the current year
         <span class="caret"></span>
@@ -180,76 +207,237 @@
         <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar's Legend data
     </button>
 
-<div class="pagination">
-    <!-- Jul month div -->
-<div id="Jul">
+    <div class="pagination">
+        <!-- Jul month div -->
+        <div id="Jul">
             <!-- Display Date, Month and Year -->
-        <h3 style="margin-left:38px">Month/Year:
+            <h3 style="margin-left:38px">Month/Year:
                 <span class="important" style="font-weight:bold">July / 2018</span>
             </h3>
             <h4 style="margin-left:37px">Current Date:
                 <span id="displayDate"></span>
             </h4>
-<a id="lastwk" onclick="" class="text-secondary">&laquo;</a>
-<table id="smallCal" class="table table-striped col-8">
-            <!-- Month and buttons to go next/previous months -->
-            <tr>
-                <th id="month" colspan="7">July 2018
-                    <button class="btn btn-success" onclick="" class="text-secondary">&laquo;</button>
-                    <button class="btn btn-success text-secondary" id="nextwk" onclick="showtwo()">&raquo;</button>
-                </th>
-            </tr>
+            <table id="smallCal" class="table table-striped col-8">
+                <!-- Month and buttons to go next/previous months -->
+                <tr>
+                    <th id="month" colspan="7">July 2018
+                        <button class="btn btn-success text-white" onclick="" id="lastwk">&laquo;</button>
+                        <button class="btn btn-success text-white" id="nextwk" onclick="showtwo()">&raquo;</button>
+                    </th>
+                </tr>
 
-            <!-- All days in the weeks -->
-            <tr class="success">
-                <th id="weekend" class="text-danger">Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
+                <!-- All days in the weeks -->
+                <tr class="success">
+                    <th id="weekend" class="text-danger">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
 
-            <!-- Every days in the months -->
-            <tr>
-                <td id="weekend">
-                    <a class="text-danger" href="">1</td>
-                </a>
-                <td class="success">
-                    <a href="">2</td>
-                </a>
-                <td>
-                    <a href="">3</td>
-                </a>
-                <td class="success">
-                    <a href="">4</td>
-                </a>
-                <td>
-                    <a href="">5</td>
-                </a>
-                <td class="success">
-                    <a href="3">6</td>
-                </a>
-                <td>
-                    <a href="">7</td>
-                </a>
+                <!-- Every days in the months -->
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">1</td>
+                    </a>
+                    <td class="success">
+                        <a href="">2</td>
+                    </a>
+                    <td>
+                        <a href="">3</td>
+                    </a>
+                    <td class="success">
+                        <a href="">4</td>
+                    </a>
+                    <td>
+                        <a href="">5</td>
+                    </a>
+                    <td class="success">
+                        <a href="3">6</td>
+                    </a>
+                    <td>
+                        <a href="">7</td>
+                    </a>
+
+                    <tr>
+                        <td id="weekend">
+                            <a class="text-danger" href="">8</td>
+                        </a>
+                        <td class="success">
+                            <a href="">9</td>
+                        </a>
+                        <td>
+                            <a href="">10</td>
+                        </a>
+                        <td class="success">
+                            <a href="">11</td>
+                        </a>
+                        <td>
+                            <a href="">12</td>
+                        </a>
+                        <td class="success">
+                            <a href="">13</td>
+                        </a>
+                        <td>
+                            <a href="">14</td>
+                        </a>
+                    </tr>
+
+                    <tr>
+                        <td id="weekend">
+                            <a class="text-danger" href="">15</td>
+                        </a>
+                        <td class="success">
+                            <a href="">16</td>
+                        </a>
+                        <td>
+                            <a href="">17</td>
+                        </a>
+                        <td class="success">
+                            <a href="">18</td>
+                        </a>
+                        <td>
+                            <a href="">19</td>
+                        </a>
+                        <td class="success">
+                            <a href="">20</td>
+                        </a>
+                        <td>
+                            <a href="">21</td>
+                        </a>
+                    </tr>
+
+                    <tr>
+                        <td id="weekend">
+                            <a class="text-danger" href="">22</td>
+                        </a>
+                        <td class="success">
+                            <a href="">23</td>
+                        </a>
+                        <td>
+                            <a href="">24</td>
+                        </a>
+                        <td>
+                            <a href="">25</td>
+                        </a>
+                        <td class="success">
+                            <a href="">25</td>
+                        </a>
+                        <td>
+                            <a href="">26</td>
+                        </a>
+                        <td class="success">
+                            <a href="">27</td>
+                        </a>
+                    </tr>
+
+                    <tr>
+                        <td id="weekend">
+                            <a class="text-danger" href="">28</td>
+                        </a>
+                        <td class="success">
+                            <a href="">29</td>
+                        </a>
+                        <td>
+                            <a href="">30</td>
+                        </a>
+                        <td class="nextmth">
+                            <a href="../pages/StudyPlannerAugMthWADP.html">1</td>
+                        </a>
+                        <td class="nextmth">
+                            <a href="../pages/StudyPlannerAugMthWADP.html">2</td>
+                        </a>
+                        <td class="nextmth">
+                            <a href="../pages/StudyPlannerAugMthWADP.html">3</td>
+                        </a>
+                        <td class="nextmth">
+                            <a href="../pages/StudyPlannerAugMthWADP.html">4</td>
+                    </tr>
+
+
+            </table>
+        </div>
+
+        <!-- Aug month div -->
+
+        <div id="Aug" style="display:none">
+            <h3 style="margin-left:38px">Month/Year:
+                <span class="important">August / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="dispDate"></span>
+            </h4>
+            <table id="smallCal" class="table table-striped col-8">
+                <tr>
+                    <th id="month" colspan="7">August 2018
+                        <button class="btn btn-success text-white" id="lastwk" onclick="backfirst()">&laquo;</button>
+                        <button class="btn btn-success text-white" id="nextwk" onclick="showthree()">&raquo;</button>
+                    </th>
+                </tr>
+
+                <tr class="success">
+                    <th id="weekend" class="text-danger">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+
+                <tr>
+                    <td class="lastmth">
+                        <a href="../pages/JulMthWADP.html">29</td>
+                    </a>
+                    <td class="lastmth">
+                        <a href="../pages/JulMthWADP.html">30</td>
+                    </a>
+                    <td class="lastmth">
+                        <a href="../pages/JulMthWADP.html">31</td>
+                    </a>
+                    <td class="success">
+                        <a href="../pages/ToDoList1Aug.html">1</td>
+                    </a>
+                    <td>
+                        <a href="../pages/ToDoList2Aug.html">2</td>
+                    </a>
+                    <td class="success">
+                        <a href="../pages/ToDoList3Aug.html">3</td>
+                    </a>
+                    <td>
+                        <a href="">4</td>
+                    </a>
+                </tr>
 
                 <tr>
                     <td id="weekend">
-                        <a class="text-danger" href="">8</td>
+                        <a class="text-danger" href="">5</td>
                     </a>
                     <td class="success">
+                        <a href="">6</td>
+                    </a>
+                    <td>
+                        <a href="">7</td>
+                    </a>
+                    <td class="success">
+                        <a href="">8</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="National Day">
                         <a href="">9</td>
                     </a>
-                    <td>
+                    <td class="success">
                         <a href="">10</td>
                     </a>
-                    <td class="success">
+                    <td>
                         <a href="">11</td>
                     </a>
-                    <td>
-                        <a href="">12</td>
+                </tr>
+
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">12</td>
                     </a>
                     <td class="success">
                         <a href="">13</td>
@@ -257,23 +445,23 @@
                     <td>
                         <a href="">14</td>
                     </a>
+                    <td class="success">
+                        <a href="">15</td>
+                    </a>
+                    <td>
+                        <a href="">16</td>
+                    </a>
+                    <td class="success">
+                        <a href="">17</td>
+                    </a>
+                    <td>
+                        <a href="">18</td>
+                    </a>
                 </tr>
 
                 <tr>
                     <td id="weekend">
-                        <a class="text-danger" href="">15</td>
-                    </a>
-                    <td class="success">
-                        <a href="">16</td>
-                    </a>
-                    <td>
-                        <a href="">17</td>
-                    </a>
-                    <td class="success">
-                        <a href="">18</td>
-                    </a>
-                    <td>
-                        <a href="">19</td>
+                        <a class="text-danger" href="">19</td>
                     </a>
                     <td class="success">
                         <a href="">20</td>
@@ -281,13 +469,305 @@
                     <td>
                         <a href="">21</td>
                     </a>
+                    <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Hari Raya Haji">
+                        <a href="">22</td>
+                    </a>
+                    <td class="success">
+                        <a href="">23</td>
+                    </a>
+                    <td>
+                        <a href="">24</td>
+                    </a>
+                    <td class="success">
+                        <a href="">25</td>
+                    </a>
                 </tr>
 
                 <tr>
                     <td id="weekend">
-                        <a class="text-danger" href="">22</td>
+                        <a class="text-danger" href="">26</td>
                     </a>
                     <td class="success">
+                        <a href="">27</td>
+                    </a>
+                    <td>
+                        <a href="">28</td>
+                    </a>
+                    <td class="success">
+                        <a href="">29</td>
+                    </a>
+                    <td>
+                        <a href="">30</td>
+                    </a>
+                    <td class="success">
+                        <a href="">31</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/SepMthWADP.html">1</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sep mth div -->
+        <div id="Sep" style="display:none">
+            <h3 style="margin-left:38px">Month/Year:
+                <span class="important">September / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="today"></span>
+            </h4>
+            <table id="smallCal" class="table table-striped">
+                <tr>
+                    <th id="month" colspan="7">September 2018
+                        <button class="btn btn-success text-white" id="lastwk" onclick="backtwo()">&laquo;</button>
+                        <button class="btn btn-success text-white" id="nextwk" onclick="showfour()">&raquo;</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="weekend">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">26</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">27</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">28</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">29</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">30</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">31</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">1</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend" class="p-3 mb-2 bg-info text-dark">
+                        <a class="text-danger" href="">2</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">3</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">4</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">5</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">6</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">7</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">8</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark" id="weekend">
+                        <a class="text-danger" href="">9</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">10</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">11</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">12</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">13</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">14</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">15</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark" id="weekend">
+                        <a class="text-danger" href="">16</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">17</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">18</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">19</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">20</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">21</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">22</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark" id="weekend">
+                        <a class="text-danger" href="">23</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">24</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">25</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">26</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">27</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">28</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">29</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a class="text-danger" href="">30</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">1</td>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">2</td>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">3</td>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">4</td>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">5</td>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/OctMthWADP.html">6</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Oct month div -->
+        <div id="Oct" style="display:none">
+            <h3 style="margin-left:38px">Month/Year:
+                <span class="important">October / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="now"></span>
+            </h4>
+            <table id="smallCal" class="table table-striped">
+                <tr>
+                    <th id="month" colspan="7">October 2018
+                        <button class="btn btn-success text-white" id="lastwk" onclick="backthree()">&laquo;</button>
+                        <button class="btn btn-success text-white" id="nextwk" onclick="showfive()">&raquo;</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="weekend">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/SepMthWADP.html">30</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">1</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">2</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">3</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">4</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">5</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">6</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark" id="weekend">
+                        <a class="text-danger" href="">7</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">8</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">9</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">10</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">11</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">12</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-info text-dark">
+                        <a href="">13</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td class="p-3 mb-2 bg-info text-dark" id="weekend">
+                        <a class="text-danger" href="">14</td>
+                    </a>
+                    <td>
+                        <a href="">15</td>
+                    </a>
+                    <td>
+                        <a href="">16</td>
+                    </a>
+                    <td>
+                        <a href="">17</td>
+                    </a>
+                    <td>
+                        <a href="">18</td>
+                    </a>
+                    <td>
+                        <a href="">19</td>
+                    </a>
+                    <td>
+                        <a href="">20</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">21</td>
+                    </a>
+                    <td>
+                        <a href="">22</td>
+                    </a>
+                    <td>
                         <a href="">23</td>
                     </a>
                     <td>
@@ -296,559 +776,523 @@
                     <td>
                         <a href="">25</td>
                     </a>
-                    <td class="success">
-                        <a href="">25</td>
-                    </a>
                     <td>
                         <a href="">26</td>
                     </a>
-                    <td class="success">
+                    <td>
                         <a href="">27</td>
                     </a>
                 </tr>
-
                 <tr>
                     <td id="weekend">
                         <a class="text-danger" href="">28</td>
                     </a>
-                    <td class="success">
+                    <td>
+                        <a href="">29</td>
+                    </a>
+                    <td>
+                        <a href="">30</td>
+                    </a>
+                    <td>
+                        <a href="">31</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/NovMthWADP.html">1</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/NovMthWADP.html">2</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/NovMthWADP.html">3</td>
+                    </a>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Nov month div -->
+        <div id="Nov" style="display:none">
+            <h3 style="margin-left:38px">Month/Year:
+                <span class="important">November / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="currentDate"></span>
+            </h4>
+            <table id="smallCal" class="table table-striped">
+                <tr>
+                    <th id="month" colspan="7">November 2018
+                        <button class="btn btn-success text-white" id="lastwk" onclick="backfour()">&laquo;</button>
+                        <button class="btn btn-success text-white" onclick="showsix()" id="nextwk">&raquo;</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="weekend">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/OctMthWADP.html">28</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/OctMthWADP.html">29</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/OctMthWADP.html">30</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/OctMthWADP.html">31</td>
+                    </a>
+                    <td>
+                        <a href="">1</td>
+                    </a>
+                    <td>
+                        <a href="">2</td>
+                    </a>
+                    <td>
+                        <a href="">3</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">4</td>
+                    </a>
+                    <td>
+                        <a href="">5</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Deepavali">
+                        <a href="">6</td>
+                    </a>
+                    <td>
+                        <a href="">7</td>
+                    </a>
+                    <td>
+                        <a href="">8</td>
+                    </a>
+                    <td>
+                        <a href="">9</td>
+                    </a>
+                    <td>
+                        <a href="">10</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">11</td>
+                    </a>
+                    <td>
+                        <a href="">12</td>
+                    </a>
+                    <td>
+                        <a href="">13</td>
+                    </a>
+                    <td>
+                        <a href="">14</td>
+                    </a>
+                    <td>
+                        <a href="">15</td>
+                    </a>
+                    <td>
+                        <a href="">16</td>
+                    </a>
+                    <td>
+                        <a href="">17</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">18</td>
+                    </a>
+                    <td>
+                        <a href="">19</td>
+                    </a>
+                    <td>
+                        <a href="">20</td>
+                    </a>
+                    <td>
+                        <a href="">21</td>
+                    </a>
+                    <td>
+                        <a href="">22</td>
+                    </a>
+                    <td>
+                        <a href="">23</td>
+                    </a>
+                    <td>
+                        <a href="">24</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">25</td>
+                    </a>
+                    <td>
+                        <a href="">26</td>
+                    </a>
+                    <td>
+                        <a href="">27</td>
+                    </a>
+                    <td>
+                        <a href="">28</td>
+                    </a>
+                    <td>
                         <a href="">29</td>
                     </a>
                     <td>
                         <a href="">30</td>
                     </a>
                     <td class="nextmth">
-                        <a href="../pages/StudyPlannerAugMthWADP.html">1</td>
+                        <a id="nextmth" href="../pages/DecMthWADP.html">1</td>
                     </a>
-                    <td class="nextmth">
-                        <a href="../pages/StudyPlannerAugMthWADP.html">2</td>
-                    </a>
-                    <td class="nextmth">
-                        <a href="../pages/StudyPlannerAugMthWADP.html">3</td>
-                    </a>
-                    <td class="nextmth">
-                        <a href="../pages/StudyPlannerAugMthWADP.html">4</td>
                 </tr>
+            </table>
+        </div>
 
-
-        </table>
-<a id="nextwk" onclick="showtwo()" class="text-secondary">&raquo;</a>
-</div>
-
-<!-- Aug month div -->
-
-<div id="Aug" style="display:none">
-        <h3 style="margin-left:38px">Month/Year: <span class="important">August / 2018</span></h3>
-        <h4 style="margin-left:37px">Current Date:
-                <span id="displayDate"></span>
+        <!-- Dec month div -->
+        <div id="Dec" style="display:none">
+            <h3 style="margin-left:38px">Month/Year:
+                <span class="important">December / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="date"></span>
             </h4>
-<a id="lastwk" onclick="backfirst()" class="text-secondary">&laquo;</a>
-<table id="smallCal" class="table table-striped col-8">
-<tr>
-<th id="month" colspan="7">August 2018
-<button class="btn btn-success text-secondary" id="lastwk" onclick="backfirst()">&laquo;</button>
-<button class="btn btn-success text-secondary" id="nextwk" onclick="showthree()">&raquo;</button>
-</th>
-</tr>
 
-<tr class="success">
-<th id="weekend" class="text-danger">Sun</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thu</th>
-<th>Fri</th>
-<th>Sat</th>
-</tr>
+            <table id="smallCal" class="table table-striped">
+                <tr>
+                    <th id="month" colspan="7">December 2018
+                        <button class="btn btn-success text-white" onclick="backfive()" id="lastwk">&laquo;</button>
+                        <button class="btn btn-success text-white" onclick="goto19()" id="nextwk">&raquo;</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="weekend">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">25</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">26</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">27</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">28</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">29</td>
+                    </a>
+                    <td class="lastmth">
+                        <a id="lastmth" href="../pages/NovMthWADP.html">30</td>
+                    </a>
+                    <td>
+                        <a href="">1</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">2</td>
+                    </a>
+                    <td>
+                        <a href="">3</td>
+                    </a>
+                    <td>
+                        <a href="">4</td>
+                    </a>
+                    <td>
+                        <a href="">5</td>
+                    </a>
+                    <td>
+                        <a href="">6</td>
+                    </a>
+                    <td>
+                        <a href="">7</td>
+                    </a>
+                    <td>
+                        <a href="">8</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="weekend">
+                        <a class="text-danger" href="">9</td>
+                    </a>
+                    <td>
+                        <a href="">10</td>
+                    </a>
+                    <td>
+                        <a href="">11</td>
+                    </a>
+                    <td>
+                        <a href="">12</td>
+                    </a>
+                    <td>
+                        <a href="">13</td>
+                    </a>
+                    <td>
+                        <a href="">14</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">15</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="holiday" id="weekend">
+                        <a class="text-danger" href="">16</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">17</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">18</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">19</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">20</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">21</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">22</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="holiday" id="weekend">
+                        <a class="text-danger" href="">23</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">24</td>
+                    </a>
+                    <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Christmas Day">
+                        <a href="">25</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">26</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">27</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">28</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">29</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td id="holiday">
+                        <a class="text-danger" href="">30</td>
+                    </a>
+                    <td id="holiday">
+                        <a href="">31</td>
+                    </a>
+                    <td class="nextmth" data-toggle="tooltip" title="New Year Day">
+                        <a id="nextmth" href="../pages/2019JanMthWADP.html">1</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/2019JanMthWADP.html">2</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/2019JanMthWADP.html">3</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/2019JanMthWADP.html">4</td>
+                    </a>
+                    <td class="nextmth">
+                        <a id="nextmth" href="../pages/2019JanMthWADP.html">5</td>
+                    </a>
+                </tr>
+            </table>
+        </div>
 
-<tr>
-<td class="lastmth"><a href="../pages/JulMthWADP.html">29</td></a>
-<td class="lastmth"><a href="../pages/JulMthWADP.html">30</td></a>
-<td class="lastmth"><a href="../pages/JulMthWADP.html">31</td></a>
-<td class="success"><a href="../pages/ToDoList1Aug.html">1</td></a>
-<td><a href="../pages/ToDoList2Aug.html">2</td></a>
-<td class="success"><a href="../pages/ToDoList3Aug.html">3</td></a>
-<td><a href="">4</td></a>
-</tr>
+        <div id="legend" class="col-3 ">
 
-<tr>
-<td id="weekend"><a class="text-danger" href="">5</td></a>
-<td class="success"><a href="">6</td></a>
-<td><a href="">7</td></a>
-<td class="success"><a href="">8</td></a>
-<td class="p-3 mb-2 bg-danger"  data-toggle="tooltip" title="National Day"><a href="">9</td></a>
-<td class="success"><a href="">10</td></a>
-<td><a href="">11</td></a>
-</tr>
+            <p>Legend
+                <br>(Hover over the dates to get the details on what they represents):</p>
 
-<tr>
-<td id="weekend"><a class="text-danger" href="">12</td></a>
-<td class="success"><a href="">13</td></a>
-<td><a href="">14</td></a>
-<td class="success"><a href="">15</td></a>
-<td><a href="">16</td></a>
-<td class="success"><a href="">17</td></a>
-<td><a href="">18</td></a>
-</tr>
+            <div class="p-3 mb-2 bg-info text-dark" data-toggle="tooltip" title="School Holidays">
+                <div id="holidays">
+                    <p class="text-center">14</p>
+                </div>
+            </div>
 
-<tr>
-<td id="weekend"><a class="text-danger" href="">19</td></a>
-<td class="success"><a href="">20</td></a>
-<td><a href="">21</td></a>
-<td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Hari Raya Haji"><a href="">22</td></a>
-<td class="success"><a href="">23</td></a>
-<td><a href="">24</td></a>
-<td class="success"><a href="">25</td></a>
-</tr>
+            <div class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
+                <div id="PH">
+                    <p class="text-center">9</p>
+                </div>
+            </div>
 
-<tr>
-<td id="weekend"><a class="text-danger" href="">26</td></a>
-<td class="success"><a href="">27</td></a>
-<td><a href="">28</td></a>
-<td class="success"><a href="">29</td></a>
-<td><a href="">30</td></a>
-<td class="success"><a href="">31</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/SepMthWADP.html">1</td>
-</tr>
-</table>
-<a id="nextwk" onclick="showthree()" class="text-secondary">&raquo;</a>
-</div>
-
-<!-- Sep mth div -->
-<div id="Sep" style="display:none">
-<a id="lastwk" onclick="backtwo()" class="text-secondary">&laquo;</a>
-<table id="smallCal" class="table table-striped">
-<tr>
-<th id="month" colspan="7">September 2018
-<button class="btn btn-success text-secondary" id="lastwk" onclick="backtwo()">&laquo;</button>
-<button class="btn btn-success text-secondary" id="nextwk" onclick="showfour()">&raquo;</button>
-</th>
-</tr>
-<tr>
-<th id="weekend">Sun</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thu</th>
-<th>Fri</th>
-<th>Sat</th>
-</tr>
-<tr>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">26</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">27</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">28</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">29</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">30</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/StudyPlannerAugMthWADP.html">31</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">1</td></a>
-</tr>
-<tr>
-<td id="weekend" class="p-3 mb-2 bg-info text-dark"><a class="text-danger" href="">2</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">3</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">4</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">5</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">6</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">7</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">8</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark" id="weekend"><a class="text-danger" href="">9</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">10</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">11</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">12</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">13</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">14</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">15</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark" id="weekend"><a class="text-danger" href="">16</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">17</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">18</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">19</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">20</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">21</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">22</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark" id="weekend"><a class="text-danger" href="">23</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">24</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">25</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">26</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">27</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">28</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">29</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark"><a class="text-danger" href="">30</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">1</td>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">2</td>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">3</td>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">4</td>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">5</td>
-<td class="nextmth"><a id="nextmth" href="../pages/OctMthWADP.html">6</td>
-</tr>
-</table>
-<a id="nextwk" onclick="showfour()" class="text-secondary">&raquo;</a>
-</div>
-
-<!-- Oct month div -->
-<div id="Oct" style="display:none">
-<a id="lastwk" onclick="backthree()" class="text-secondary">&laquo;</a>
-<table id="smallCal" class="table table-striped">
-<tr>
-<th id="month" colspan="7">October 2018
-<button class="btn btn-success text-secondary" id="lastwk" onclick="backthree()">&laquo;</button>
-<button class="btn btn-success text-secondary" id="nextwk" onclick="showfive()">&raquo;</button>
-</th>
-</tr>
-<tr>
-<th id="weekend">Sun</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thu</th>
-<th>Fri</th>
-<th>Sat</th>
-</tr>
-<tr>
-<td class="lastmth"><a id="lastmth" href="../pages/SepMthWADP.html">30</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">1</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">2</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">3</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">4</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">5</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">6</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark" id="weekend"><a class="text-danger" href="">7</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">8</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">9</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">10</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">11</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">12</td></a>
-<td class="p-3 mb-2 bg-info text-dark"><a href="">13</td></a>
-</tr>
-<tr>
-<td class="p-3 mb-2 bg-info text-dark" id="weekend"><a class="text-danger" href="">14</td></a>
-<td><a href="">15</td></a>
-<td><a href="">16</td></a>
-<td><a href="">17</td></a>
-<td><a href="">18</td></a>
-<td><a href="">19</td></a>
-<td><a href="">20</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">21</td></a>
-<td><a href="">22</td></a>
-<td><a href="">23</td></a>
-<td><a href="">24</td></a>
-<td><a href="">25</td></a>
-<td><a href="">26</td></a>
-<td><a href="">27</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">28</td></a>
-<td><a href="">29</td></a>
-<td><a href="">30</td></a>
-<td><a href="">31</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/NovMthWADP.html">1</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/NovMthWADP.html">2</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/NovMthWADP.html">3</td></a>
-</tr>
-</table>
-<a id="nextwk" onclick="showfive()" class="text-secondary">&raquo;</a>
-</div>
-
-<!-- Nov month div -->
-<div id="Nov" style="display:none">
-<table id="smallCal" class="table table-striped">
-<tr>
-<th id="month" colspan="7">November 2018
-<button class="btn btn-success" id="lastwk" onclick="backfour()">&laquo;</button>
-<button class="btn btn-success" onclick="showsix()" id="nextwk">&raquo;</button>
-</th>
-</tr>
-<tr>
-<th id="weekend">Sun</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thu</th>
-<th>Fri</th>
-<th>Sat</th>
-</tr>
-<tr>
-<td class="lastmth"><a id="lastmth" href="../pages/OctMthWADP.html">28</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/OctMthWADP.html">29</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/OctMthWADP.html">30</td></a>
-<td class="lastmth"><a id="lastmth" href="../pages/OctMthWADP.html">31</td></a>
-<td><a href="">1</td></a>
-<td><a href="">2</td></a>
-<td><a href="">3</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">4</td></a>
-<td><a href="">5</td></a>
-<td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Deepavali"><a href="">6</td></a>
-<td><a href="">7</td></a>
-<td><a href="">8</td></a>
-<td><a href="">9</td></a>
-<td><a href="">10</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">11</td></a>
-<td><a href="">12</td></a>
-<td><a href="">13</td></a>
-<td><a href="">14</td></a>
-<td><a href="">15</td></a>
-<td><a href="">16</td></a>
-<td><a href="">17</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">18</td></a>
-<td><a href="">19</td></a>
-<td><a href="">20</td></a>
-<td><a href="">21</td></a>
-<td><a href="">22</td></a>
-<td><a href="">23</td></a>
-<td><a href="">24</td></a>
-</tr>
-<tr>
-<td id="weekend"><a class="text-danger" href="">25</td></a>
-<td><a href="">26</td></a>
-<td><a href="">27</td></a>
-<td><a href="">28</td></a>
-<td><a href="">29</td></a>
-<td><a href="">30</td></a>
-<td class="nextmth"><a id="nextmth" href="../pages/DecMthWADP.html">1</td></a>
-</tr>
-</table>
-<a id="nextwk" onclick="showsix()" class="text-secondary">&raquo;</a>
-</div>
-
-<div id="Dec" style="display:none">
-        <h3 style="margin-left:37px">Month/Year: <span class="important">December/2018</span></h3>
-        <h4 style="margin-left:37px">Current Date: <span id="displayDate"></span></h4>
-        
-        <table id="smallCal" class="table table-striped">
-        <tr>
-        <th id="month" colspan="7">December 2018
-        <button class="btn btn-success" onclick="backfive()" id="lastwk">&laquo;</button>
-        <button class="btn btn-success" onclick="nextmth()" id="next">&raquo;</button>
-        </th>
-        </tr>
-        <tr>
-        <th id="weekend">Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-        </tr>
-        <tr>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">25</td></a>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">26</td></a>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">27</td></a>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">28</td></a>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">29</td></a>
-        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">30</td></a>
-        <td><a href="">1</td></a>
-        </tr>
-        <tr>
-        <td id="weekend"><a class="text-danger" href="">2</td></a>
-        <td><a href="">3</td></a>
-        <td><a href="">4</td></a>
-        <td><a href="">5</td></a>
-        <td><a href="">6</td></a>
-        <td><a href="">7</td></a>
-        <td><a href="">8</td></a>
-        </tr>
-        <tr>
-        <td id="weekend"><a class="text-danger" href="">9</td></a>
-        <td><a href="">10</td></a>
-        <td><a href="">11</td></a>
-        <td><a href="">12</td></a>
-        <td><a href="">13</td></a>
-        <td><a href="">14</td></a>
-        <td id="holiday"><a href="">15</td></a>
-        </tr>
-        <tr>
-        <td id="holiday" id="weekend"><a class="text-danger" href="">16</td></a>
-        <td id="holiday"><a href="">17</td></a>
-        <td id="holiday"><a href="">18</td></a>
-        <td id="holiday"><a href="">19</td></a>
-        <td id="holiday"><a href="">20</td></a>
-        <td id="holiday"><a href="">21</td></a>
-        <td id="holiday"><a href="">22</td></a>
-        </tr>
-        <tr>
-        <td id="holiday" id="weekend"><a class="text-danger" href="">23</td></a>
-        <td id="holiday"><a href="">24</td></a>
-        <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Christmas Day"><a href="">25</td></a>
-        <td id="holiday"><a href="">26</td></a>
-        <td id="holiday"><a href="">27</td></a>
-        <td id="holiday"><a href="">28</td></a>
-        <td id="holiday"><a href="">29</td></a>
-        </tr>
-        <tr>
-        <td id="holiday"><a class="text-danger" href="">30</td></a>
-        <td id="holiday"><a href="">31</td></a>
-        <td class="nextmth" data-toggle="tooltip" title="New Year Day"><a id="nextmth" href="../pages/2019JanMthWADP.html">1</td></a>
-        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">2</td></a>
-        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">3</td></a>
-        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">4</td></a>
-        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">5</td></a>
-        </tr>
-        </table>
-</div>
-
-<div id="legend" class="col-3 ">
-
-        <h3>Legend(Hover over the dates to get the details on what the color represents):</h3>
-    
-        <div class="p-3 mb-2 bg-info text-dark" data-toggle="tooltip" title="School Holidays">
-            <div id="holidays">
-                <p class="text-center">14</p>
+            <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
+                <div id="lastORnext">
+                    <p class="text-center">24</p>
+                </div>
             </div>
         </div>
-    
-        <div class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
-            <div id="PH">
-                <p class="text-center">9</p>
-            </div>
-        </div>
-    
-        <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
-            <div id="lastORnext">
-                <p class="text-center">24</p>
-            </div>
-        </div>
-    
+
+        <script>
+            function nextmth() {
+                window.location.replace("../pages/StudyPlannerAugMthWADP.html");
+            }
+
+            function showhide() {
+                var legen = document.getElementById("legend");
+                if (legen.style.display === "none") {
+                    legen.style.display = "block";
+                }
+                else {
+                    legen.style.display = "none";
+                }
+            }
+
+            var today = new Date();
+            document.getElementById("displayDate").innerHTML = today.toDateString();
+
+            var today = new Date();
+            document.getElementById("dispDate").innerHTML = today.toDateString();
+
+            var today = new Date();
+            document.getElementById("today").innerHTML = today.toDateString();
+
+            var today = new Date();
+            document.getElementById("now").innerHTML = today.toDateString();
+
+            var today = new Date();
+            document.getElementById("currentDate").innerHTML = today.toDateString();
+
+            var today = new Date();
+            document.getElementById("date").innerHTML = today.toDateString();
+
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+
+            var keyquotes = ["Time is a great healer, but a poor beautician.<br>– Lucille S. Harper", "I am definitely going to take a course on time management… just as soon as I can work it into my schedule.<br>– Louis E. Boone", "Work expands so as to fill the time available for its completion.<br>–  Cyril Northcote Parkinson", "Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.<br>― Roy T. Bennett,", "The trouble with being punctual is that nobody’s there to appreciate it.<br>– Franklin P. Jones", "If you have a dream, don’t just sit there. Gather courage to believe that you can succeed and leave no stone unturned to make it a reality.<br>― Roopleen", "I can accept failure, everyone fails at something. But I can't accept not trying.<br>- Michael Jordan"];
+            var day = new Date();
+            var daily = day.getDay();
+            if (daily == 0) {
+                document.getElementById("phrases").innerHTML = keyquotes[0];
+            }
+            if (daily == 1) {
+                document.getElementById("phrases").innerHTML = keyquotes[1];
+            }
+            if (daily == 2) {
+                document.getElementById("phrases").innerHTML = keyquotes[2];
+            }
+            if (daily == 3) {
+                document.getElementById("phrases").innerHTML = keyquotes[3];
+            }
+            if (daily == 4) {
+                document.getElementById("phrases").innerHTML = keyquotes[4];
+            }
+            if (daily == 5) {
+                document.getElementById("phrases").innerHTML = keyquotes[5];
+            }
+            if (daily == 6) {
+                document.getElementById("phrases").innerHTML = keyquotes[6];
+            }
+
+            function goto19() {
+                window.open("../pages/2019JanMthWADP.html");
+
+            }
+            function showtwo() {
+                var Jul = document.getElementById("Jul");
+                var Aug = document.getElementById("Aug");
+                Jul.style.display = "none";
+                Aug.style.display = "block";
+            }
+
+            function backfirst() {
+                var Jul = document.getElementById("Jul");
+                var Aug = document.getElementById("Aug");
+                Jul.style.display = "block";
+                Aug.style.display = "none";
+            }
+
+            function backtwo() {
+                var Aug = document.getElementById("Aug");
+                var Sep = document.getElementById("Sep");
+                Sep.style.display = "none";
+                Aug.style.display = "block";
+            }
+
+            function showthree() {
+                var Aug = document.getElementById("Aug");
+                var Sep = document.getElementById("Sep");
+                Aug.style.display = "none";
+                Sep.style.display = "block";
+            }
+
+            function showfour() {
+                var Sep = document.getElementById("Sep");
+                var Oct = document.getElementById("Oct");
+                Sep.style.display = "none";
+                Oct.style.display = "block";
+            }
+
+            function backthree() {
+                var Oct = document.getElementById("Oct");
+                var Sep = document.getElementById("Sep");
+                Oct.style.display = "none";
+                Sep.style.display = "block";
+            }
+
+            function showfive() {
+                var Nov = document.getElementById("Nov");
+                var Oct = document.getElementById("Oct");
+                Oct.style.display = "none";
+                Nov.style.display = "block";
+            }
+
+            function backfour() {
+                var Oct = document.getElementById("Oct");
+                var Nov = document.getElementById("Nov");
+                Oct.style.display = "block";
+                Nov.style.display = "none";
+            }
+
+            function showsix() {
+                var Nov = document.getElementById("Nov");
+                var Dec = document.getElementById("Dec");
+                Nov.style.display = "none";
+                Dec.style.display = "block";
+            }
+
+            function backfive() {
+                var Nov = document.getElementById("Nov");
+                var Dec = document.getElementById("Dec");
+                Nov.style.display = "block";
+                Dec.style.display = "none";
+            }
+
+            function video2(){
+                var v1 = document.getElementById("video1");
+                var v2 = document.getElementById("video2");
+                v1.style.display = "none";
+                v2.style.display = "block";
+            }
+
+            function video1(){
+                var v1 = document.getElementById("video1");
+                var v2 = document.getElementById("video2");
+                v1.style.display = "block";
+                v2.style.display = "none";
+            }
+        </script>
+
     </div>
-<script>
-function nextmth() {
-    window.location.replace("../pages/StudyPlannerAugMthWADP.html");
-}
-
-function showhide() {
-    var legen = document.getElementById("legend");
-    if (legen.style.display === "none") {
-        legen.style.display = "block";
-    }
-    else {
-        legen.style.display = "none";
-    }
-}
-
-var today = new Date();
-document.getElementById("displayDate").innerHTML = today.toDateString();
-
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-var keyquotes = ["Time is a great healer, but a poor beautician.<br>– Lucille S. Harper", "I am definitely going to take a course on time management… just as soon as I can work it into my schedule.<br>– Louis E. Boone", "Work expands so as to fill the time available for its completion.<br>–  Cyril Northcote Parkinson", "Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.<br>― Roy T. Bennett,", "The trouble with being punctual is that nobody’s there to appreciate it.<br>– Franklin P. Jones", "If you have a dream, don’t just sit there. Gather courage to believe that you can succeed and leave no stone unturned to make it a reality.<br>― Roopleen", "I can accept failure, everyone fails at something. But I can't accept not trying.<br>- Michael Jordan"];
-var day = new Date();
-var daily = day.getDay();
-if (daily == 0) {
-    document.getElementById("phrases").innerHTML = keyquotes[0];
-    }
-if (daily == 1) {
-    document.getElementById("phrases").innerHTML = keyquotes[1];
-}
-if (daily == 2) {
-     document.getElementById("phrases").innerHTML = keyquotes[2];
-}
-if (daily == 3) {
-    document.getElementById("phrases").innerHTML = keyquotes[3];
-}
-if (daily == 4) {
-     document.getElementById("phrases").innerHTML = keyquotes[4];
-}
-if (daily == 5) {
-    document.getElementById("phrases").innerHTML = keyquotes[5];
-}
-if (daily == 6) {
-    document.getElementById("phrases").innerHTML = keyquotes[6];
-}
-
-function goto19() {
-    window.open("../pages/2019JanMthWADP.html");
-
-}
-function showtwo(){
-     var Jul = document.getElementById("Jul");
-	 var Aug = document.getElementById("Aug");
-	 Jul.style.display = "none";
-	 Aug.style.display = "block";
-}
-
-function backfirst(){
-     var Jul = document.getElementById("Jul");
-	 var Aug = document.getElementById("Aug");
-	 Jul.style.display = "block";
-	 Aug.style.display = "none";
-}
-
-function backtwo(){
-     var Aug = document.getElementById("Aug");
-	 var Sep = document.getElementById("Sep"); 
-	 Sep.style.display = "none";
-	 Aug.style.display = "block";
-}
-
-function showthree(){
-     var Aug = document.getElementById("Aug");
-	 var Sep = document.getElementById("Sep");
-	 Aug.style.display = "none";
-	 Sep.style.display = "block";
-}
-
-function showfour(){
-     var Sep = document.getElementById("Sep");
-	 var Oct = document.getElementById("Oct");
-	 Sep.style.display = "none";
-	 Oct.style.display = "block";
-}
-
-function backthree(){
-    var Oct = document.getElementById("Oct");
-	var Sep = document.getElementById("Sep");
-	Oct.style.display = "none";
-	Sep.style.display = "block";
-}
-
-function showfive(){
-    var Nov = document.getElementById("Nov");
-	var Oct = document.getElementById("Oct");
-	Oct.style.display = "none";
-	Nov.style.display = "block";
-}
-
-function backfour(){
-    var Oct = document.getElementById("Oct");
-	var Nov = document.getElementById("Nov");
-	Oct.style.display = "block";
-	Nov.style.display = "none";
-}
-
-function showsix(){
-    var Nov = document.getElementById("Nov");
-    var Dec = document.getElementById("Dec");
-    Nov.style.display = "none";
-    Dec.style.display = "block";
-}
-
-function backfive(){
-    var Nov = document.getElementById("Nov");
-    var Dec = document.getElementById("Dec");
-    Nov.style.display = "block";
-    Dec.style.display = "none";
-}
-</script>
-
-</div>
 </body>
 
 </html>

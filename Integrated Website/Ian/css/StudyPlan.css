@@ -116,15 +116,24 @@ tr, th, td{
 	margin-bottom:200px;
 }
 
-#JulCal, #AugCal, #SepCal, #OctCal, #NovCal, #DecCal{
-	border: 1px solid blue;
-	min-height: 500px;
-
+#Jul, #Aug, #Sep, #Oct, #Nov, #Dec{
+	/*border: 1px solid blue;
+	min-height: 500px;*/
+	width:1160px;
 }
 
 #legend{
 	border:1px solid black;
-	max-height: 400px;
+	max-height: 360px;
+	max-width:230px;
 	margin-left:60px;
-	margin-top:190px;
+	margin-top:208px;
+}
+
+#lastwk{
+	float:left;
+}
+
+#nextwk{
+	float:right;
 }
