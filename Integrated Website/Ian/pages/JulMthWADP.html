@@ -175,22 +175,21 @@
     </ul>
     <!-- End of the dropdown of the months in the year -->
 
-    <!-- Displaying/Hiding the calendar button -->
+    <!-- Displaying/Hiding the legend button -->
     <button onclick="showhide()" type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar
+        <span class="glyphicon glyphicon-calendar"></span> Display/Hide the Calendar's Legend data
     </button>
 
-
-    <!-- Display Date, Month and Year -->
-    <h3 style="margin-left:38px">Month/Year:
-        <span class="important" style="font-weight:bold">July / 2018</span>
-    </h3>
-    <h4 style="margin-left:37px">Current Date:
-        <span id="displayDate"></span>
-    </h4>
-    
 <div class="pagination">
+    <!-- Jul month div -->
 <div id="Jul">
+            <!-- Display Date, Month and Year -->
+        <h3 style="margin-left:38px">Month/Year:
+                <span class="important" style="font-weight:bold">July / 2018</span>
+            </h3>
+            <h4 style="margin-left:37px">Current Date:
+                <span id="displayDate"></span>
+            </h4>
 <a id="lastwk" onclick="" class="text-secondary">&laquo;</a>
 <table id="smallCal" class="table table-striped col-8">
             <!-- Month and buttons to go next/previous months -->
@@ -336,7 +335,13 @@
 <a id="nextwk" onclick="showtwo()" class="text-secondary">&raquo;</a>
 </div>
 
+<!-- Aug month div -->
+
 <div id="Aug" style="display:none">
+        <h3 style="margin-left:38px">Month/Year: <span class="important">August / 2018</span></h3>
+        <h4 style="margin-left:37px">Current Date:
+                <span id="displayDate"></span>
+            </h4>
 <a id="lastwk" onclick="backfirst()" class="text-secondary">&laquo;</a>
 <table id="smallCal" class="table table-striped col-8">
 <tr>
@@ -409,6 +414,7 @@
 <a id="nextwk" onclick="showthree()" class="text-secondary">&raquo;</a>
 </div>
 
+<!-- Sep mth div -->
 <div id="Sep" style="display:none">
 <a id="lastwk" onclick="backtwo()" class="text-secondary">&laquo;</a>
 <table id="smallCal" class="table table-striped">
@@ -485,6 +491,7 @@
 <a id="nextwk" onclick="showfour()" class="text-secondary">&raquo;</a>
 </div>
 
+<!-- Oct month div -->
 <div id="Oct" style="display:none">
 <a id="lastwk" onclick="backthree()" class="text-secondary">&laquo;</a>
 <table id="smallCal" class="table table-striped">
@@ -552,12 +559,13 @@
 <a id="nextwk" onclick="showfive()" class="text-secondary">&raquo;</a>
 </div>
 
-<!--<div id="Nov" style="display:none">
+<!-- Nov month div -->
+<div id="Nov" style="display:none">
 <table id="smallCal" class="table table-striped">
 <tr>
 <th id="month" colspan="7">November 2018
-<button onclick="lastmth()" class="btn btn-success" id="previous">&#10094;</button>
-<button onclick="nextmth()" class="btn btn-success" id="next">&#10095;</button>
+<button class="btn btn-success" id="lastwk" onclick="backfour()">&laquo;</button>
+<button class="btn btn-success" onclick="showsix()" id="nextwk">&raquo;</button>
 </th>
 </tr>
 <tr>
@@ -615,116 +623,230 @@
 <td class="nextmth"><a id="nextmth" href="../pages/DecMthWADP.html">1</td></a>
 </tr>
 </table>
-<a id="nextwk" onclick="showAug()" class="text-secondary">&raquo;</a>
-</div>-->
+<a id="nextwk" onclick="showsix()" class="text-secondary">&raquo;</a>
+</div>
 
+<div id="Dec" style="display:none">
+        <h3 style="margin-left:37px">Month/Year: <span class="important">December/2018</span></h3>
+        <h4 style="margin-left:37px">Current Date: <span id="displayDate"></span></h4>
+        
+        <table id="smallCal" class="table table-striped">
+        <tr>
+        <th id="month" colspan="7">December 2018
+        <button class="btn btn-success" onclick="backfive()" id="lastwk">&laquo;</button>
+        <button class="btn btn-success" onclick="nextmth()" id="next">&raquo;</button>
+        </th>
+        </tr>
+        <tr>
+        <th id="weekend">Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        </tr>
+        <tr>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">25</td></a>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">26</td></a>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">27</td></a>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">28</td></a>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">29</td></a>
+        <td class="lastmth"><a id="lastmth" href="../pages/NovMthWADP.html">30</td></a>
+        <td><a href="">1</td></a>
+        </tr>
+        <tr>
+        <td id="weekend"><a class="text-danger" href="">2</td></a>
+        <td><a href="">3</td></a>
+        <td><a href="">4</td></a>
+        <td><a href="">5</td></a>
+        <td><a href="">6</td></a>
+        <td><a href="">7</td></a>
+        <td><a href="">8</td></a>
+        </tr>
+        <tr>
+        <td id="weekend"><a class="text-danger" href="">9</td></a>
+        <td><a href="">10</td></a>
+        <td><a href="">11</td></a>
+        <td><a href="">12</td></a>
+        <td><a href="">13</td></a>
+        <td><a href="">14</td></a>
+        <td id="holiday"><a href="">15</td></a>
+        </tr>
+        <tr>
+        <td id="holiday" id="weekend"><a class="text-danger" href="">16</td></a>
+        <td id="holiday"><a href="">17</td></a>
+        <td id="holiday"><a href="">18</td></a>
+        <td id="holiday"><a href="">19</td></a>
+        <td id="holiday"><a href="">20</td></a>
+        <td id="holiday"><a href="">21</td></a>
+        <td id="holiday"><a href="">22</td></a>
+        </tr>
+        <tr>
+        <td id="holiday" id="weekend"><a class="text-danger" href="">23</td></a>
+        <td id="holiday"><a href="">24</td></a>
+        <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Christmas Day"><a href="">25</td></a>
+        <td id="holiday"><a href="">26</td></a>
+        <td id="holiday"><a href="">27</td></a>
+        <td id="holiday"><a href="">28</td></a>
+        <td id="holiday"><a href="">29</td></a>
+        </tr>
+        <tr>
+        <td id="holiday"><a class="text-danger" href="">30</td></a>
+        <td id="holiday"><a href="">31</td></a>
+        <td class="nextmth" data-toggle="tooltip" title="New Year Day"><a id="nextmth" href="../pages/2019JanMthWADP.html">1</td></a>
+        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">2</td></a>
+        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">3</td></a>
+        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">4</td></a>
+        <td class="nextmth"><a id="nextmth" href="../pages/2019JanMthWADP.html">5</td></a>
+        </tr>
+        </table>
+</div>
 
-            <script>
-                function nextmth() {
-                    window.location.replace("../pages/StudyPlannerAugMthWADP.html");
-                }
+<div id="legend" class="col-3 ">
 
-                function showhide() {
-                    var cal = document.getElementById("smallCal");
-                    if (cal.style.display === "none") {
-                        cal.style.display = "block";
-                    }
-                    else {
-                        cal.style.display = "none";
-                    }
-                }
+        <h3>Legend(Hover over the dates to get the details on what the color represents):</h3>
+    
+        <div class="p-3 mb-2 bg-info text-dark" data-toggle="tooltip" title="School Holidays">
+            <div id="holidays">
+                <p class="text-center">14</p>
+            </div>
+        </div>
+    
+        <div class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
+            <div id="PH">
+                <p class="text-center">9</p>
+            </div>
+        </div>
+    
+        <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
+            <div id="lastORnext">
+                <p class="text-center">24</p>
+            </div>
+        </div>
+    
+    </div>
+<script>
+function nextmth() {
+    window.location.replace("../pages/StudyPlannerAugMthWADP.html");
+}
 
-                var today = new Date();
-                document.getElementById("displayDate").innerHTML = today.toDateString();
+function showhide() {
+    var legen = document.getElementById("legend");
+    if (legen.style.display === "none") {
+        legen.style.display = "block";
+    }
+    else {
+        legen.style.display = "none";
+    }
+}
 
-                $(document).ready(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
-                });
+var today = new Date();
+document.getElementById("displayDate").innerHTML = today.toDateString();
 
-                var keyquotes = ["Time is a great healer, but a poor beautician.<br>– Lucille S. Harper", "I am definitely going to take a course on time management… just as soon as I can work it into my schedule.<br>– Louis E. Boone", "Work expands so as to fill the time available for its completion.<br>–  Cyril Northcote Parkinson", "Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.<br>― Roy T. Bennett,", "The trouble with being punctual is that nobody’s there to appreciate it.<br>– Franklin P. Jones", "If you have a dream, don’t just sit there. Gather courage to believe that you can succeed and leave no stone unturned to make it a reality.<br>― Roopleen", "I can accept failure, everyone fails at something. But I can't accept not trying.<br>- Michael Jordan"];
-                var day = new Date();
-                var daily = day.getDay();
-                if (daily == 0) {
-                    document.getElementById("phrases").innerHTML = keyquotes[0];
-                }
-                if (daily == 1) {
-                    document.getElementById("phrases").innerHTML = keyquotes[1];
-                }
-                if (daily == 2) {
-                    document.getElementById("phrases").innerHTML = keyquotes[2];
-                }
-                if (daily == 3) {
-                    document.getElementById("phrases").innerHTML = keyquotes[3];
-                }
-                if (daily == 4) {
-                    document.getElementById("phrases").innerHTML = keyquotes[4];
-                }
-                if (daily == 5) {
-                    document.getElementById("phrases").innerHTML = keyquotes[5];
-                }
-                if (daily == 6) {
-                    document.getElementById("phrases").innerHTML = keyquotes[6];
-                }
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 
-                function goto19() {
-                    window.open("../pages/2019JanMthWADP.html");
-                }
-                function showtwo(){
-     var wk1 = document.getElementById("Jul");
-	 var wk2 = document.getElementById("Aug");
-	 wk1.style.display = "none";
-	 wk2.style.display = "block";
+var keyquotes = ["Time is a great healer, but a poor beautician.<br>– Lucille S. Harper", "I am definitely going to take a course on time management… just as soon as I can work it into my schedule.<br>– Louis E. Boone", "Work expands so as to fill the time available for its completion.<br>–  Cyril Northcote Parkinson", "Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.<br>― Roy T. Bennett,", "The trouble with being punctual is that nobody’s there to appreciate it.<br>– Franklin P. Jones", "If you have a dream, don’t just sit there. Gather courage to believe that you can succeed and leave no stone unturned to make it a reality.<br>― Roopleen", "I can accept failure, everyone fails at something. But I can't accept not trying.<br>- Michael Jordan"];
+var day = new Date();
+var daily = day.getDay();
+if (daily == 0) {
+    document.getElementById("phrases").innerHTML = keyquotes[0];
+    }
+if (daily == 1) {
+    document.getElementById("phrases").innerHTML = keyquotes[1];
+}
+if (daily == 2) {
+     document.getElementById("phrases").innerHTML = keyquotes[2];
+}
+if (daily == 3) {
+    document.getElementById("phrases").innerHTML = keyquotes[3];
+}
+if (daily == 4) {
+     document.getElementById("phrases").innerHTML = keyquotes[4];
+}
+if (daily == 5) {
+    document.getElementById("phrases").innerHTML = keyquotes[5];
+}
+if (daily == 6) {
+    document.getElementById("phrases").innerHTML = keyquotes[6];
+}
+
+function goto19() {
+    window.open("../pages/2019JanMthWADP.html");
+
+}
+function showtwo(){
+     var Jul = document.getElementById("Jul");
+	 var Aug = document.getElementById("Aug");
+	 Jul.style.display = "none";
+	 Aug.style.display = "block";
 }
 
 function backfirst(){
-     var wk1 = document.getElementById("Jul");
-	 var wk2 = document.getElementById("Aug");
-	 wk1.style.display = "block";
-	 wk2.style.display = "none";
+     var Jul = document.getElementById("Jul");
+	 var Aug = document.getElementById("Aug");
+	 Jul.style.display = "block";
+	 Aug.style.display = "none";
 }
 
 function backtwo(){
-     var wk2 = document.getElementById("Aug");
-	 var wk3 = document.getElementById("Sep"); 
-	 wk3.style.display = "none";
-	 wk2.style.display = "block";
+     var Aug = document.getElementById("Aug");
+	 var Sep = document.getElementById("Sep"); 
+	 Sep.style.display = "none";
+	 Aug.style.display = "block";
 }
 
 function showthree(){
-     var wk2 = document.getElementById("Aug");
-	 var wk3 = document.getElementById("Sep");
-	 wk2.style.display = "none";
-	 wk3.style.display = "block";
+     var Aug = document.getElementById("Aug");
+	 var Sep = document.getElementById("Sep");
+	 Aug.style.display = "none";
+	 Sep.style.display = "block";
 }
 
 function showfour(){
-     var wk3 = document.getElementById("Sep");
-	 var wk4 = document.getElementById("Oct");
-	 wk3.style.display = "none";
-	 wk4.style.display = "block";
+     var Sep = document.getElementById("Sep");
+	 var Oct = document.getElementById("Oct");
+	 Sep.style.display = "none";
+	 Oct.style.display = "block";
 }
 
 function backthree(){
-    var wk4 = document.getElementById("Oct");
-	var wk3 = document.getElementById("Sep");
-	wk4.style.display = "none";
-	wk3.style.display = "block";
+    var Oct = document.getElementById("Oct");
+	var Sep = document.getElementById("Sep");
+	Oct.style.display = "none";
+	Sep.style.display = "block";
 }
 
 function showfive(){
-    var wk5 = document.getElementById("Nov");
-	var wk4 = document.getElementById("Oct");
-	wk4.style.display = "none";
-	wk5.style.display = "block";
+    var Nov = document.getElementById("Nov");
+	var Oct = document.getElementById("Oct");
+	Oct.style.display = "none";
+	Nov.style.display = "block";
 }
 
 function backfour(){
-    var wk4 = document.getElementById("Oct");
-	var wk5 = document.getElementById("Nov");
-	wk4.style.display = "block";
-	wk5.style.display = "none";
+    var Oct = document.getElementById("Oct");
+	var Nov = document.getElementById("Nov");
+	Oct.style.display = "block";
+	Nov.style.display = "none";
 }
-            </script>
+
+function showsix(){
+    var Nov = document.getElementById("Nov");
+    var Dec = document.getElementById("Dec");
+    Nov.style.display = "none";
+    Dec.style.display = "block";
+}
+
+function backfive(){
+    var Nov = document.getElementById("Nov");
+    var Dec = document.getElementById("Dec");
+    Nov.style.display = "block";
+    Dec.style.display = "none";
+}
+</script>
 
 </div>
 </body>

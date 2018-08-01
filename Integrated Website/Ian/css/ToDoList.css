@@ -1,0 +1,42 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.pagination{
+    font-size:1.4em;
+	text-align:center;
+}
+#lastwk,#nextwk{
+	font-weight:bold;
+	font-size:1.4em;
+}
+#Sun,#Mon,#Tue,#Wed,#Thu,#Fri{
+     margin-right:110px;
+	 margin-left:18px;
+	 text-decoration:none;
+	 font-weight:bold;
+	 display:inline-block;
+}
+#Sat{
+	margin-right:18px;
+	margin-left:18px;
+	text-decoration:none;
+	font-weight:bold;
+	display:inline-block;
+}
+h3{
+    text-align:center;
+}
+.month{
+    border:1px solid black;
+}
+#left{
+	width:80px;
+	height:80px;
+	float:left;
+}
+#right{
+	width:80px;
+	height:80px;
+	float:right;
+}
