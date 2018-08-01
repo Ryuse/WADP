@@ -1,3 +1,29 @@
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+#edaypic{
+	margin: auto;
+	margin-top: 12vh;
+	background-color: black;
+	width: 98.5%;
+	border: 1px solid gray;
+	box-shadow: 0px 0px 5px black;
+
+}
+
+#edaypics img {
+	vertical-align: middle; 
+	width: 1000px;
+	height: 600px;
+}
+
+canvas {
+	border: 1px solid #d3d3d3;
+	background-color: #f1f1f1;
+}
+
 *{
 	padding: 0px;
 	margin: 0px;
@@ -6,14 +32,24 @@
 	
 }
 
+p.close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: lightgray;
+	font-size: 30px;
+}
+
+p.close:hover{
+	cursor: pointer;
+}
 
 #bgcolor{
 	background-color: white;
 }
 
 #prompt{
-	background-color: rgb(50,205,50);
-	font-family: Georgia;
+	font-family: Verdana, sans-serif;
 	border: 1px solid black;
 	text-align: center;
 	color: black;
@@ -48,18 +84,6 @@ div p a{
 	border: solid 5px red;
 }
 
-#trivia{
-	background-color: rgb(52, 119, 4);
-	font-family: Verdana;
-}
-
-
-#edcaption{
-	background-color: rgb(52, 119, 4);
-	font-family: Verdana;
-	border: none;
-}
-
 span.number{
 	font-weight: bold;
 	font-style: italic;
@@ -80,7 +104,6 @@ div button{
     width: 100%;
     padding: 50px 0;
     text-align: center;
-    background-color: rgb(50,205,50);
     margin-top: 20px;
 	margin-bottom: 20px;
 	border: 1px solid black;
@@ -100,302 +123,22 @@ textarea {
 	margin-bottom: 10px;
 	padding: 10px;
 	border: 1px solid black;
-	background-color: green;
-	color: white;
-	font-family: Georgia;
+	font-family: Verdana, sans-serif;
 	border-radius: 10px;
 	cursor: pointer;
 }
 
-input {
+input[type=text] {
 	cursor: pointer;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/6 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-/* Navigation Bar */
-
-	#main{
-		width:100%;
-		height:10vh;
-		background-color: whitesmoke;
-		opacity: 0.8;
-		top:0px;
-		z-index:100;
-		overflow: hidden;
-		position: fixed;
-		
-		box-sizing: border-box;
-		border-bottom: 2px solid lightgray;
-		/* background-image: url("plant.jpg"); */
-		/* background-repeat: no-repeat; */
-	}
-
-	
-	#main a>img, .imglink{
-		float:left;
-		height: 10vh;
-		width: auto;
-		display:block;
-		padding:0px 10px;
-	}	
-
-	nav {
-	width: 100%;
-	height: 80px;
-	background-color: whitesmoke;
-	line-height:80px;
-
-	}
-
-	nav ul{
-	float: left;
-	margin-left:10px;
-	}
-
-	nav ul li{
-	list-style-type:none;
-	display: inline-block;
-	transition: 0.8s all;
-	
-
-	}
-
-	nav ul li:hover{
-	background-color:#3fac14;
-	
-
-	}
-
-	nav ul li a{
-	text-decoration:none;
-	color:rgb(0, 0, 0);
-	padding:30px;
-	margin: 0px;
-	}
-
-	/* nav ul li.current{
-		background-color:#3fac14;
-		
-	} */
-	.current{
-		background-color:#3fac14;
-		color:white;
-	}
-	#loginbutton{
-		width: 150px;
-		float: right;
-		/* background-color:#ffffff; */
-		text-align: center;
-		
-	}
-
-	#loginbutton:hover{
-		cursor: pointer;
-		
-	}
-
-	#loginbutton > p{
-		font-size: 1.2em;
-
-	}
-
-	#loginbutton > p:hover{
-		color:rgb(255, 255, 255);
-	}
-
-	/*Custom scrollbar(Only works for chrome)*/
-
-	/* width */
-	::-webkit-scrollbar {
-	width: 20px;
-	}
-	
-	/* Track */
-	::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px grey;
-	border-radius: 10px;
-	}
-	
-	/* Handle */
-	::-webkit-scrollbar-thumb {
-	background: green;
-	border-radius: 10px;
-	}
-	
-	/* Handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-	background: #017013;
-	}
-
-#logincontainer{
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	opacity: 0.9;
-	background-color:black;
-	display: none;
-	z-index: 1000;
-
-
-}
-
-#login{
-	background-color:white;
-	opacity: 1;
-	border-radius: 1%;
-	display: none;
-	
-	z-index: 1001;
-	
-	width: 30%;
-	height: 50vh;
-
-	position: fixed;
-	top:15%;
-	left:50%;
-	transform: translateX(-50%);
-
-	text-align: center;
-	padding: 20px;
-	padding-top: 130px;
-
-
-
-
-}
-
-input{
-	width: 100%;
-	height: 50px;
-	margin: 10px 0px;
-	font-size: 1.5em;
-
-}
-
-input[type="button"]{
-	margin: 20px 0px;
-	background-color:whitesmoke;
-	border: 2px solid lightgray;
-	color: rgb(146, 146, 146);
-
-}
-
-#login form a{
-	text-decoration: none;
-}
-
-input[type="button"]:hover{
-	border-color: greenyellow;
-	color:greenyellow;
-	background-color:white;
-	cursor: pointer;
-	
-}
-
-
-
-#login hr{
-	margin: 0px auto;
-}
-p.close{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	color: lightgray;
-	font-size: 30px;
-}
-
-p.close:hover{
+input[type=submit] {
 	cursor: pointer;
 }
+
+#textbox {
+	margin-left: 50px;
+	width: 800px;
+}
+
+
