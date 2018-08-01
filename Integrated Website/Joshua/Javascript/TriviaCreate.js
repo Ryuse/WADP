@@ -21,7 +21,7 @@ function dropdown() {
   }
   //Create input textfield
   function creating() {
-    var parent = document.getElementById("creating");
+    var parent = document.getElementById("newquiz");
     var create = document.createElement("input");
     setAttributes(create, { "class": "form-control input-md questions", "type": "text", "name": "question", "placeholder": "Type your question here..." });
     parent.appendChild(create);
@@ -29,9 +29,9 @@ function dropdown() {
   //Create 4 Radio buttons and textfields for user to set options
   function setoption() {
     for (i = 0; i < 4; i++) {
-      var parent = document.getElementById("creating");
+      var parent = document.getElementById("newquiz");
       var radio = document.createElement("input");
-      setAttributes(radio, { "class": "form-control pull-left", "type": "radio", "name": "options", "style": "width: 1.2em; height: 1.2em;" });
+      setAttributes(radio, { "class": "form-control pull-left radio", "type": "radio", "name": "options", "style": "width: 1.2em; height: 1.2em;" });
       parent.appendChild(radio);
       var create = document.createElement("input");
       setAttributes(create, { "class": "form-control input-md options", "type": "text", "name": "setoption", "placeholder":"Type your options here..."});
@@ -40,13 +40,17 @@ function dropdown() {
   };
   //Creates correct amount of inputs for user to enter questions and options
   function clickcounter() {
+    var parent2 = document.getElementById("newquiz");
+    while (parent2.firstChild) {
+        parent2.removeChild(parent2.firstChild);
+    }
     var questions = document.getElementById("qnnum").value;
     var clicks = 0;
     for (clicks = 0; clicks < questions; clicks++) {
-      if (clicks<=20) {
-        var create = document.createElement("p");
-        create.innerText = `Question ${clicks+1}:`;
-        document.getElementById("creating").appendChild(create);
+      if (clicks<=10) {
+        var createtext = document.createElement("p");
+        createtext.innerText = `Question ${clicks+1}:`;
+        parent2.appendChild(createtext);
         creating();
         setoption();
       }
