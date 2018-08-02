@@ -16,11 +16,17 @@
         <a href="Quizlist.html">
             <button class="btn btn-md btn-success">Back</button>
         </a>
+        <a href="#">
+            <button class="btn btn-md btn-success pull-right" onclick="favcount()">Favourite Quiz</button>
+        </a>
         <div class="progress">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
             </div>
         </div>
-        
+        <div class="well">
+            <h3 id="nameholder"></h3>
+            <!-- localstorage questions and options and correct answers go here after submitting -->
+        </div>
     </div>
     <!-- <script src="login.js"></script> -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

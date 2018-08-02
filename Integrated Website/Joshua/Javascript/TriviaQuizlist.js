@@ -3,10 +3,7 @@ function setAttributes(el, attrs) {
       el.setAttribute(key, attrs[key]);
     }
   }
-function openNew(){
-    var newwindow = window.open("");
-    newwindow.document.write("")
-}
+//when user click a quiz the playcount will increase by 1
 var playcount = 0;
 function playcount(){
   playcount+=1;

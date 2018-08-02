@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <title>Createquiz</title>
     <link href="../Images/logo.png" rel="icon">
-    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../Css/TriviaCreate.css" rel="stylesheet" type="text/css">
@@ -31,6 +30,10 @@
         <form id="creating" class="form-group" name="asknum">
             How many questions are there in your quiz?
             <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
+            Name of quiz:
+            <input class="form-control input-sm" type="text" name="quizname" id="quizname" value="" required>
+            Image for quiz:
+            <input class="form-control input-sm" type="url" name="imglink" id="getimg" value="" required>
         </form>
         <div class="dropdown">
             <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions

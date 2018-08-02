@@ -35,6 +35,3 @@ function setAttributes(el, attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
-// function start() {
-//   document.getElementById("creating").reset();
-// };

@@ -65,8 +65,10 @@ function clickcounter() {
 //Checks if user has filled up required field before proceeding to execute clickcounter() //Works
 function checkval() {
     var questions = document.getElementById("qnnum").value;
-    if (questions == "") {
-        alert("Please fill up the field with the desired number of questions");
+    var quizname = document.getElementById("quizname").value;
+    var imglink = document.getElementById("getimg").value;
+    if (questions == ""&&quizname == ""&&imglink == "") {
+        alert("Please fill up the field(s) with the required information.");
     }
     else {
         clickcounter();
@@ -119,7 +121,7 @@ function storequiz() {
         var storeall = [];
         var questions = {};
         for (i = 0; i < document.getElementById("qnnum").value; i++) {
-            for (i = 0; i < 4; i++) {
+            for (q = 0; q < 4; q++) {
                 var question = document.getElementById("question" + i).value;
                 questions.question = question;
                 var answers = {
@@ -128,13 +130,21 @@ function storequiz() {
                     option3: "",
                     option4: "",
                 }
+                console.log(answers)
+                var stuff = "option" + (q+1)
+                console.log(stuff)
+                //Still cannot figure out how to do this
+                //Save all questions, options and set options into localstorage
+                answers.stuff = document.getElementById("options"+i+q).value
+                console.log(answers.option[q])
             }
         }
-        answers.option
+        
         storeall.push(answers);
         localStorage.setItem("quiz", JSON.stringify(storeall));
     }
 }
+//supposed to put selected dropdown content into input field
 function store(mylink) {
     var option = mylink.innerText;
     document.getElementsByClassName("questions").value = option;
