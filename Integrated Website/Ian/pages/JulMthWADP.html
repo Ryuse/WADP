@@ -21,14 +21,15 @@
     <style>
         #keys {
             margin-bottom: 18px;
-            margin-left: 38px;
+            margin-left: 60px;
             border: 2px solid black;
             display: inline-block;
+            max-width:370px;
         }
 
         #phrases {
             font-weight: bold;
-            font-size: 25px;
+            font-size: 30px;
             text-shadow: 1px 1px 4px #0000ff;
         }
 
@@ -53,7 +54,12 @@
             margin-top: 16px;
         }
 
-        #displayDate {
+        #displayDate,
+        #dispDate,
+        #now,
+        #currentDate,
+        #date,
+        #today {
             font-family: Cooper Black;
         }
 
@@ -64,12 +70,12 @@
             margin-top: 40px;
         }
 
-        #left{
-            float:left;
+        #left {
+            float: left;
         }
 
-        #right{
-            float:right;
+        #right {
+            float: right;
         }
     </style>
 
@@ -127,24 +133,27 @@
 
     <div>
         <!-- famous quotes div -->
-        <div id="keys">
-            <h4>KeyQuote/Phrase of the Day!</h4>
-            <p id="phrases" class="text-danger"></p>
-        </div>
-
-        <div class="pagination" style="display:inline-block">
-            <div>Here are some videos on saving the environment and how to manage time well</div>
-            <div id="video1">
-                <button id="left" class="btn btn-warning" onclick="">&laquo;</button>
-                <button id="right" class="btn btn-warning" onclick="video2()">&raquo;</button>
-                <iframe width="300" height="215" src="https://www.youtube.com/embed/VUk6LXRZMMk" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
+        <div class="row">
+            <div id="keys" class="col-sm-4">
+                <h2>KeyQuote/Phrase of the Day!</h2>
+                <p id="phrases" class="text-danger"></p>
             </div>
-            <div id="video2" style="display: none">
+
+            <div class="col-sm-4" style="display:inline-block">
+                <div id="video1">
+                    <button id="left" class="btn btn-warning" onclick="">&laquo;</button>
+                    <button id="right" class="btn btn-warning" onclick="video2()">&raquo;</button>
+                    <!--<iframe width="300" height="215" src="https://www.youtube.com/embed/VUk6LXRZMMk" frameborder="0" allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>-->
+                </div>
+                <div class="col-sm-4">
+                    <div id="video2" style="display: none">
                     <button id="left" class="btn btn-warning" onclick="video1()">&laquo;</button>
                     <button id="right" class="btn btn-warning" onclick="">&raquo;</button>
-                <iframe width="300" height="215" src="https://www.youtube.com/embed/Vkq_srFGW5I" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
+                    <!--<iframe width="300" height="215" src="https://www.youtube.com/embed/Vkq_srFGW5I" frameborder="0" allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1277,14 +1286,14 @@
                 Dec.style.display = "none";
             }
 
-            function video2(){
+            function video2() {
                 var v1 = document.getElementById("video1");
                 var v2 = document.getElementById("video2");
                 v1.style.display = "none";
                 v2.style.display = "block";
             }
 
-            function video1(){
+            function video1() {
                 var v1 = document.getElementById("video1");
                 var v2 = document.getElementById("video2");
                 v1.style.display = "block";
