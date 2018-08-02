@@ -21,7 +21,13 @@
         <a href="#editquiz">
             <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
         </a>
-        <button class="btn btn-md btn-success pull-right" id="start" onclick="start()">Create New</button>
+        <button class="btn btn-md btn-success pull-right" id="start" onclick="resetchild()">Create New</button>
+        <div class="panel">
+        <h3 id="instructions" class="text-center">Instructions</h3>
+        <p id="steps" class="text-center text-success">Click the create new button to reset everything. Enter how many questions you want your quiz to have and click the
+            set questions/options button. Enter your questions and options and mark which option is the answer by clicking
+            the corresponding radio button. Submit when done and you should be able to see your quiz in the quizlist!</p>
+        </div>
         <form id="creating" class="form-group" name="asknum">
             How many questions are there in your quiz?
             <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
@@ -31,9 +37,9 @@
                 <span class="caret"></span>
             </button>
             <div id="questions" class="dropdown-content shadow-sm bg-white rounded">
-                <a href="#createquiz" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
-                <a href="#createquiz" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
-                <a href="#createquiz" onclick="store(this)">Write down one way which you can help the environment.</a>
+                <a href="#questions" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
+                <a href="#questions" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
+                <a href="#questions" onclick="store(this)">Write down one way which you can help the environment.</a>
             </div>
         </div>
         <button class="btn btn-success btn-md pull-left" onclick="checkval()">Set Questions and options</button>

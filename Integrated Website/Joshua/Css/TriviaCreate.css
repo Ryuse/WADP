@@ -35,7 +35,7 @@
 #creating #qnnum{
     width: 20%;
 }
-#creating .form-control{
+.options, .questions{
     width:70%;
 }
 #edit{
@@ -44,4 +44,11 @@
 }
 .panel{
     border: 1px solid black;
+}
+#instructions{
+    text-decoration: underline;
+    font-style: italic;
+}
+#steps{
+    font-size: 17px;
 }
