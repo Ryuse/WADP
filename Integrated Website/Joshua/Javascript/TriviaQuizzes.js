@@ -8,6 +8,13 @@ $(window).load(function(){
     });
   
   });
+  score=0;
+  wrong=0;
 var submit = function(){
-    
+    var comp = localStorage.getItem("quiz",JSON.parse(storeall));
+}
+var compare = function(){
+    if(comp){
+
+    }
 }

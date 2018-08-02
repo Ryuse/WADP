@@ -7,3 +7,8 @@ function openNew(){
     var newwindow = window.open("");
     newwindow.document.write("")
 }
+var playcount = 0;
+function playcount(){
+  playcount+=1;
+  document.querySelector(".playcount");
+}
