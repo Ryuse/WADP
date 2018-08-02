@@ -74,7 +74,7 @@ div p a{
 #gametitle {
 	text-align: center;
 	font-family: Verdana, sans-serif;
-	color: orange;
+	color: rgb(236, 113, 12);
 }	
 
 #difficulty li{
@@ -231,7 +231,7 @@ div p a{
 	font-family: Verdana, sans-serif;
 }
 
-#mycountdown {
+.mycountdown {
 	color: red;
 	padding: 10px;
 	font-weight: bold;
@@ -299,23 +299,30 @@ div p a{
 	top: 10px;
 }
 
+/* Gold */
+.row:nth-child(2) {background: gold;}
+/* Silver */
+.row:nth-child(3) {background: #c0c0c0;}
+/* Bronze */
+.row:nth-child(4) {background: #cd7f32;}
+/* White */
+.row:nth-child(5) {background: white;}
+.row:nth-child(6) {background: white;}
+
 .name {
 	position: relative;
 	display: inline-block;
 	width: 50%;
 	line-height: 45px;
+	padding-left: 50px;
 }
 
 .score {
 	position: relative;
 	display: inline-block;
-	width: 25%;
-}
-
-.difficulty {
-	position: relative;
-	display: inline-block;
-	width: 25%;
+	width: 50%;
+	line-height: 45px;
+	padding-left: 10px;
 }
 
 .nameheader {
@@ -329,14 +336,7 @@ div p a{
 	font-weight: bold;
 	font-family: Verdana, sans-serif;
 	display: inline-block;
-	padding-left: 120px;
+	padding-left: 160px;
 	padding-top: 5px;
 }
 
-.difficultyheader {
-	font-weight: bold;
-	font-family: Verdana, sans-serif;
-	display: inline-block;
-	padding-left: 100px;
-	padding-top: 5px;
-}

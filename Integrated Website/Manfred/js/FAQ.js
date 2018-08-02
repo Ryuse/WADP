@@ -88,12 +88,19 @@ function myFunction10() {
     }
 }
 
-function confirm1() {
-    var x = confirm("Are you sure you want to submit?");
-	if (x == true) {
-	    alert("You have successfully submitted your enquiry! Thank you!");
-	}
-	else {
-	    alert("Okay, take your time.");
-	}
+function confirm1(textbox) {
+    var x = document.getElementById("textbox").value;
+    if (!x.match(/\S/)) {
+        alert("Please enter a question before submitting.");
+        return false;
+    } else {
+        var y = confirm("Are you sure you want to submit?");
+	    if (y == true) {
+	        alert("You have successfully submitted your enquiry! Thank you!");
+	    }
+	    else {
+	        alert("Okay, take your time.");
+        }
+        return true;
+    }
 }

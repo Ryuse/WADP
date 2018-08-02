@@ -4,6 +4,9 @@ var myScore;
 var myHighScore;
 var mySound;
 var myBackground;
+var currentscore;
+var allScores = [0, 0, 0, 0, 0];
+var counter = 0;
 
 //Display menu screen after loading the page or playing the game
 
@@ -19,15 +22,20 @@ function displayGame() {
 //Return to menu screen from leaderboard screen
 
 function returnMainMenu () {
-    document.getElementById("leaderboard").style.display = "none"
-	document.getElementById("minigame").style.display = "block"
+    document.getElementById("leaderboard").style.display = "none";
+	document.getElementById("minigame").style.display = "block";
 }
 
 //Go to leaderboard screen from menu screen
 
 function GameLeaderboard() {
-	document.getElementById("minigame").style.display = "none"
-	document.getElementById("leaderboard").style.display = "block"
+	document.getElementById("minigame").style.display = "none";
+    document.getElementById("leaderboard").style.display = "block";
+    document.getElementById("score1").innerHTML = localStorage.getItem("leaderboard1");
+    document.getElementById("score2").innerHTML = localStorage.getItem("leaderboard2");
+    document.getElementById("score3").innerHTML = localStorage.getItem("leaderboard3");
+    document.getElementById("score4").innerHTML = localStorage.getItem("leaderboard4");
+    document.getElementById("score5").innerHTML = localStorage.getItem("leaderboard5");
 }
 
 //Start game with easy settings (speed is slow)
@@ -40,7 +48,20 @@ function startGameEasy() {
 	myEnd = new component("30px", "Consolas", "black", 400, 40, "text");
     mySound = new sound("../images/Fire2.mp3");
     myGameArea.start();
-	myGameArea.interval = setInterval(updateGameArea, 7)
+    myGameArea.interval = setInterval(updateGameArea, 7);
+}
+
+function CountDownEasy() {
+    var myTimer = setInterval(myClock, 1000);
+    var c = 5;
+
+    function myClock() {
+      document.getElementById("easycountdown").innerHTML = --c;
+      if (c == 0) {
+        clearInterval(myTimer);
+        document.getElementById("easycountdown").innerHTML = 5;
+      }
+    }
 }
 
 //Display 3-second intermission when easy difficulty is selected
@@ -53,7 +74,7 @@ function GameInstructionsEasy() {
     } else {
         x.style.display = "block";
     }
-	setTimeout(startGameEasy, 3000);
+	setTimeout(startGameEasy, 5000);
 }
 
 //Start game with medium settings (speed is normal)
@@ -66,8 +87,22 @@ function startGameMedium() {
 	myEnd = new component("30px", "Consolas", "black", 400, 40, "text");
     mySound = new sound("../images/Fire2.mp3");
     myGameArea.start();
-	myGameArea.interval = setInterval(updateGameArea, 5)
+    myGameArea.interval = setInterval(updateGameArea, 5);
 }
+
+function CountDownMedium() {
+    var myTimer = setInterval(myClock, 1000);
+    var c = 5;
+
+    function myClock() {
+      document.getElementById("mediumcountdown").innerHTML = --c;
+      if (c == 0) {
+          clearInterval(myTimer);
+          document.getElementById("mediumcountdown").innerHTML = 5;
+      }
+    }
+}
+
 
 //Display 3-second intermission when medium difficulty is selected
 
@@ -79,7 +114,7 @@ function GameInstructionsMedium() {
     } else {
         x.style.display = "block";
     }
-	setTimeout(startGameMedium, 3000);
+	setTimeout(startGameMedium, 5000);
 }
 
 //Start game with hard settings (speed is fast)
@@ -92,10 +127,23 @@ function startGameHard() {
 	myEnd = new component("30px", "Consolas", "black", 400, 40, "text");
     mySound = new sound("../images/Fire2.mp3");
     myGameArea.start();
-	myGameArea.interval = setInterval(updateGameArea, 1)
+    myGameArea.interval = setInterval(updateGameArea, 1);
 }
 
 //Display 3-second intermission when hard difficulty is selected
+
+function CountDownHard() {
+    var myTimer = setInterval(myClock, 1000);
+    var c = 5;
+
+    function myClock() {
+      document.getElementById("hardcountdown").innerHTML = --c;
+      if (c == 0) {
+        clearInterval(myTimer);
+        document.getElementById("hardcountdown").innerHTML = 5;
+      }
+    }
+}
 
 function GameInstructionsHard() {
 	document.getElementById("minigame").style.display = "none";
@@ -105,7 +153,7 @@ function GameInstructionsHard() {
     } else {
         x.style.display = "block";
     }
-	setTimeout(startGameHard, 3000);
+	setTimeout(startGameHard, 5000);
 }
 
 //Variable of game in canvas
@@ -182,6 +230,20 @@ function component(width, height, color, x, y, type) {
                 this.x = 0;
             }
         }
+        this.hitBottom();
+        this.hitTop();
+    }
+    this.hitBottom = function() {
+        var rockbottom = myGameArea.canvas.height - myGamePiece.height;
+        if (myGamePiece.y > rockbottom) {
+            myGamePiece.y = rockbottom;
+        }
+    }
+    this.hitTop = function() {
+        var rocktop = 0;
+        if (myGamePiece.y < rocktop) {
+            myGamePiece.y = rocktop;
+        }
     }
     this.crashWith = function(otherobj) {
         var myleft = this.x;
@@ -208,9 +270,11 @@ function gameOver() {
 	if (a == true) {
 	    b.parentElement.removeChild(b);
 		myObstacles = [];
-		mySound.stop();
-		displayGame(); 
+        mySound.stop();
+        highscore();
+        displayGame(); 
 	} else {
+        alert("Goodbye!");
 		window.close();
 	}
 }
@@ -221,7 +285,8 @@ function updateGameArea() {
         if (myGamePiece.crashWith(myObstacles[i])) {
             mySound.play();
 			myGameArea.stop();
-			setTimeout(gameOver, 1000);
+            setTimeout(gameOver, 1000);
+            counter = counter + 1;
 		}
 	}
     myGameArea.clear();
@@ -248,7 +313,7 @@ function updateGameArea() {
         myObstacles[i].newPos();
         myObstacles[i].update();
     }
-    var currentscore = myGameArea.frameNo;
+    currentscore = myGameArea.frameNo;
     myScore.text="SCORE: " + currentscore; //Display current score
 	myEnd.text="RUN!"; 
     myScore.update();
@@ -278,3 +343,41 @@ function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
 }
+
+function highscore() {
+    if(typeof(Storage) !== "undefined") {
+        console.log(currentscore)
+        localStorage.setItem("score", currentscore);
+        if (counter == 1) {
+        document.getElementById("score1").innerHTML = localStorage.getItem("score");
+        } else if (counter == 2) {
+        document.getElementById("score2").innerHTML = localStorage.getItem("score");
+        } else if (counter == 3) {
+        document.getElementById("score3").innerHTML = localStorage.getItem("score");
+        } else if (counter == 4) {
+        document.getElementById("score4").innerHTML = localStorage.getItem("score");
+        } else if (counter == 5) {
+        document.getElementById("score5").innerHTML = localStorage.getItem("score");
+        }
+        SortLocalStorage();
+    } 
+}
+
+function SortLocalStorage(){
+    allScores.push(currentscore)
+    allScores.sort(function(a, b){return b-a});
+        for (i=0;i<allScores.length;i++){
+            if(allScores.length > 5) {
+                allScores.sort(function(a, b){return b-a});
+                allScores.pop(function(a, b){return a-b});
+                console.log(allScores);
+                localStorage.setItem("leaderboard1", JSON.stringify(allScores[0]));
+                localStorage.setItem("leaderboard2", JSON.stringify(allScores[1]));
+                localStorage.setItem("leaderboard3", JSON.stringify(allScores[2]));
+                localStorage.setItem("leaderboard4", JSON.stringify(allScores[3]));
+                localStorage.setItem("leaderboard5", JSON.stringify(allScores[4]));
+                localStorage.setItem("leaderboardsave", allScores);
+                JSON.stringify(allScores);
+            }
+        }
+ }

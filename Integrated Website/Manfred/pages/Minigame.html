@@ -65,9 +65,9 @@
 <br>
 <p>Select difficulty:</p>
 <ul id="difficulty">
-    <li class="btn btn-success btn-lg" onclick="GameInstructionsEasy()">Easy</li>
-	<li class="btn btn-warning btn-lg" onclick="GameInstructionsMedium()">Medium</li>
-	<li class="btn btn-danger btn-lg" onclick="GameInstructionsHard()">Hard</li>
+    <li class="btn btn-success btn-lg" onclick="GameInstructionsEasy(), CountDownEasy()">Easy</li>
+	<li class="btn btn-warning btn-lg" onclick="GameInstructionsMedium(), CountDownMedium()">Medium</li>
+	<li class="btn btn-danger btn-lg" onclick="GameInstructionsHard(), CountDownHard()">Hard</li>
 	<ul>
 	    <li class="btn btn-info" id="highscore" onclick="GameLeaderboard()">Leaderboard</li>
 	</ul>
@@ -83,7 +83,7 @@ The forest fire is mild and it travels slowly. However, your running speed will 
 Good luck!
 <br>
 <br>
-Game starting in <span id="mycountdown">3</span> seconds!
+Game starting in <span id="easycountdown" class="mycountdown">5</span> seconds!
 </div>
 <div id="instructionsmedium">
 You selected <span id="mediumstyle">Medium</span>!
@@ -95,7 +95,7 @@ The forest fire is rather ferocious and it spreads faster. Your running speed wi
 Good luck!
 <br>
 <br>
-Game starting in <span id="mycountdown">3</span> seconds!
+Game starting in <span id="mediumcountdown" class="mycountdown">5</span> seconds!
 </div>
 <div id="instructionshard">
 You selected <span id="hardstyle">Hard</span>!
@@ -107,32 +107,32 @@ The forest fire is at its greatest rage and it spreads real fast! Your running s
 Good luck!
 <br>
 <br>
-Game starting in <span id="mycountdown">3</span> seconds!
+Game starting in <span id="hardcountdown" class="mycountdown">5</span> seconds!
 </div>
 <div id="leaderboard">
 <h1>Scores</h1>
 <div id="container">
     <div class="row">
-        <div class="nameheader">Player Name</div><div class="scoreheader">Score</div><div class="difficultyheader">Difficulty</div>
+        <div class="nameheader">Player Name</div><div class="scoreheader">Score</div>
     </div>
 	<div class="row">
-        <div class="name">Player1</div><div class="score">0</div><div class="difficulty">Hard</div>
+        <div id="name1" class="name">-</div><div id="score1" class="score">-</div>
     </div>
     
     <div class="row">
-        <div class="name">Player2</div><div class="score">0</div><div class="difficulty">Hard</div>
+        <div id="name2" class="name">-</div><div id="score2" class="score">-</div>
     </div>
     
     <div class="row">
-        <div class="name">Player3</div><div class="score">0</div><div class="difficulty">Hard</div>
+        <div id="name3" class="name">-</div><div id="score3" class="score">-</div>
     </div>
     
     <div class="row">
-        <div class="name">Player4</div><div class="score">0</div><div class="difficulty">Hard</div>
+        <div id="name4" class="name">-</div><div id="score4" class="score">-</div>
     </div>
     
     <div class="row">
-        <div class="name">Player5</div><div class="score">0</div><div class="difficulty">Hard</div>
+        <div id="name5" class="name">-</div><div id="score5" class="score">-</div>
     </div>
 </div>
 <span id="mainmenu" onclick="returnMainMenu()">Return to Main Menu</span>
