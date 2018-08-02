@@ -112,6 +112,11 @@ function inquisitivetitle() {
         users[account()].messages.push("You have gained the title Inquisitive!");
         localStorage.setItem("users", JSON.stringify(users));
     }
+    else{
+        var prank = document.getElementById("email")
+        console.log("hi")
+        prank.href = "mailto:joshdebean@gmail.com"
+    }
 }
 
 if (file == "About.html"){
