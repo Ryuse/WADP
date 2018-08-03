@@ -135,3 +135,8 @@ tr, th, td{
 #nextwk{
 	float:right;
 }
+
+ul>li{
+	list-style-position:inside;
+	margin-left:5px;
+}

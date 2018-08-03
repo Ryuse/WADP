@@ -1,272 +1,846 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<title></title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="../css/ToDoList.css">
-<style>
-#previous{
-	margin-top:6px;
-	margin-right:590px;
-}
-#next{
-	margin-top:6px;
-	margin-left:590px;
-}
-#namemth, #AugMth{
-    border-bottom:1px solid black;
-}
-#ToDoList{
-	text-align:center;
-	border:2px solid black;
-}
-h2{
-	font-weight:bold;
-}
-</style>	
+	<link rel="stylesheet" type="text/css" href="../css/ToDoList.css">
+	<style>
+		#previous {
+			margin-top: 6px;
+			margin-right: 530px;
+		}
+
+		#next {
+			margin-top: 6px;
+			margin-left: 530px;
+		}
+
+		/*#Jul, #AugMth{
+            border-bottom:1px solid black;
+        }*/
+
+		#ToDoList {
+			text-align: center;
+			border: 2px solid black;
+		}
+
+		h2 {
+			font-weight: bold;
+		}
+
+		#heading {
+			text-align: center;
+		}
+	</style>
 </head>
+
 <body>
-<div>
-	<img id="left" src="../images/To-do_List.png">
-	<img id="right" src="../images/To-do_List.png">
-	<h3>To-Do-Lists Planner<br>Plan all of your to-do-lists over here</h3>
-</div>
-<div class="month">
+	<div>
+		<img id="left" src="../images/To-do_List.png">
+		<img id="right" src="../images/To-do_List.png">
+		<h3 id="heading">To-Do-Lists Planner
+			<br>Plan all of your to-do-lists over here</h3>
+	</div>
+	<div class="month">
 
-<div class="namemth" class="p-3 mb-2 bg-success">
-<h3>
-	<button id="previous" class="btn btn-info">&#10094;</button>July 2018
-	<button id="next" class="btn btn-info">&#10095;</button>
-</h3>
-</div>
+		<div id="Julmth">
+			<h3>
+				<button id="previous" class="btn btn-info" onclick="">&#10094;</button>July 2018
+				<button id="next" class="btn btn-info" onclick="Aug()">&#10095;</button>
+			</h3>
 
-<div class="pagination">
-<div id="week1">
-<a id="lastwk" onclick="" class="text-secondary">&laquo;</a>
-<a id="Sun" href="" class="text-danger">Sunday<br>1</a>
-<a id="Mon" href="">Monday<br>2</a>
-<a id="Tue" href="">Tuesday<br>3</a>
-<a id="Wed" href="">Wednesday<br>4</a>
-<a id="Thu" href="">Thursday<br>5</a>
-<a id="Fri" href="">Friday<br>6</a>
-<a id="Sat" href="">Saturday<br>7</a>
-<a id="nextwk" onclick="showtwo()" class="text-secondary">&raquo;</a>
+			<div class="pagination">
+				<div id="Jul">
+					<a id="Sun" href="" class="text-danger">Sunday
+						<br>1</a>
+					<a id="Mon" href="">Monday
+						<br>2</a>
+					<a id="Tue" href="">Tuesday
+						<br>3</a>
+					<a id="Wed" href="">Wednesday
+						<br>4</a>
+					<a id="Thu" href="">Thursday
+						<br>5</a>
+					<a id="Fri" href="">Friday
+						<br>6</a>
+					<a id="Sat" href="">Saturday
+						<br>7</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday
+						<br>8</a>
+					<a id="Mon" href="">Monday
+						<br>9</a>
+					<a id="Tue" href="">Tuesday
+						<br>10</a>
+					<a id="Wed" href="">Wednesday
+						<br>11</a>
+					<a id="Thu" href="">Thursday
+						<br>12</a>
+					<a id="Fri" href="">Friday
+						<br>13</a>
+					<a id="Sat" href="">Saturday
+						<br>14</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday
+						<br>15</a>
+					<a id="Mon" href="">Monday
+						<br>16</a>
+					<a id="Tue" href="">Tuesday
+						<br>17</a>
+					<a id="Wed" href="">Wednesday
+						<br>18</a>
+					<a id="Thu" href="">Thursday
+						<br>19</a>
+					<a id="Fri" href="">Friday
+						<br>20</a>
+					<a id="Sat" href="">Saturday
+						<br>21</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday
+						<br>22</a>
+					<a id="Mon" href="">Monday
+						<br>23</a>
+					<a id="Tue" href="">Tuesday
+						<br>24</a>
+					<a id="Wed" href="">Wednesday
+						<br>25</a>
+					<a id="Thu" href="">Thursday
+						<br>26</a>
+					<a id="Fri" href="">Friday
+						<br>27</a>
+					<a id="Sat" href="">Saturday
+						<br>28</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday
+						<br>29</a>
+					<a id="Mon" href="">Monday
+						<br>30</a>
+					<a id="Tue" href="">Tuesday
+						<br>31</a>
+					<a id="Wed" href="" class="text-secondary">Wednesday
+						<br>1</a>
+					<a id="Thu" href="" class="text-secondary">Thursday
+						<br>2</a>
+					<a id="Fri" href="" class="text-secondary">Friday
+						<br>3</a>
+					<a id="Sat" href="" class="text-secondary">Saturday
+						<br>4</a>
 
-<table id="ToDoList" class="table table-striped" border="1">
-		<tr>
-			<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
-		</tr>
-		<tr>
-			<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
-			<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
-			<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
-		</tr>
-		<tr>
-			<td><input id="time" type="text"><button type="button" onclick="post()" class="btn btn-primary">Save</button></td>
-			<td><input id="details" type="text"><button onclick="show()" class="btn btn-primary">Save</button></td>
-			<td><input id="remarks" type="text"></td>
-		</tr>
-	</table>
+					<table id="ToDoList" class="table table-striped" border="1">
+						<tr>
+							<th colspan="3">
+								<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+									<h2>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<h2>Time Slot</h2>
+								<br>Enter you time here(Example: 1pm - 2pm)</th>
+							<th>
+								<h2>Details of your to-do-lists</h2>
+								<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+							<th>
+								<h2>Remarks</h2>
+								<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+						</tr>
+						<tr>
+							<td>
+								<label>From(Start):</label>
+								<br>
+								<input id="timestart" type="text">
+								<label>To(End):</label>
+								<br>
+								<input id="timeend" type="text">
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="details" type="text"></textarea>
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="remarks" type="text"></textarea>
+							</td>
+						</tr>
+					</table>
 
-</div>
+					<button type="button" onclick="submit()" class="btn btn-danger">Submit your inputs</button>
+					<button type="button" onclick="backtoJulCal()" class="btn btn-danger">Back to the Calendar home page</button>
 
-<div id="week2" style="display:none">
-<a id="lastwk" onclick="backfirst()" class="text-secondary">&laquo;</a>
-<a id="Sun" href="" class="text-danger">Sunday<br>8</a>
-<a id="Mon" href="">Monday<br>9</a>
-<a id="Tue" href="">Tuesday<br>10</a>
-<a id="Wed" href="">Wednesday<br>11</a>
-<a id="Thu" href="">Thursday<br>12</a>
-<a id="Fri" href="">Friday<br>13</a>
-<a id="Sat" href="">Saturday<br>14</a>
-<a id="nextwk" onclick="showthree()" class="text-secondary">&raquo;</a>
+				</div>
+			</div>
+		</div>
+		<div id="Augmth" style="display:none">
+				<h3>
+					<button id="previous" class="btn btn-info" onclick="Jul()">&#10094;</button>August 2018
+					<button id="next" class="btn btn-info" onclick="Sep()">&#10095;</button>
+				</h3>
+	            <div class="pagination">
+					<div id="Aug">
+						<a id="Sun" class="text-secondary" href="">Sunday<br>29</a>
+						<a id="Mon" class="text-secondary" href="">Monday<br>30</a>
+						<a id="Tue" class="text-secondary" href="">Tuesday<br>31</a>
+						<a id="Wed" href="">Wednesday<br>1</a>
+						<a id="Thu" href="">Thursday<br>2</a>
+						<a id="Fri" href="">Friday<br>3</a>
+						<a id="Sat" href="">Saturday<br>4</a>
+						<br>
+						<a id="Sun" class="text-danger" href="">Sunday<br>5</a>
+						<a id="Mon" href="">Monday<br>6</a>
+						<a id="Tue" href="">Tuesday<br>7</a>
+						<a id="Wed" href="">Wednesday<br>8</a>
+						<a id="Thu" href="" class="text-danger" data-toggle="tooltip" title="National Day">Thursday<br>9</a>
+						<a id="Fri" href="">Friday<br>10</a>
+						<a id="Sat" href="">Saturday<br>11</a>
+						<br>
+						<a id="Sun" class="text-danger" href="">Sunday<br>12</a>
+						<a id="Mon" href="">Monday<br>13</a>
+						<a id="Tue" href="">Tuesday<br>14</a>
+						<a id="Wed" href="">Wednesday<br>15</a>
+						<a id="Thu" href="">Thursday<br>16</a>
+						<a id="Fri" href="">Friday<br>17</a>
+						<a id="Sat" href="">Saturday<br>18</a>
+						<br>
+						<a id="Sun" class="text-danger" href="">Sunday<br>19</a>
+						<a id="Mon" href="">Monday<br>20</a>
+						<a id="Tue" href="">Tuesday<br>21</a>
+						<a id="Wed" href="" data-toggle="tooltip" title="Hari Raya Haji" class="text-danger">Wednesday<br>22</a>
+						<a id="Thu" href="">Thursday<br>23</a>
+						<a id="Fri" href="">Friday<br>24</a>
+						<a id="Sat" href="">Saturday<br>25</a>
+						<br>
+						<a id="Sun" class="text-danger" href="">Sunday<br>26</a>
+						<a id="Mon" href="">Monday<br>27</a>
+						<a id="Tue" href="">Tuesday<br>28</a>
+						<a id="Wed" href="">Wednesday<br>29</a>
+						<a id="Thu" href="">Thursday<br>30</a>
+						<a id="Fri" href="">Friday<br>31</a>
+						<a id="Sat" class="text-secondary" href="">Saturday<br>1</a>
+						<table id="ToDoList" class="table table-striped" border="1">
+							<tr>
+								<th colspan="3">
+									<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+										<h2>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<h2>Time Slot</h2>
+									<br>Enter you time here(Example: 1pm - 2pm)</th>
+								<th>
+									<h2>Details of your to-do-lists</h2>
+									<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+								<th>
+									<h2>Remarks</h2>
+									<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+							</tr>
+							<tr>
+								<td>
+									<label>From(Start):</label>
+									<br>
+									<input id="timestarts" type="text">
+									<label>To(End):</label>
+									<br>
+									<input id="timeEnd" type="text">
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="detailed" type="text"></textarea>
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="remark" type="text"></textarea>
+								</td>
+							</tr>
+						</table>
+	
+						<button type="button" onclick="send()" class="btn btn-danger">Submit your inputs</button>
+						<button type="button" onclick="backhome()" class="btn btn-danger">Back to the Calendar home page</button>
+					</div>
+				</div>
+		</div>
+		<div id="Sepmth" style="display:none">
+			<h3>
+				<button id="previous" class="btn btn-info" onclick="backAug()">&#10094;</button>September 2018
+				<button id="next" class="btn btn-info" onclick="Oct()">&#10095;</button>
+			</h3>
+			<div class="pagination">
+				<div id="Sep">
+					<a id="Sun" class="text-secondary" href="">Sunday<br>26</a>
+					<a id="Mon" class="text-secondary" href="">Monday<br>27</a>
+					<a id="Tue" class="text-secondary" href="">Tuesday<br>28</a>
+					<a id="Wed" class="text-secondary" href="">Wednesday<br>29</a>
+					<a id="Thu" class="text-secondary" href="">Thursday<br>30</a>
+					<a id="Fri" class="text-secondary" href="">Friday<br>31</a>
+					<a id="Sat" href="">Saturday<br>1</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>2</a>
+					<a id="Mon" href="">Monday<br>3</a>
+					<a id="Tue" href="">Tuesday<br>4</a>
+					<a id="Wed" href="">Wednesday<br>5</a>
+					<a id="Thu" href="">Thursday<br>6</a>
+					<a id="Fri" href="">Friday<br>7</a>
+					<a id="Sat" href="">Saturday<br>8</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>9</a>
+					<a id="Mon" href="">Monday<br>10</a>
+					<a id="Tue" href="">Tuesday<br>11</a>
+					<a id="Wed" href="">Wednesday<br>12</a>
+					<a id="Thu" href="">Thursday<br>13</a>
+					<a id="Fri" href="">Friday<br>14</a>
+					<a id="Sat" href="">Saturday<br>15</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>16</a>
+					<a id="Mon" href="">Monday<br>17</a>
+					<a id="Tue" href="">Tuesday<br>18</a>
+					<a id="Wed" href="">Wednesday<br>19</a>
+					<a id="Thu" href="">Thursday<br>20</a>
+					<a id="Fri" href="">Friday<br>21</a>
+					<a id="Sat" href="">Saturday<br>22</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>23</a>
+					<a id="Mon" href="">Monday<br>24</a>
+					<a id="Tue" href="">Tuesday<br>25</a>
+					<a id="Wed" href="">Wednesday<br>26</a>
+					<a id="Thu" href="">Thursday<br>27</a>
+					<a id="Fri" href="">Friday<br>28</a>
+					<a id="Sat" href="">Saturday<br>29</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>30</a>
+					<a id="Mon" class="text-secondary" href="">Monday<br>1</a>
+					<a id="Tue" class="text-secondary" href="">Tuesday<br>2</a>
+					<a id="Wed" class="text-secondary" href="">Wednesday<br>3</a>
+					<a id="Thu" class="text-secondary" href="">Thursday<br>4</a>
+					<a id="Fri" class="text-secondary" href="">Friday<br>5</a>
+					<a id="Sat" class="text-secondary" href="">Saturday<br>6</a>
+					<table id="ToDoList" class="table table-striped" border="1">
+						<tr>
+							<th colspan="3">
+								<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+									<h2>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<h2>Time Slot</h2>
+								<br>Enter you time here(Example: 1pm - 2pm)</th>
+							<th>
+								<h2>Details of your to-do-lists</h2>
+								<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+							<th>
+								<h2>Remarks</h2>
+								<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+						</tr>
+						<tr>
+							<td>
+								<label>From(Start):</label>
+								<br>
+								<input id="timeStart" type="text">
+								<label>To(End):</label>
+								<br>
+								<input id="timeEnds" type="text">
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="list" type="text"></textarea>
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="comments" type="text"></textarea>
+							</td>
+						</tr>
+					</table>
 
-<table id="ToDoList" class="table table-striped" border="1">
-		<tr>
-			<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
-		</tr>
-		<tr>
-			<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
-			<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
-			<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
-		</tr>
-		<tr>
-			<td><input id="time" type="text"></td>
-			<td><input id="details" type="text"></td>
-			<td><input id="remarks" type="text"></td>
-		</tr>
-	</table>
+					<button type="button" onclick="post()" class="btn btn-danger">Submit your inputs</button>
+					<button type="button" onclick="goback()" class="btn btn-danger">Back to the Calendar home page</button>
+				</div>
+			</div>
+		</div>
+		<div id="Octmth" style="display:none">
+			<h3>
+				<button id="previous" class="btn btn-info" onclick="backSep()">&#10094;</button>October 2018
+				<button id="next" class="btn btn-info" onclick="Nov()">&#10095;</button>
+			</h3>
+			<div class="pagination">
+				<div id="Oct">
+					<a id="Sun" class="text-secondary" href="">Sunday<br>30</a>
+					<a id="Mon" href="">Monday<br>1</a>
+					<a id="Tue" href="">Tuesday<br>2</a>
+					<a id="Wed" href="">Wedesday<br>3</a>
+					<a id="Thu" href="">Thursday<br>4</a>
+					<a id="Fri" href="">Friday<br>5</a>
+					<a id="Sat" href="">Saturday<br>6</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>7</a>
+					<a id="Mon" href="">Monday<br>8</a>
+					<a id="Tue" href="">Tuesday<br>9</a>
+					<a id="Wed" href="">Wedesday<br>10</a>
+					<a id="Thu" href="">Thursday<br>11</a>
+					<a id="Fri" href="">Friday<br>12</a>
+					<a id="Sat" href="">Saturday<br>13</a>
+					<br>
+					<a id="Sun" class="text-danger">Sunday<br>14</a>
+					<a id="Mon" href="">Monday<br>15</a>
+					<a id="Tue" href="">Tuesday<br>16</a>
+					<a id="Wed" href="">Wedesday<br>17</a>
+					<a id="Thu" href="">Thursday<br>18</a>
+					<a id="Fri" href="">Friday<br>19</a>
+					<a id="Sat" href="">Saturday<br>20</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>21</a>
+					<a id="Mon" href="">Monday<br>22</a>
+					<a id="Tue" href="">Tuesday<br>23</a>
+					<a id="Wed" href="">Wedesday<br>24</a>
+					<a id="Thu" href="">Thursday<br>25</a>
+					<a id="Fri" href="">Friday<br>26</a>
+					<a id="Sat" href="">Saturday<br>27</a>
+					<br>
+					<a id="Sun" class="text-danger" href="">Sunday<br>28</a>
+					<a id="Mon" href="">Monday<br>29</a>
+					<a id="Tue" href="">Tuesday<br>30</a>
+					<a id="Wed" href="">Wedesday<br>31</a>
+					<a id="Thu" class="text-secondary" href="">Thursday<br>1</a>
+					<a id="Fri" class="text-secondary" href="">Friday<br>2</a>
+					<a id="Sat" class="text-secondary" href="">Saturday<br>3</a>
+					<table id="ToDoList" class="table table-striped" border="1">
+						<tr>
+							<th colspan="3">
+								<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+									<h2>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<h2>Time Slot</h2>
+								<br>Enter you time here(Example: 1pm - 2pm)</th>
+							<th>
+								<h2>Details of your to-do-lists</h2>
+								<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+							<th>
+								<h2>Remarks</h2>
+								<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+						</tr>
+						<tr>
+							<td>
+								<label>From(Start):</label>
+								<br>
+								<input id="timeGo" type="text">
+								<label>To(End):</label>
+								<br>
+								<input id="timeStop" type="text">
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="lists" type="text"></textarea>
+							</td>
+							<td>
+								<textarea rows="5" cols="36" id="comment" type="text"></textarea>
+							</td>
+						</tr>
+					</table>
 
-</div>
+					<button type="button" onclick="deliver()" class="btn btn-danger">Submit your inputs</button>
+					<button type="button" onclick="returnback()" class="btn btn-danger">Back to the Calendar home page</button>
+				</div>
+			</div>
+		</div>
+		<div id="Novmth" style="display:none">
+			<h3>
+				<button id="previous" class="btn btn-info" onclick="backOct()">&#10094;</button>November 2018
+				<button id="next" class="btn btn-info" onclick="Dec()">&#10095;</button>
+			</h3>
+			<div class="pagination">
+				<div id="Nov">
+					<a id="Sun" href="" class="text-secondary">Sunday<br>28</a>
+					<a id="Mon" href="" class="text-secondary">Monday<br>29</a>
+					<a id="Tue" href="" class="text-secondary">Tuesday<br>30</a>
+					<a id="Wed" href="" class="text-secondary">Wenesday<br>31</a>
+					<a id="Thu" href="">Thursday<br>1</a>
+					<a id="Fri" href="">Friday<br>2</a>
+					<a id="Sat" href="">Saturday<br>3</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>4</a>
+					<a id="Mon" href="">Monday<br>5</a>
+					<a id="Tue" href="" data-toggle="tooltip" title="Deepavali" class="text-danger">Tuesday<br>6</a>
+					<a id="Wed" href="">Wedneaday<br>7</a>
+					<a id="Thu" href="">Thursday<br>8</a>
+					<a id="Fri" href="">Friday<br>9</a>
+					<a id="Sat" href="">Saturday<br>10</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>11</a>
+					<a id="Mon" href="">Monday<br>12</a>
+					<a id="Tue" href="">Tuesday<br>13</a>
+					<a id="Wed" href="">Wedneaday<br>14</a>
+					<a id="Thu" href="">Thursday<br>15</a>
+					<a id="Fri" href="">Friday<br>16</a>
+					<a id="Sat" href="">Saturday<br>17</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>18</a>
+					<a id="Mon" href="">Monday<br>19</a>
+					<a id="Tue" href="">Tuesday<br>20</a>
+					<a id="Wed" href="">Wedneaday<br>21</a>
+					<a id="Thu" href="">Thursday<br>22</a>
+					<a id="Fri" href="">Friday<br>23</a>
+					<a id="Sat" href="">Saturday<br>24</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>25</a>
+					<a id="Mon" href="">Monday<br>26</a>
+					<a id="Tue" href="">Tuesday<br>27</a>
+					<a id="Wed" href="">Wedneaday<br>28</a>
+					<a id="Thu" href="">Thursday<br>29</a>
+					<a id="Fri" href="">Friday<br>30</a>
+					<a id="Sat" href="" class="text-secondary">Saturday<br>1</a>
+					<table id="ToDoList" class="table table-striped" border="1">
+							<tr>
+								<th colspan="3">
+									<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+										<h2>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<h2>Time Slot</h2>
+									<br>Enter you time here(Example: 1pm - 2pm)</th>
+								<th>
+									<h2>Details of your to-do-lists</h2>
+									<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+								<th>
+									<h2>Remarks</h2>
+									<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+							</tr>
+							<tr>
+								<td>
+									<label>From(Start):</label>
+									<br>
+									<input id="timeGoes" type="text">
+									<label>To(End):</label>
+									<br>
+									<input id="timeStops" type="text">
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="todo" type="text"></textarea>
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="important" type="text"></textarea>
+								</td>
+							</tr>
+						</table>
+						<button type="button" onclick="delivered()" class="btn btn-danger">Submit your inputs</button>
+					    <button type="button" onclick="backCal()" class="btn btn-danger">Back to the Calendar home page</button>
+				</div>
+			</div>
+		</div>
+		<div id="Decmth" style="display:none">
+			<h3>
+				<button id="previous" class="btn btn-info" onclick="backNov()">&#10094;</button>December 2018
+				<button id="next" class="btn btn-info" onclick="">&#10095;</button>
+			</h3>
+			<div class="pagination">
+				<div id="Dec">
+					<a id="Sun" href="" class="text-secondary">Sunday<br>25</a>
+					<a id="Mon" href="" class="text-secondary">Monday<br>26</a>
+					<a id="Tue" href="" class="text-secondary">Tuesday<br>27</a>
+					<a id="Wed" href="" class="text-secondary">Wenesday<br>28</a>
+					<a id="Thu" href="" class="text-secondary">Thursday<br>29</a>
+					<a id="Fri" href="" class="text-secondary">Friday<br>30</a>
+					<a id="Sat" href="">Saturday<br>1</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>2</a>
+					<a id="Mon" href="">Monday<br>3</a>
+					<a id="Tue" href="">Tuesday<br>4</a>
+					<a id="Wed" href="">Wedneaday<br>5</a>
+					<a id="Thu" href="">Thursday<br>6</a>
+					<a id="Fri" href="">Friday<br>7</a>
+					<a id="Sat" href="">Saturday<br>8</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>9</a>
+					<a id="Mon" href="">Monday<br>10</a>
+					<a id="Tue" href="">Tuesday<br>11</a>
+					<a id="Wed" href="">Wedneaday<br>12</a>
+					<a id="Thu" href="">Thursday<br>13</a>
+					<a id="Fri" href="">Friday<br>14</a>
+					<a id="Sat" href="">Saturday<br>15</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>16</a>
+					<a id="Mon" href="">Monday<br>17</a>
+					<a id="Tue" href="">Tuesday<br>18</a>
+					<a id="Wed" href="">Wedneaday<br>19</a>
+					<a id="Thu" href="">Thursday<br>20</a>
+					<a id="Fri" href="">Friday<br>21</a>
+					<a id="Sat" href="">Saturday<br>22</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>23</a>
+					<a id="Mon" href="">Monday<br>24</a>
+					<a id="Tue" href="" data-toggle="tooltip" title="Christmas Day" class="text-danger">Tuesday<br>25</a>
+					<a id="Wed" href="">Wedneaday<br>26</a>
+					<a id="Thu" href="">Thursday<br>27</a>
+					<a id="Fri" href="">Friday<br>28</a>
+					<a id="Sat" href="">Saturday<br>29</a>
+					<br>
+					<a id="Sun" href="" class="text-danger">Sunday<br>30</a>
+					<a id="Mon" href="">Monday<br>31</a>
+					<a id="Tue" href="" class="text-secondary" data-toggle="tooltip" title="New Year Day">Tuesday<br>1</a>
+					<a id="Wed" href="" class="text-secondary">Wedneaday<br>2</a>
+					<a id="Thu" href="" class="text-secondary">Thursday<br>3</a>
+					<a id="Fri" href="" class="text-secondary">Friday<br>4</a>
+					<a id="Sat" href="" class="text-secondary">Saturday<br>5</a>
+					<table id="ToDoList" class="table table-striped" border="1">
+							<tr>
+								<th colspan="3">
+									<h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list
+										<h2>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<h2>Time Slot</h2>
+									<br>Enter you time here(Example: 1pm - 2pm)</th>
+								<th>
+									<h2>Details of your to-do-lists</h2>
+									<br>Enter your to-do-lists here(Example: Do WADP Practical 4 worksheet)</th>
+								<th>
+									<h2>Remarks</h2>
+									<br>Enter any other Important notes to take note(Example: For revision of examination)</th>
+							</tr>
+							<tr>
+								<td>
+									<label>From(Start):</label>
+									<br>
+									<input id="timego" type="text">
+									<label>To(End):</label>
+									<br>
+									<input id="timestop" type="text">
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="todolist" type="text"></textarea>
+								</td>
+								<td>
+									<textarea rows="5" cols="36" id="importantremarks" type="text"></textarea>
+								</td>
+							</tr>
+						</table>
+						<button type="button" onclick="stored()" class="btn btn-danger">Submit your inputs</button>
+					    <button type="button" onclick="backtoCal()" class="btn btn-danger">Back to the Calendar home page</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div id="week3" style="display:none">
-<a id="lastwk" onclick="backtwo()" class="text-secondary">&laquo;</a>
-<a id="Sun" href="" class="text-danger">Sunday<br>15</a>
-<a id="Mon" href="">Monday<br>16</a>
-<a id="Tue" href="">Tuesday<br>17</a>
-<a id="Wed" href="">Wednesday<br>18</a>
-<a id="Thu" href="">Thursday<br>19</a>
-<a id="Fri" href="">Friday<br>20</a>
-<a id="Sat" href="">Saturday<br>21</a>
-<a id="nextwk" onclick="showfour()" class="text-secondary">&raquo;</a>
+			<script>
 
-<table id="ToDoList" class="table table-striped" border="1">
-		<tr>
-			<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
-		</tr>
-		<tr>
-			<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
-			<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
-			<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
-		</tr>
-		<tr>
-			<td><input id="time" type="text"></td>
-			<td><input id="details" type="text"></td>
-			<td><input id="remarks" type="text"></td>
-		</tr>
-	</table>
+				//Retrieving data from local storage
 
-</div>
+				var users = JSON.parse(localStorage.getItem("users"));
+				var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 
-<div id="week4" style="display:none">
-<a id="lastwk" onclick="backthree()" class="text-secondary">&laquo;</a>
-<a id="Sun" href="" class="text-danger">Sunday<br>22</a>
-<a id="Mon" href="">Monday<br>23</a>
-<a id="Tue" href="">Tuesday<br>24</a>
-<a id="Wed" href="">Wednesday<br>25</a>
-<a id="Thu" href="">Thursday<br>26</a>
-<a id="Fri" href="">Friday<br>27</a>
-<a id="Sat" href="">Saturday<br>28</a>
-<a id="nextwk" onclick="showfive()" class="text-secondary">&raquo;</a>
+				var planlist = users[account()].plans
+				function account() {
+					for (i = 0; i < users.length; i++) {
+						if (currentuser == users[i].username)
+							return i
+					}
+				}
 
-<table id="ToDoList" class="table table-striped" border="1">
-		<tr>
-			<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
-		</tr>
-		<tr>
-			<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
-			<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
-			<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
-		</tr>
-		<tr>
-			<td><input id="time" type="text"></td>
-			<td><input id="details" type="text"></td>
-			<td><input id="remarks" type="text"></td>
-		</tr>
-	</table>
+				if (users[account()].plans == undefined || users[account()].plans == null) {
+					users[account()].plans = []
+					localStorage.setItem("users", JSON.stringify(users));
 
-</div>
+				}
 
-<div id="week5" style="display:none">
-<a id="lastwk" onclick="backfour()" class="text-secondary">&laquo;</a>
-<a id="Sun" href="" class="text-danger">Sunday<br>29</a>
-<a id="Mon" href="">Monday<br>30</a>
-<a id="Tue" href="">Tuesday<br>31</a>
-<a id="Wed" href="" class="text-secondary">Wednesday<br>1</a>
-<a id="Thu" href="" class="text-secondary">Thursday<br>2</a>
-<a id="Fri" href="" class="text-secondary">Friday<br>3</a>
-<a id="Sat" href="" class="text-secondary">Saturday<br>4</a>
-<a id="nextwk" onclick="showAug()" class="text-secondary">&raquo;</a>
+				function submit() {
+					var yes = confirm("Are you sure you want to confirm your to-do-list inputs?");
 
-<table id="ToDoList" class="table table-striped" border="1">
-	<tr>
-		<th colspan="3"><h2>Set your To-Do-Lists here and click on the instructions button to lern how to use the to-do-list<h2></th>
-	</tr>
-	<tr>
-		<th><h2>Time Slot</h2><br>Enter you time here(1pm - 2pm)</th>
-		<th><h2>Details of your to-do-lists</h2><br>Enter your to-do-lists here(Do WADP Practical 4 worksheet)</th>
-		<th><h2>Remarks</h2><br>Enter any other Important notes to take note of</th>
-	</tr>
-	<tr>
-		<td><input id="time" type="text"></td>
-		<td><input id="details" type="text"></td>
-		<td><input id="remarks" type="text"></td>
-	</tr>
-</table>
+					if (yes == true){
+					var plans = {}
 
-</div>
-</div>
+					plans.timeStart = document.getElementById("timestart").value;
+					plans.timeEnd = document.getElementById("timeend").value;
+					plans.TDL = document.getElementById("details").value;
+					plans.remark = document.getElementById("remarks").value;
 
+					users[account()].plans.push(plans)
+					localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
 
-<div>
-<p id="inputs"><p id="TDL"></p></p>
-</div>
+				function send(){
+					var yes = confirm("Are you sure you want to confirm your to-do-list inputs?");
 
-<script>
+					if (yes == true){
+						var plans = {}
+						plans.timeStarts = document.getElementById("timestarts").value;
+						plans.timeEnds = document.getElementById("timeEnd").value;
+						plans.TDL = document.getElementById("detailed").value;
+						plans.remarks = document.getElementById("remark").value;
 
-function post(){
-	var input = document.getElementById("time").value;
-	localStorage.setItem("time", input)
-	document.getElementById("inputs").innerHTML = localStorage.getItem("time");
-}
+						users[account()].plans.push(plans)
+						localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
 
-function show(){
-	var input = document.getElementById("details").value;
-	localStorage.setItem("TDL", input)
-	document.getElementById("TDL").innerHTML = localStorage.getItem("TDL");
-}
+				function post(){
+					var yes = confirm("Are you sure you want to confirm your to-do-list inpuut?");
 
-function showtwo(){
-     var wk1 = document.getElementById("week1");
-	 var wk2 = document.getElementById("week2");
-	 wk1.style.display = "none";
-	 wk2.style.display = "block";
-}
+					if (yes == true){
+						var plans = {}
+						plans.timeStarts = document.getElementById("timeStart").value;
+						plans.timeEnds = document.getElementById("timeEnds").value;
+						plans.TDL = document.getElementById("list").value;
+						plans.remarks = document.getElementById("comments").value;
 
-function backfirst(){
-     var wk1 = document.getElementById("week1");
-	 var wk2 = document.getElementById("week2");
-	 wk1.style.display = "block";
-	 wk2.style.display = "none";
-}
+						users[account()].plans.push(plans)
+						localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
 
-function backtwo(){
-     var wk2 = document.getElementById("week2");
-	 var wk3 = document.getElementById("week3"); 
-	 wk3.style.display = "none";
-	 wk2.style.display = "block";
-}
+				function deliver(){
+					var yes = confirm("Are you sure you want to confirm your to-do-list inpuut?");
 
-function showthree(){
-     var wk2 = document.getElementById("week2");
-	 var wk3 = document.getElementById("week3");
-	 wk2.style.display = "none";
-	 wk3.style.display = "block";
-}
+					if (yes == true){
+						var plans = {}
+						plans.timeStarts = document.getElementById("timeGo").value;
+						plans.timeEnds = document.getElementById("timeStop").value;
+						plans.TDL = document.getElementById("lists").value;
+						plans.remarks = document.getElementById("comment").value;
 
-function showfour(){
-     var wk3 = document.getElementById("week3");
-	 var wk4 = document.getElementById("week4");
-	 wk3.style.display = "none";
-	 wk4.style.display = "block";
-}
+						users[account()].plans.push(plans)
+						localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
 
-function backthree(){
-    var wk4 = document.getElementById("week4");
-	var wk3 = document.getElementById("week3");
-	wk4.style.display = "none";
-	wk3.style.display = "block";
-}
+				function delivered(){
+					var yes = confirm("Are you sure you want to confirm your to-do-list inpuut?");
 
-function showfive(){
-    var wk5 = document.getElementById("week5");
-	var wk4 = document.getElementById("week4");
-	wk4.style.display = "none";
-	wk5.style.display = "block";
-}
+					if (yes == true){
+						var plans = {}
+						plans.timeStarts = document.getElementById("timeGoes").value;
+						plans.timeEnds = document.getElementById("timeStops").value;
+						plans.TDL = document.getElementById("todo").value;
+						plans.remarks = document.getElementById("important").value;
 
-function backfour(){
-    var wk4 = document.getElementById("week4");
-	var wk5 = document.getElementById("week5");
-	wk4.style.display = "block";
-	wk5.style.display = "none";
-}
-</script>
+						users[account()].plans.push(plans)
+						localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
+
+				function stored(){
+					var yes = confirm("Are you sure you want to confirm your to-do-list inpuut?");
+
+					if (yes == true){
+						var plans = {}
+						plans.timeStarts = document.getElementById("timego").value;
+						plans.timeEnds = document.getElementById("timestop").value;
+						plans.TDL = document.getElementById("todolist").value;
+						plans.remarks = document.getElementById("importantremarks").value;
+
+						users[account()].plans.push(plans)
+						localStorage.setItem("users", JSON.stringify(users));
+					}
+				}
+
+				function backtoJulCal(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function backhome(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function goback(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function returnback(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function backCal(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function backtoCal(){
+					location.replace("AllMth2018WADP.html");
+				}
+
+				function Aug() {
+					var jul = document.getElementById("Julmth");
+					var aug = document.getElementById("Augmth");
+					jul.style.display = "none";
+					aug.style.display = "block";
+				}
+
+				function Jul() {
+					var jul = document.getElementById("Julmth");
+					var aug = document.getElementById("Augmth");
+					jul.style.display = "block";
+					aug.style.display = "none";
+				}
+
+				function Sep(){
+					var aug = document.getElementById("Augmth");
+					var sep = document.getElementById("Sepmth");
+					aug.style.display = "none";
+					sep.style.display = "block";
+				}
+
+				function Oct(){
+					var sep = document.getElementById("Sepmth");
+					var oct = document.getElementById("Octmth");
+					sep.style.display = "none";
+					oct.style.display = "block";
+				}
+
+				function Nov(){
+					var oct = document.getElementById("Octmth");
+					var nov = document.getElementById("Novmth");
+					oct.style.display = "none";
+					nov.style.display = "block";
+				}
+
+				function Dec(){
+					var nov = document.getElementById("Novmth");
+					var dec = document.getElementById("Decmth");
+					nov.style.display = "none";
+					dec.style.display = "block";
+				}
+				
+				function backAug(){
+					var aug = document.getElementById("Augmth");
+					var sep = document.getElementById("Sepmth");
+					aug.style.display = "block";
+					sep.style.display = "none";
+				}
+
+				function backSep(){
+					var sep = document.getElementById("Sepmth");
+					var oct = document.getElementById("Octmth");
+					sep.style.display = "block";
+					oct.style.display = "none";
+				}
+
+				function backOct(){
+					var oct = document.getElementById("Octmth");
+					var nov = document.getElementById("Novmth");
+					oct.style.display = "block";
+					nov.style.display = "none";
+                }
+
+                function backNov(){
+					var nov = document.getElementById("Novmth");
+					var dec = document.getElementById("Decmth");
+					nov.style.display = "block";
+					dec.style.display = "none";
+				}
+
+                $(document).ready(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+
+			</script>
 </body>
+
 </html>
