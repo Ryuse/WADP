@@ -6,11 +6,17 @@ var currentuser = JSON.parse(localStorage.getItem("currentuser"));
 //Getting the elements
 
 var currenttitle = users[account()].currenttitle;
+
 var title = document.getElementById("title");
+
 title.innerHTML = currenttitle;
+title.style.color = getraritycolor(currenttitle, "color")
+title.style.textShadow = getraritycolor(currenttitle, "shadow")
 
 var profilename = document.getElementById("detailname");
-profilename.innerHTML = currentuser + ' the ' + title.innerHTML;
+
+profilename.innerHTML = currentuser;
+
 
 //Picture
 
@@ -37,7 +43,7 @@ function changepic(i) {
 
 }
 
-function custompic(srcs){
+function custompic(srcs) {
     console.log("hi")
     pictureContainer.src = srcs
     users[account()].picture = srcs
@@ -52,9 +58,9 @@ function account() {
     }
 }
 
-for(img = 0; img < users[account()].availablepictures.length; img++){
+for (img = 0; img < users[account()].availablepictures.length; img++) {
     imgcontlist = document.getElementById("imglist")
-    
+
     imgcont = document.createElement("div")
     imgcont.className = "imgcontainer"
 
@@ -63,63 +69,163 @@ for(img = 0; img < users[account()].availablepictures.length; img++){
     imgs.className = "mx-auto d-block"
     imgs.setAttribute("data-dismiss", "modal")
     imgs.setAttribute("onclick", "changepic(this)")
-    
+
     imgcont.appendChild(imgs)
     imgcontlist.insertBefore(imgcont, imgcontlist.firstChild)
 }
 
-
-// Printing titles in the title container
+//=======================================Printing titles in the title container=========================================//
 
 var titlecontainer = document.getElementById("titleslist");
 var titles = users[account()].titles;
 
+//===========================Rarity===============================//
+
+//Rarity system in a game called Zenonia
+common = ["Greenhorn", "Curious", "Explorer", "Informed", "Friendly"] //White
+uncommon = ["Likable"] //Blue
+rare = ["Amiable", "Inquisitive"] //Yellow
+epic = ["Popular",] //Purple
+unique = ["Superstar",] //Orange
+legendary = ["Admin"] //Red
+
+rarity = [legendary, unique, epic, rare, uncommon, common]
+raritydesc = ["Legendary", "Unique", "Epic", "Rare", "Uncommon", "Common"]
+
+function getraritycolor(title, type) {
+
+    common = ["Greenhorn", "Curious", "Explorer", "Informed", "Friendly"] //White
+    uncommon = ["Likable",] //Blue
+    rare = ["Amiable", "Inquisitive"] //Yellow
+    epic = ["Popular",] //Purple
+    unique = ["Superstar",] //Orange
+    legendary = ["Admin"] //Red
+
+    var color;
+
+    if (type === "color") {
+        if (common.indexOf(title) != -1) {
+            color = "gray"
+            return color
+        }
+        else if (uncommon.indexOf(title) != -1) {
+            color = "blue"
+
+            return color
+        }
+        else if (rare.indexOf(title) != -1) {
+            color = "yellow"
+            return color
+        }
+        else if (epic.indexOf(title) != -1) {
+            color = "purple"
+            return color
+        }
+        else if (unique.indexOf(title) != -1) {
+            color = "white"
+            return color
+        }
+        else {
+            color = "red"
+            return color
+        }
+    }
 
 
-/*I had issues with this for hours. Thank you stackoverflow! https://stackoverflow.com/questions/11548768/loop-in-function-not-working
-  This thing is harder to solve than I thought but thank you internet. 
-*/
-for (i = 0; i < titles.length; i++) {
-    (function (i) {
-        p = document.createElement('p');
-        p.innerHTML = titles[i];
-        p.className = "title";
-        var hr = document.createElement('HR');
+    else if (type === "shadow") {
+        if (common.indexOf(title) != -1) {
+            color = "none"
+            return color
+        }
+        else if (uncommon.indexOf(title) != -1) {
+            color = "none"
 
-        var button = document.createElement('button');
-        button.className = "btn btn-success btn-sm titlebutton"
-        button.id = "titlebutton"
-        button.innerHTML = "Use this title"
+            return color
+        }
+        else if (rare.indexOf(title) != -1) {
+            color = "0px 0px 3px red"
+            return color
+        }
+        else if (epic.indexOf(title) != -1) {
+            color = "0px 0px 5px black"
+            return color
+        }
+        else if (unique.indexOf(title) != -1) {
+            color = "0px 0px 5px darkorange"
+            return color
+        }
+        else {
+            color = "0px 0px 5px red"
+            return color
+        }
+    }
 
-        button.onclick = function () {
+}
 
-            currenttitle = titles[i];
-            
-
-            /*Apparently this was the important thing that was missing. 
-            Without this nothing would change even when setting local storage*/
-            users[account()].currenttitle = currenttitle;
+//=========================Printing=================================//
 
 
-            localStorage.setItem("users", JSON.stringify(users));
 
-            title.innerHTML = titles[i];
-            profilename.innerHTML = currentuser + ' the ' + title.innerHTML;
+for (r = 0; r < 6; r++) {
+    
+    // p = document.createElement('p');
+    // p.innerHTML = raritydesc[r].toString();
+    // p.className = "text-center"
+    // // p.style.fontWeight = "bold"
+    // p.style.borderBottom = "5px solid black"
 
-            location.reload() //Reload to change the profile title
+    
+    // titlecontainer.appendChild(p);
 
+
+    for (i = 0; i < titles.length; i++) {
+
+        if (rarity[r].indexOf(titles[i]) != -1) {
+            /*I had issues with this for hours. Thank you stackoverflow! https://stackoverflow.com/questions/11548768/loop-in-function-not-working
+              This thing is harder to solve than I thought but thank you internet.*/
+            (function (i) {
+                p = document.createElement('p');
+                p.innerHTML = titles[i];
+                p.className = "title";
+
+                p.style.color = String(getraritycolor(titles[i], "color"))
+                p.style.textShadow = String(getraritycolor(titles[i], "shadow"))
+
+
+                var hr = document.createElement('HR');
+
+                var button = document.createElement('button');
+                button.className = "btn btn-success btn-sm titlebutton"
+                button.id = "titlebutton"
+                button.innerHTML = "Use this title"
+
+                button.onclick = function () {
+
+                    currenttitle = titles[i];
+                    /*Apparently this was the important thing that was missing. 
+                    Without this nothing would change even when setting local storage*/
+                    users[account()].currenttitle = currenttitle;
+
+                    localStorage.setItem("users", JSON.stringify(users));
+                    location.reload() //Reload to change the profile title
+
+                }
+
+                titlecontainer.appendChild(button);
+                titlecontainer.appendChild(p);
+                titlecontainer.appendChild(hr);
+            })(i);
         }
 
-        titlecontainer.appendChild(button);
-        titlecontainer.appendChild(p);
-        titlecontainer.appendChild(hr);
-    })(i);
+
+    }
 }
+
 
 //Recent Activities
 var activitycontainer = document.getElementById("activites")
 
-for (q = users[account()].messages.length-1; q > -1; q--) {
+for (q = users[account()].messages.length - 1; q > -1; q--) {
     if (users[account()].messages == []) {
         var p = document.createElement("p")
         p.innerHTML = "You have no messages"
@@ -144,7 +250,7 @@ for (q = users[account()].messages.length-1; q > -1; q--) {
 
 //Friend system
 
-function acceptfriend(name){
+function acceptfriend(name) {
 
     name = users[findaccount(name)].username
 
@@ -153,7 +259,7 @@ function acceptfriend(name){
 
     buttons.style.display = "none";
     nobutton.style.display = "none";
-    
+
     idname = "friendrequest" + name
     ptext = document.getElementById(idname)
     ptext.innerHTML = name + " is now your friend"
@@ -172,7 +278,7 @@ function acceptfriend(name){
     localStorage.setItem("users", JSON.stringify(users));
 }
 
-function rejectfriend(name){
+function rejectfriend(name) {
 
     nobutton = document.getElementById("friendbuttonno" + name)
     buttons = document.getElementById("friendbutton" + name)
@@ -210,15 +316,15 @@ function findaccount(namee) {
 }
 
 //returns index of sender
-function findrequestsent(sendername){
+function findrequestsent(sendername) {
     number = users[findaccount(sendername)].requestsent.indexOf(users[account()].username)
     return number
 }
 
 //Finds message index
-function findmessage(msg){
-    for(a = 0; a < users[account()].messages.length; a++){
-        if(users[account()].messages[a].indexOf(String(msg)) != -1){
+function findmessage(msg) {
+    for (a = 0; a < users[account()].messages.length; a++) {
+        if (users[account()].messages[a].indexOf(String(msg)) != -1) {
             return a
         }
     }
@@ -226,13 +332,13 @@ function findmessage(msg){
 
 //Printing friend in profile
 
-for(f = 0; f < users[account()].friends.length; f++){
-    (function(orange){
+for (f = 0; f < users[account()].friends.length; f++) {
+    (function (orange) {
         friend = findaccount(users[account()].friends[orange])
 
         table = document.querySelector("#friendlisttable")
         friendcontainer = document.createElement("div")
-        
+
         friendcontainer.className = "btn btn-outline-success"
 
         img = document.createElement("img");
@@ -248,7 +354,7 @@ for(f = 0; f < users[account()].friends.length; f++){
         friendcontainer.appendChild(img)
         friendcontainer.appendChild(friendusername)
 
-        friendcontainer.onclick = function (){
+        friendcontainer.onclick = function () {
             friends = findaccount(users[account()].friends[orange])
             console.log(friends)
             localStorage.setItem("visituser", JSON.stringify(friends));
@@ -260,8 +366,8 @@ for(f = 0; f < users[account()].friends.length; f++){
 
 //Printing Badges in profile
 
-for(b = 0; b < users[account()].availablepictures.length; b++){
-    (function(kiwi){
+for (b = 0; b < users[account()].availablepictures.length; b++) {
+    (function (kiwi) {
         badgecontainer = document.getElementById("badgelist")
 
         imagecontainer = document.createElement('div');
@@ -286,8 +392,8 @@ for(b = 0; b < users[account()].availablepictures.length; b++){
     })(b);
 }
 
-
-
+profilebadge = document.getElementById("badges")
+profilebadge.innerHTML = users[account()].availablepictures.length;
 
 //Testing stuff and graveyard
 

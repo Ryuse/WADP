@@ -30,7 +30,15 @@ function signup() {
         friends: [],
         messages: [],
         requestsent: [],
-        badges: 0
+        badges: 0,
+        todo: [
+            { 
+            date: "",
+            time: "",
+            do: "",
+            remarks: "",
+        },
+    ]
     }
 
     //Getting their inputs

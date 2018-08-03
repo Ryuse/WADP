@@ -15,6 +15,7 @@ function account() {
 var pagename = window.location.pathname; //Gets the pathname
 var file = pagename.split("/").pop(); //Gets the filename
 
+
 //=============================Interacting with website titles===============================//
 
 //Shows and adds Curious title to user
@@ -97,9 +98,9 @@ if (file == "About.html") {
 function inquisitivetitle() {
     //Gets the popup element
     var popup = document.getElementById("popupinquisitivetitle");
-   
+
     if (currentuser != undefined && currentuser != null && titles.indexOf('Inquisitive') == -1) {
-        
+
         popup.style.display = "block"
         titles.push('Inquisitive');
         localStorage.setItem("users", JSON.stringify(users));
@@ -112,14 +113,14 @@ function inquisitivetitle() {
         users[account()].messages.push("You have gained the title Inquisitive!");
         localStorage.setItem("users", JSON.stringify(users));
     }
-    else{
+    else {
         var prank = document.getElementById("email")
         console.log("hi")
         prank.href = "mailto:joshdebean@gmail.com"
     }
 }
 
-if (file == "About.html"){
+if (file == "About.html") {
     var prank = document.getElementById("email")
     prank.setAttribute("onclick", "inquisitivetitle()")
 }
@@ -167,10 +168,10 @@ function showfriendtitle(accomplishment, a_count, description) {
     //Internal Happenings
 
     //Gives title
-    if(description == "title"){
+    if (description == "title") {
         titles.push(String(accomplishment));
     }
-    
+
 
     //Sends Message
     users[account()].messages.push(`You have gained the ${accomplishment} ${description} for having ${a_count}!`);
@@ -207,6 +208,12 @@ else if (currentuser != undefined && currentuser != null && users[account()].tit
 else if (currentuser != undefined && currentuser != null && users[account()].titles.indexOf('Popular') == -1 && users[account()].friends.length > 9) {
     friendtitle = "Popular"
     friendcount = 10 + " friends"
+    desc = "title"
+    showfriendtitle(friendtitle, friendcount, desc)
+}
+else if (currentuser != undefined && currentuser != null && users[account()].titles.indexOf('Superstar') == -1 && users[account()].friends.length > 24) {
+    friendtitle = "Superstar"
+    friendcount = 25 + " friends"
     desc = "title"
     showfriendtitle(friendtitle, friendcount, desc)
 }
@@ -253,7 +260,7 @@ if (currentuser != undefined && currentuser != null && users[account()].titles.l
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if(currentuser != undefined && currentuser != null && users[account()].titles.length > 6 && badgecheck(leaf) != 0){
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 6 && badgecheck(leaf) != 0) {
     badgetitle = "Leaf"
     badgecount = 7 + " titles"
     badgedesc = "badge"
@@ -266,7 +273,7 @@ else if(currentuser != undefined && currentuser != null && users[account()].titl
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if(currentuser != undefined && currentuser != null && users[account()].titles.length > 14 && badgecheck(cloud) != 0){
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 14 && badgecheck(cloud) != 0) {
     badgetitle = "Cloud"
     badgecount = 15 + " titles"
     badgedesc = "badge"
@@ -279,7 +286,7 @@ else if(currentuser != undefined && currentuser != null && users[account()].titl
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if(currentuser != undefined && currentuser != null && users[account()].titles.length > 24 && badgecheck(earth) != 0){
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 24 && badgecheck(earth) != 0) {
     badgetitle = "Earth"
     badgecount = 25 + " titles"
     badgedesc = "badge"
