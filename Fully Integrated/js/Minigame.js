@@ -10,8 +10,17 @@ function account() {
     }
 }
 
-if(users[account()].highscore == null || users[account()].highscore == undefined){
-    users[account()].highscore = 0;
+if(users[account()] == undefined){
+    users[account()] == "Guest"
+}
+
+try{
+    if(users[account()].highscore == null || users[account()].highscore == undefined){
+        users[account()].highscore = 0;
+    }
+}
+catch(err){
+
 }
 
 highscores = JSON.parse(localStorage.getItem("highscores"));
@@ -128,7 +137,7 @@ function GameLeaderboard() {
 function startGameEasy() {
 
     document.getElementById("instructionseasy").style.display = "none";
-
+    
     myGamePiece = new component(30, 30, users[account()].picture, 50, 120, "image");
     myBackground = new component(1050, 400, "http://mediad.publicbroadcasting.net/p/idaho/files/styles/medium/public/201610/073016_pioneer_fire_inciweb.jpeg", 0, 0, "image");
     myScore = new component("30px", "Consolas", "black", 750, 40, "text");
@@ -382,7 +391,9 @@ function gameOver() {
         mySound.stop();
 
         highscore(currentscore);
+        resetLboard()
         displayGame();
+        location.reload()
 
     } 
     else {

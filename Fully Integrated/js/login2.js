@@ -1,12 +1,15 @@
 //Variables
 
 //Retrieving data from local storage
+try{
+    var users = JSON.parse(localStorage.getItem("users")); 
+    var currentuser = JSON.parse(localStorage.getItem("currentuser"));
+    var currenttitle = users[account()].currenttitle;
+}
+catch(err){
+    console.log("Loging2hi")
+}
 
-var users = JSON.parse(localStorage.getItem("users")); 
-// var password = JSON.parse(localStorage.getItem("password"));
-var currentuser = JSON.parse(localStorage.getItem("currentuser"));
-
-var currenttitle = users[account()].currenttitle;
 
 
 //placeholder to make them global
@@ -83,7 +86,7 @@ function logout(){
     var ans = confirm("Are you sure you want to log out?")
     if(ans){
         console.log(localStorage.removeItem('currentuser'));
-        window.location.href = "home2.html"}
+        window.location.href = "index.html"}
     // if (file == "profile.html" || file == "visituser.html"){
         
     // }

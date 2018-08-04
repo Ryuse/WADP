@@ -136,6 +136,7 @@ function showfriendtitle(accomplishment, a_count, description) {
     popup.id = "popup"
     popup.className = "col-10"
     console.log(popup)
+
     close = document.createElement('button')
     close.id = "closepopup"
     close.className = "close"
@@ -158,6 +159,12 @@ function showfriendtitle(accomplishment, a_count, description) {
     //External Happenings
 
     popup.style.display = "block"
+
+    setTimeout(
+        function () {
+            popup.style.display = "none"
+        },
+        5000);
 
     setTimeout(
         function () {

@@ -396,7 +396,71 @@ profilebadge = document.getElementById("badges")
 profilebadge.innerHTML = users[account()].availablepictures.length;
 
 highestscore = document.getElementById("minigamehighscore")
-highestscore.innerHTML = users[account()].highscore
+
+if(users[account()].highscore == undefined || users[account()].highscore == null){
+    highestscore.innerHTML = 0
+}
+else{
+    highestscore.innerHTML = users[account()].highscore
+}
+
+
+//==============================================================To Do=====================================================================//
+
+planlist = users[account()].plans
+
+if (users[account()].plans == undefined || users[account()].plans == null) {
+
+    users[account()].plans = []
+    localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+for(p = 0; p < planlist.length; p++){
+
+    (function(aa){
+        
+        todostuff = document.getElementById("todostuff")
+
+        div = document.createElement("div");
+        div.id = "todolistsprint" + aa
+        div.class = "col-3"
+    
+        var day = document.createElement("h3");
+        day.innerHTML = "Day: " + planlist[aa].day
+    
+        var tofrom = document.createElement("h4");
+        tofrom.innerHTML = "From: " + planlist[aa].timeStart
+    
+        var todo = document.createElement("h4");
+        todo.innerHTML = "To: " + planlist[aa].timeEnd
+    
+        var action = document.createElement("p")
+        action.innerHTML = "Action: " + planlist[aa].TDL
+    
+        var remark = document.createElement("p")
+        remark.innerHTML = "Remarks: " + planlist[aa].remark
+    
+
+
+        div.appendChild(day)
+        div.appendChild(tofrom)
+        div.appendChild(todo)
+        div.appendChild(action)
+        div.appendChild(remark)
+        todostuff.appendChild(div)
+        
+    })(p);
+}
+
+function findtodo(id){
+    for(t = 0; t < planlist.length; t++){
+        if(id == `${planlist[t].day}${planlist[t].timeStart}${planlist[t].timeEnd}${planlist[t].TDL}${planlist[t].remark}`){
+            return t
+        }
+        
+    }
+}
 
 //Testing stuff and graveyard
 

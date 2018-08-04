@@ -1,3 +1,8 @@
+//This is for bootstrap tooltip
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
 //Retrieving data from local storage
 
 var users = JSON.parse(localStorage.getItem("users"));
@@ -16,8 +21,9 @@ var navitems;
 var pagename = window.location.pathname; //Gets the pathname
 var file = pagename.split("/").pop(); //Gets the filename
 
-if (file == "index.html") {
-    navitems = '<a class="navbar-brand current" href="#">\
+if (currentuser == undefined || currentuser == null) {
+    if (file == "index.html") {
+        navitems = '<a class="navbar-brand current" href="#">\
 <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
@@ -47,7 +53,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+        <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
     </li>\
 \
 <li class="nav-item">\
@@ -55,16 +61,16 @@ aria-expanded="false" aria-label="Toggle navigation">\
 </li>\
 \
 <li class="nav-item">\
-<a class="nav-link  " href="Earth Day Minigame.html"> Minigame </a>\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
 </li>\
 \
     <li class="nav-item">\
         <a class="nav-link" href="About.html"> About </a>\
     </li>\
 </ul>'
-}
-else if (file === "Map.html") {
-    navitems = '<a class="navbar-brand current" href="index.html">\
+    }
+    else if (file === "Map.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
     <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
@@ -94,7 +100,7 @@ else if (file === "Map.html") {
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+            <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
         </li>\
     \
     <li class="nav-item">\
@@ -102,7 +108,7 @@ else if (file === "Map.html") {
 </li>\
 \
 <li class="nav-item">\
-<a class="nav-link  " href="Earth Day Minigame.html"> Minigame </a>\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
 </li>\
 \
         <li class="nav-item">\
@@ -110,9 +116,9 @@ else if (file === "Map.html") {
         </li>\
     </ul>'
 
-}
-else if (file === "About.html") {
-    navitems = '<a class="navbar-brand current" href="index.html">\
+    }
+    else if (file === "About.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
     <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
@@ -142,7 +148,7 @@ else if (file === "About.html") {
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+            <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
         </li>\
     \
     <li class="nav-item">\
@@ -150,17 +156,17 @@ else if (file === "About.html") {
 </li>\
 \
 <li class="nav-item">\
-<a class="nav-link " href="Earth Day Minigame.html"> Minigame </a>\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
 </li>\
 \
         <li class="nav-item">\
             <a class="nav-link active" href="About.html"> About </a>\
         </li>\
     </ul>'
-}
+    }
 
-else if(file == "video.html"){
-    navitems = '<a class="navbar-brand current" href="index.html">\
+    else if (file == "video.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
     <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
@@ -190,7 +196,7 @@ else if(file == "video.html"){
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+            <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
         </li>\
     \
     <li class="nav-item">\
@@ -198,18 +204,18 @@ else if(file == "video.html"){
 </li>\
 \
 <li class="nav-item">\
-<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
 </li>\
 \
         <li class="nav-item">\
             <a class="nav-link" href="About.html"> About </a>\
         </li>\
     </ul>'
-}
+    }
 
-else if (file == "Earth%20Day.html") {
+    else if (file == "Earth%20Day.html") {
 
-    navitems = '<a class="navbar-brand current" href="index.html">\
+        navitems = '<a class="navbar-brand current" href="index.html">\
     <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
@@ -239,7 +245,7 @@ else if (file == "Earth%20Day.html") {
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+            <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
         </li>\
     \
     <li class="nav-item">\
@@ -247,65 +253,18 @@ else if (file == "Earth%20Day.html") {
     </li>\
     \
     <li class="nav-item">\
-<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
 </li>\
 \
         <li class="nav-item">\
             <a class="nav-link" href="About.html"> About </a>\
         </li>\
         </ul>'
-}
-else if (file == "Earth%20Day%20Minigame.html") {
+    }
+   
+    else {
 
-    navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
-    EcoDose\
-    </a>\
-    \
-    <!-- Collapses navbar contents when screen is smaller -->\
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
-    aria-expanded="false" aria-label="Toggle navigation">\
-    \
-    <span class="navbar-toggler-icon"></span>\
-    \
-    </button>\
-    \
-    <!-- Navbar contents and links -->\
-    \
-    <div class="collapse navbar-collapse" id="navbarText">\
-    \
-    <ul class="navbar-nav mr-auto">\
-    \
-        <li class="nav-item">\
-            <a href="Map.html" class="nav-link"> Map\
-                <span class="sr-only">(current)</span>\
-            </a>\
-        </li>\
-    \
-        <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
-        </li>\
-    \
-        <li class="nav-item">\
-            <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
-        </li>\
-    \
-    <li class="nav-item">\
-    <a class="nav-link " href="video.html"> Videos </a>\
-    </li>\
-    \
-    <li class="nav-item active">\
-<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
-</li>\
-\
-        <li class="nav-item">\
-            <a class="nav-link" href="About.html"> About </a>\
-        </li>\
-        </ul>'
-}
-else {
-
-    navitems = '<a class="navbar-brand current" href="index.html">\
+        navitems = '<a class="navbar-brand current" href="index.html">\
 <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
@@ -335,7 +294,392 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Ian/Calendar/Study Planner.html"> Study Planner </a>\
+        <a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Study Planner </a>\
+    </li>\
+\
+<li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
+<li class="nav-item">\
+<a class="nav-link disabled" href="#" data-toggle="tooltip" data-placement="top" title="You must be logged in to access this"> Minigame </a>\
+</li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="About.html"> About </a>\
+    </li>\
+</ul>'
+    }
+}
+else {
+    if (file == "index.html") {
+        navitems = '<a class="navbar-brand current" href="#">\
+<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+EcoDose\
+</a>\
+\
+<!-- Collapses navbar contents when screen is smaller -->\
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+aria-expanded="false" aria-label="Toggle navigation">\
+\
+<span class="navbar-toggler-icon"></span>\
+\
+</button>\
+\
+<!-- Navbar contents and links -->\
+\
+<div class="collapse navbar-collapse" id="navbarText">\
+\
+<ul class="navbar-nav mr-auto">\
+\
+    <li class="nav-item">\
+        <a href="Map.html" class="nav-link"> Map\
+            <span class="sr-only">(current)</span>\
+        </a>\
+    </li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+    </li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+    </li>\
+\
+<li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
+<li class="nav-item">\
+<a class="nav-link  " href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="About.html"> About </a>\
+    </li>\
+</ul>'
+    }
+    else if (file === "Map.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link active"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
+<li class="nav-item">\
+<a class="nav-link  " href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+    </ul>'
+
+    }
+    else if (file === "About.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link" href="video.html"> Videos </a>\
+</li>\
+\
+<li class="nav-item">\
+<a class="nav-link " href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link active" href="About.html"> About </a>\
+        </li>\
+    </ul>'
+    }
+
+    else if (file == "video.html") {
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link  active" href="video.html"> Videos </a>\
+</li>\
+\
+<li class="nav-item">\
+<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+    </ul>'
+    }
+
+    else if (file == "Earth%20Day.html") {
+
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+    <a class="nav-link " href="video.html"> Videos </a>\
+    </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+        </ul>'
+    }
+    else if (file == "Earth%20Day%20Minigame.html") {
+
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+    <a class="nav-link " href="video.html"> Videos </a>\
+    </li>\
+    \
+    <li class="nav-item active">\
+<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+        </ul>'
+    }
+    else if (file == "Study%20Planner.html" || file == "ToDoList.html") {
+
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item">\
+            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item active">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+    <a class="nav-link " href="video.html"> Videos </a>\
+    </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+        </ul>'
+    }
+    else {
+
+        navitems = '<a class="navbar-brand current" href="index.html">\
+<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+EcoDose\
+</a>\
+\
+<!-- Collapses navbar contents when screen is smaller -->\
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+aria-expanded="false" aria-label="Toggle navigation">\
+\
+<span class="navbar-toggler-icon"></span>\
+\
+</button>\
+\
+<!-- Navbar contents and links -->\
+\
+<div class="collapse navbar-collapse" id="navbarText">\
+\
+<ul class="navbar-nav mr-auto">\
+\
+    <li class="nav-item">\
+        <a href="Map.html" class="nav-link"> Map\
+            <span class="sr-only">(current)</span>\
+        </a>\
+    </li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+    </li>\
+\
+    <li class="nav-item">\
+        <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
     </li>\
 \
 <li class="nav-item">\
@@ -350,6 +694,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         <a class="nav-link" href="About.html"> About </a>\
     </li>\
 </ul>'
+    }
 }
 
 
@@ -451,7 +796,7 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 \
 					<!-- Signs up -->\
 					\
-					<a href="../Lemuel2/SignUp.html">\
+					<a href="./SignUp.html">\
 						<button type="button" class="btn btn-success btn-block">\
                          Sign Up </button>\
 					</a>\
@@ -482,5 +827,10 @@ function account() {
     }
 }
 
-document.getElementById("profilepic").src = users[account()].picture
+try {
+    document.getElementById("profilepic").src = users[account()].picture
+}
+catch (err) {
+    console.log("hi")
+}
 
