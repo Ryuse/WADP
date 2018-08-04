@@ -49,7 +49,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
     </li>\
 \
     <li class="nav-item">\
@@ -96,7 +96,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -144,7 +144,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -192,7 +192,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -241,7 +241,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -290,7 +290,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
     </li>\
 \
     <li class="nav-item">\
@@ -339,7 +339,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
     </li>\
 \
     <li class="nav-item">\
@@ -386,7 +386,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -434,7 +434,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -482,7 +482,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -531,7 +531,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -579,7 +579,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item">\
@@ -627,10 +627,58 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
     \
         <li class="nav-item">\
-            <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+            <a class="nav-link" href="../WADP Trivia.html"> Trivia </a>\
         </li>\
     \
         <li class="nav-item active">\
+            <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
+        </li>\
+    \
+    <li class="nav-item">\
+    <a class="nav-link " href="video.html"> Videos </a>\
+    </li>\
+    \
+    <li class="nav-item">\
+<a class="nav-link" href="Earth Day Minigame.html"> Minigame </a>\
+</li>\
+\
+        <li class="nav-item">\
+            <a class="nav-link" href="About.html"> About </a>\
+        </li>\
+        </ul>'
+    }
+    else if (file == "WADP%20Trivia.html") {
+
+        navitems = '<a class="navbar-brand current" href="index.html">\
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    EcoDose\
+    </a>\
+    \
+    <!-- Collapses navbar contents when screen is smaller -->\
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"\
+    aria-expanded="false" aria-label="Toggle navigation">\
+    \
+    <span class="navbar-toggler-icon"></span>\
+    \
+    </button>\
+    \
+    <!-- Navbar contents and links -->\
+    \
+    <div class="collapse navbar-collapse" id="navbarText">\
+    \
+    <ul class="navbar-nav mr-auto">\
+    \
+        <li class="nav-item">\
+            <a href="Map.html" class="nav-link"> Map\
+                <span class="sr-only">(current)</span>\
+            </a>\
+        </li>\
+    \
+        <li class="nav-item active">\
+            <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
+        </li>\
+    \
+        <li class="nav-item">\
             <a class="nav-link" href="Study Planner.html"> Study Planner </a>\
         </li>\
     \
@@ -675,7 +723,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     </li>\
 \
     <li class="nav-item">\
-        <a class="nav-link" href="../Joshua/WADP Trivia.html"> Trivia </a>\
+        <a class="nav-link" href="./WADP Trivia.html"> Trivia </a>\
     </li>\
 \
     <li class="nav-item">\

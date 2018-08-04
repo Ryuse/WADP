@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Createquiz</title>
+    <link href="../Images/logo.png" rel="icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/TriviaCreate.css" rel="stylesheet" type="text/css">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="well" id="createquiz">
+        <h1 class="text-center text-success">Create your own quiz!</h1>
+        <a href="WADP Trivia.html">
+            <button class="btn btn-md btn-success">Back</button>
+        </a>
+        <a href="#editquiz">
+            <button class="btn btn-md btn-success" id="edit">Edit your quizzes</button>
+        </a>
+        <button class="btn btn-md btn-success pull-right" id="start" onclick="resetchild()">Create New</button>
+        <div class="panel">
+        <h3 id="instructions" class="text-center">Instructions</h3>
+        <p id="steps" class="text-center text-success">Click the create new button to reset everything. Enter how many questions you want your quiz to have and click the
+            set questions/options button. Enter your questions and options and mark which option is the answer by clicking
+            the corresponding radio button. Submit when done and you should be able to see your quiz in the quizlist!</p>
+        </div>
+        <form id="creating" class="form-group" name="asknum">
+            How many questions are there in your quiz?
+            <input class="form-control input-sm" type="number" max=10 min=1 name="questions" id="qnnum" value="" required>
+            Name of quiz:
+            <input class="form-control input-sm" type="text" name="quizname" id="quizname" value="" required>
+            Image for quiz:
+            <input class="form-control input-sm" type="url" name="imglink" id="getimg" value="" required>
+        </form>
+        <div class="dropdown">
+            <button onclick="dropdown()" class="dropbtn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Suggested Questions
+                <span class="caret"></span>
+            </button>
+            <div id="questions" class="dropdown-content shadow-sm bg-white rounded">
+                <a href="#questions" onclick="store(this)">What is the estimated amount of plastic thrown away annually?</a>
+                <a href="#questions" onclick="store(this)">What is the estimated area of forest cleared anually?</a>
+                <a href="#questions" onclick="store(this)">Write down one way which you can help the environment.</a>
+            </div>
+        </div>
+        <button class="btn btn-success btn-md pull-left" onclick="checkval()">Set Questions and options</button>
+    </div>
+    <div id="newquiz" class="well">
+    </div>
+    <div id="editquiz" class="well">
+        <h2 class="text-success text-center">Your quizzes</h2>
+        <div class="panel">
+            <div class="panel-body" id="storequizzes">
+
+            </div>
+        </div>
+    </div>
+    <!-- <script src="login.js"></script> -->
+    <script src="../Javascript/TriviaCreate.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

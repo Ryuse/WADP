@@ -1,0 +1,54 @@
+#qnnum,#getimg,#quizname{
+    width:25%;
+}
+#qnamnt{
+    font-size: 20px;
+}
+/* Styling of content in dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Styling of links in dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Dropdown button style */
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+/* Color change on hover */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+#creating #qnnum{
+    width: 20%;
+}
+.options, .questions{
+    width:70%;
+}
+#edit{
+    position: relative;
+    left:40%;
+}
+.panel{
+    border: 1px solid black;
+}
+#instructions{
+    text-decoration: underline;
+    font-style: italic;
+}
+#steps{
+    font-size: 17px;
+}
