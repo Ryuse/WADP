@@ -22,15 +22,24 @@ try{
 catch(err){
 
 }
-
 highscores = JSON.parse(localStorage.getItem("highscores"));
-highscores.sort(compare)
-localStorage.setItem("highscores", JSON.stringify(highscores));
 
 if(highscores == null || highscores == undefined){
     highscores = []
     localStorage.setItem("highscores", JSON.stringify(highscores));
+    location.reload()
 }
+
+
+
+if(highscores.length != 0){
+    highscores.sort(compare)
+}
+
+
+localStorage.setItem("highscores", JSON.stringify(highscores));
+
+
 
 function highscore(nscore){
     if(nscore > users[account()].highscore){

@@ -173,7 +173,7 @@ function getraritycolor(title, type) {
 
 
 for (r = 0; r < 6; r++) {
-    
+
     for (i = 0; i < titles.length; i++) {
 
         if (rarity[r].indexOf(titles[i]) != -1) {
@@ -393,10 +393,10 @@ profilebadge.innerHTML = users[account()].availablepictures.length;
 
 highestscore = document.getElementById("minigamehighscore")
 
-if(users[account()].highscore == undefined || users[account()].highscore == null){
+if (users[account()].highscore == undefined || users[account()].highscore == null) {
     highestscore.innerHTML = 0
 }
-else{
+else {
     highestscore.innerHTML = users[account()].highscore
 }
 
@@ -412,31 +412,31 @@ if (users[account()].plans == undefined || users[account()].plans == null) {
 
 }
 
-for(p = 0; p < planlist.length; p++){
+for (p = 0; p < planlist.length; p++) {
 
-    (function(aa){
-        
+    (function (aa) {
+
         todostuff = document.getElementById("todostuff")
 
         div = document.createElement("div");
         div.id = "todolistsprint" + aa
         div.class = "col-3"
-    
+
         var day = document.createElement("h3");
         day.innerHTML = "Day: " + planlist[aa].day
-    
+
         var tofrom = document.createElement("h4");
         tofrom.innerHTML = "From: " + planlist[aa].timeStart
-    
+
         var todo = document.createElement("h4");
         todo.innerHTML = "To: " + planlist[aa].timeEnd
-    
+
         var action = document.createElement("p")
         action.innerHTML = "Action: " + planlist[aa].TDL
-    
+
         var remark = document.createElement("p")
         remark.innerHTML = "Remarks: " + planlist[aa].remark
-    
+
 
 
         div.appendChild(day)
@@ -445,7 +445,7 @@ for(p = 0; p < planlist.length; p++){
         div.appendChild(action)
         div.appendChild(remark)
         todostuff.appendChild(div)
-        
+
     })(p);
 }
 
@@ -456,31 +456,75 @@ quizmade.innerHTML = users[account()].quizmade
 
 
 
+quizzes = JSON.parse(localStorage.getItem("quizzes"));
 
 
+if(quizzes == null || quizzes == undefined){
+    quizzes = []
+    localStorage.setItem("quizzes", JSON.stringify(quizzes));
+}
+
+userquizzes = users[account()].quizzes
 
 
-//Testing stuff and graveyard
+if(userquizzes == null || userquizzes == undefined){
+    users[account()].quizzes = []
+    localStorage.setItem("users", JSON.stringify(users));
+    location.reload()
+}
 
 
+for (uq = 0; uq < users[account()].quizzes.length; uq++) {
 
-// for(i = 0; i < document.getElementsByClassName("titlebutton").length; i++){
-//     button = document.getElementsByClassName("titlebutton")[i]
-//     button.addEventListener("click", changetitle(i)); 
-// }
+    (function (qq) {
+        
+        var helppppp = document.getElementById("quizmadecontainer");
 
-// function changetitle(na){
-//     title.innerHTML = document.querySelectorAll("p.title")[na].innerHTML;
-// }
+        div = document.createElement("div");
+        div.id = "userquizno" + qq
+        div.className = "col-5"
+
+        
+        img = document.createElement("img")
+        img.src = users[account()].quizzes[qq].img
+        img.className = "img-fluid"
+
+        title = document.createElement("h5");
+        title.innerHTML = "Title: " + users[account()].quizzes[qq].name
 
 
+        createdby = document.createElement("h4");
+        createdby.innerHTML = "By: " + users[account()].quizzes[qq].by
 
-            // currenttitle = titles[i];
-            // title.innerHTML = titles[i];
 
-            // users.currenttitle = currenttitle;
+        no_of_questions = document.createElement("h6");
+        no_of_questions.innerHTML = "No. of questions: " + users[account()].quizzes[qq].question.length
 
-            // window.localStorage.setItem("users", JSON.stringify(users)); //This doesn't work for some reason
-            // console.log(currenttitle)
-            // console.log(title.innerHTML)
-            // profilename.innerHTML = currentuser + ' the ' + title.innerHTML;
+        var button = document.createElement("button")
+        button.className = "btn btn-success"
+        button.innerHTML = "Do Quiz"
+
+        button.onclick = function () {
+            for (quiz = 0; quiz < quizzes.length; quiz++) {
+                if (quizzes[quiz].name == users[account()].quizzes[qq].name && quizzes[quiz].by == users[account()].quizzes[qq].by) {
+                    localStorage.setItem("quizchosen", JSON.stringify(quiz));
+                    window.location.href = "Do quiz.html"
+                }
+            }
+        }
+
+        div.appendChild(img)
+        div.appendChild(title)
+        div.appendChild(createdby)
+        div.appendChild(no_of_questions)
+        div.appendChild(button)
+
+        helppppp.appendChild(div)
+
+    })(uq);
+
+}
+
+
+quizdone = document.getElementById("quizdone")
+quizdone.innerHTML = users[account()].quizdone

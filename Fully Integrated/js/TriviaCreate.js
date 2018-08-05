@@ -10,6 +10,8 @@ function account() {
 
 quizzes = JSON.parse(localStorage.getItem("quizzes"));
 
+quizzes = JSON.parse(localStorage.getItem("quizzes"));
+
 
 if(quizzes == null || quizzes == undefined){
     quizzes = []
@@ -308,8 +310,7 @@ function storequiz() {
 
 for(uq = 0; uq < userquizzes.length; uq++){
 
-    uqcont = document.getElementById("currentuserquizzes")
-    console.log(uq);
+    var uqcont = document.getElementById("currentuserquizzes");
 
     (function(qq){
         console.log(qq)
@@ -329,24 +330,24 @@ for(uq = 0; uq < userquizzes.length; uq++){
         no_of_questions = document.createElement("h4");
         no_of_questions.innerHTML = "No. of questions: " + userquizzes[qq].question.length
     
-        // var button = document.createElement("button")
-        // button.className = "btn btn-danger"
-        // button.innerHTML = "Remove"
+        var button = document.createElement("button")
+        button.className = "btn btn-success"
+        button.innerHTML = "Do Quiz"
 
-        // button.onclick = function(){
-        //     identifier = findtodo(`${planlist[aa].day}${planlist[aa].timeStart}${planlist[aa].timeEnd}${planlist[aa].TDL}${planlist[aa].remark}`)
-        //     todostuff.removeChild(todostuff.childNodes[identifier])
-        //     console.log(identifier)
-            
-        //     planlist.splice(identifier, 1);
-        //     localStorage.setItem("users", JSON.stringify(users));
-        //     location.reload();
-        // }
+        button.onclick = function(){
+            for(quiz = 0; quiz < quizzes.length; quiz++){
+                if(quizzes[quiz].name == userquizzes[qq].name && quizzes[quiz].by == userquizzes[qq].by){
+                    localStorage.setItem("quizchosen", JSON.stringify(qq));
+                    window.location.href="Do quiz.html"
+                }
+            }
+        }
+
         div.appendChild(img)
         div.appendChild(title)
         div.appendChild(createdby)
         div.appendChild(no_of_questions)
-        // div.appendChild(button)
+        div.appendChild(button)
 
         uqcont.appendChild(div)
         

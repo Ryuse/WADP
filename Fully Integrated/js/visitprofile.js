@@ -323,3 +323,77 @@ else{
 quizmade = document.getElementById("quizmade")
 quizmade.innerHTML = users[visituser].quizmade
 
+quizdone = document.getElementById("quizdone")
+quizdone.innerHTML = users[visituser].quizdone
+
+quizzes = JSON.parse(localStorage.getItem("quizzes"));
+
+if(quizzes == null || quizzes == undefined){
+    quizzes = []
+    localStorage.setItem("quizzes", JSON.stringify(quizzes));
+}
+
+userquizzes = users[visituser].quizzes
+
+
+
+if(userquizzes == null || userquizzes == undefined){
+    users[visituser].quizzes = []
+    localStorage.setItem("users", JSON.stringify(users));
+    location.reload()
+}
+
+
+for (asd = 0; asd < users[account()].quizzes.length; asd++) {
+
+    (function (visit) {
+
+        var helppppp = document.getElementById("quizmadecontainer");
+
+        div = document.createElement("div");
+        div.id = "userquizno" + visit
+        div.className = "col-5"
+
+        
+        img = document.createElement("img")
+        img.src = users[visituser].quizzes[visit].img
+        img.className = "img-fluid"
+
+        title = document.createElement("h5");
+        title.innerHTML = "Title: " + users[visituser].quizzes[visit].name
+
+
+        createdby = document.createElement("h4");
+        createdby.innerHTML = "By: " + users[visituser].quizzes[visit].by
+
+
+        no_of_questions = document.createElement("h6");
+        no_of_questions.innerHTML = "No. of questions: " + users[visituser].quizzes[visit].question.length
+
+        var button = document.createElement("button")
+        button.className = "btn btn-success"
+        button.innerHTML = "Do Quiz"
+
+        button.onclick = function () {
+            for (quiz = 0; quiz < quizzes.length; quiz++) {
+
+                if (quizzes[quiz].name == users[visituser].quizzes[visit].name && quizzes[quiz].by == users[visituser].quizzes[visit].by) {
+                    console.log(visit)
+                    localStorage.setItem("quizchosen", JSON.stringify(quiz));
+                    window.location.href = "Do quiz.html"
+
+                }
+            }
+        }
+
+        div.appendChild(img)
+        div.appendChild(title)
+        div.appendChild(createdby)
+        div.appendChild(no_of_questions)
+        div.appendChild(button)
+
+        helppppp.appendChild(div)
+
+    })(asd);
+
+}

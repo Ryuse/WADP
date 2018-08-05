@@ -254,7 +254,7 @@ function badgecheck(badgename) {
 }
 
 //===================Tree Badge================//
-if (currentuser != undefined && currentuser != null && users[account()].titles.length > 2 && badgecheck(tree) != 0) {
+if (currentuser != undefined && currentuser != null && users[account()].titles.length > 2 && badgecheck(tree) == -1) {
     badgetitle = "Tree"
     badgecount = 3 + " titles"
     badgedesc = "badge"
@@ -267,7 +267,7 @@ if (currentuser != undefined && currentuser != null && users[account()].titles.l
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 6 && badgecheck(leaf) != 0) {
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 6 && badgecheck(leaf) == -1) {
     badgetitle = "Leaf"
     badgecount = 7 + " titles"
     badgedesc = "badge"
@@ -280,7 +280,7 @@ else if (currentuser != undefined && currentuser != null && users[account()].tit
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 14 && badgecheck(cloud) != 0) {
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 14 && badgecheck(cloud) == -1) {
     badgetitle = "Cloud"
     badgecount = 15 + " titles"
     badgedesc = "badge"
@@ -293,7 +293,7 @@ else if (currentuser != undefined && currentuser != null && users[account()].tit
 
     showfriendtitle(badgetitle, badgecount, badgedesc)
 }
-else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 24 && badgecheck(earth) != 0) {
+else if (currentuser != undefined && currentuser != null && users[account()].titles.length > 24 && badgecheck(earth) == -1) {
     badgetitle = "Earth"
     badgecount = 25 + " titles"
     badgedesc = "badge"
