@@ -230,11 +230,11 @@ else if (currentuser != undefined && currentuser != null && users[account()].tit
 /*====================================Badges=========================================*/
 
 //Picture locations for badges
-var plant = "../../images/Profile Pictures/Plant.png" //Starter
-var tree = "../../images/Profile Pictures/Tree.png" // 3 Titles
-var leaf = "../../images/Profile Pictures/Leaf.png" // 7 Titles
-var cloud = "../../images/Profile Pictures/Cloud.png" // 15 Titles
-var earth = "../../images/Profile Pictures/Earth.png" // 25 Titles
+var plant = "../images/Profile Pictures/Plant.png" //Starter
+var tree = "../images/Profile Pictures/Tree.png" // 3 Titles
+var leaf = "../images/Profile Pictures/Leaf.png" // 7 Titles
+var cloud = "../images/Profile Pictures/Cloud.png" // 15 Titles
+var earth = "../images/Profile Pictures/Earth.png" // 25 Titles
 
 var badgetitle;
 var badgecount;

@@ -26,11 +26,11 @@ pictureContainer.src = users[account()].picture
 
 //Picture locations
 
-var cloud = "../../images/Profile Pictures/Cloud.png"
-var earth = "../../images/Profile Pictures/Earth.png"
-var leaf = "../../images/Profile Pictures/Leaf.png"
-var plant = "../../images/Profile Pictures/Plant.png"
-var tree = "../../images/Profile Pictures/Tree.png"
+var cloud = "../images/Profile Pictures/Cloud.png"
+var earth = "../images/Profile Pictures/Earth.png"
+var leaf = "../images/Profile Pictures/Leaf.png"
+var plant = "../images/Profile Pictures/Plant.png"
+var tree = "../images/Profile Pictures/Tree.png"
 
 var pictures = [cloud, earth, leaf, plant, tree]
 

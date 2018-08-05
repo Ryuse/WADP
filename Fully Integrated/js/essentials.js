@@ -24,7 +24,7 @@ var file = pagename.split("/").pop(); //Gets the filename
 if (currentuser == undefined || currentuser == null) {
     if (file == "index.html") {
         navitems = '<a class="navbar-brand current" href="#">\
-<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+<img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
 \
@@ -71,7 +71,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     }
     else if (file === "Map.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -119,7 +119,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     }
     else if (file === "About.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -167,7 +167,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
 
     else if (file == "video.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -265,7 +265,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     else {
 
         navitems = '<a class="navbar-brand current" href="index.html">\
-<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+<img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
 \
@@ -314,7 +314,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
 else {
     if (file == "index.html") {
         navitems = '<a class="navbar-brand current" href="#">\
-<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+<img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
 \
@@ -361,7 +361,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     }
     else if (file === "Map.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -409,7 +409,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     }
     else if (file === "About.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -457,7 +457,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
 
     else if (file == "video.html") {
         navitems = '<a class="navbar-brand current" href="index.html">\
-    <img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+    <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
     EcoDose\
     </a>\
     \
@@ -698,7 +698,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
     else {
 
         navitems = '<a class="navbar-brand current" href="index.html">\
-<img src="../../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
+<img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \
 EcoDose\
 </a>\
 \
@@ -770,25 +770,25 @@ var htmlstuff = '<!-- Nav bar (Got this from bootstrap) -->\
 					<div style="min-width: 300px; overflow: hidden;" class="dropdown-menu dropdown-menu-right" aria-labelledby="loggedinusername">\
 \
 						<a id="header" class="dropdown-header" href="profile.html">\
-							<img src="../../images/Profile Pictures/Tree.png" id="profilepic" alt="">\
+							<img src="../images/Profile Pictures/Tree.png" id="profilepic" alt="">\
 							<p id="name" class="text-justify"> placeholder </p>\
 						</a>\
 						<div class="dropdown-divider"></div>\
 \
 						<a id="profile" class="dropdown-item" href="profile.html">\
-							<img src="../../images/Profile/no_avatar.jpg" alt="">\
+							<img src="../images/Profile/no_avatar.jpg" alt="">\
 							<p> My Profile </p>\
                         </a>\
                         <a id="messages" class="dropdown-item" href="messages.html">\
-                        <img src="../../images/profile/message.png" alt="">\
+                        <img src="../images/profile/message.png" alt="">\
                             <p> Messages </p>\
                         </a>\
                         <a id="achievements" class="dropdown-item" href="Achievements.html">\
-                        <img src="../../images/profile/achievements.png" alt="">\
+                        <img src="../images/profile/achievements.png" alt="">\
                             <p> Achievements </p>\
                         </a>\
 						<a id="logout" class="dropdown-item" href="#" onclick="logout()">\
-							<img src="../../images/Profile/Logout.png" alt="">\
+							<img src="../images/Profile/Logout.png" alt="">\
 							<p> Log out </p>\
 						</a>\
 					</div>\
