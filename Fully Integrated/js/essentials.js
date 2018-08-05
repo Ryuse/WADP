@@ -647,7 +647,7 @@ aria-expanded="false" aria-label="Toggle navigation">\
         </li>\
         </ul>'
     }
-    else if (file == "WADP%20Trivia.html") {
+    else if (file == "WADP%20Trivia.html" || file == "Createquiz.html") {
 
         navitems = '<a class="navbar-brand current" href="index.html">\
     <img src="../images/logo.png" height="30" class="d-inline-block align-top" alt=""> \

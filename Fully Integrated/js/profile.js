@@ -18,7 +18,8 @@ var profilename = document.getElementById("detailname");
 profilename.innerHTML = currentuser;
 
 
-//Picture
+
+//========================================================Picture=============================================================//
 
 var pictureContainer = document.querySelector("#picture img");
 pictureContainer.src = users[account()].picture
@@ -33,7 +34,9 @@ var tree = "../../images/Profile Pictures/Tree.png"
 
 var pictures = [cloud, earth, leaf, plant, tree]
 
-//Functions
+//==========================================================Functions==========================================================//
+
+//change the picture
 function changepic(i) {
     console.log(i.src)
     pictureContainer.src = i.src
@@ -43,6 +46,7 @@ function changepic(i) {
 
 }
 
+//for custom picture
 function custompic(srcs) {
     console.log("hi")
     pictureContainer.src = srcs
@@ -51,6 +55,7 @@ function custompic(srcs) {
     localStorage.setItem("users", JSON.stringify(users));
 }
 
+//finds account
 function account() {
     for (i = 0; i < users.length; i++) {
         if (currentuser == users[i].username)
@@ -58,6 +63,8 @@ function account() {
     }
 }
 
+
+//For modal
 for (img = 0; img < users[account()].availablepictures.length; img++) {
     imgcontlist = document.getElementById("imglist")
 
@@ -74,7 +81,7 @@ for (img = 0; img < users[account()].availablepictures.length; img++) {
     imgcontlist.insertBefore(imgcont, imgcontlist.firstChild)
 }
 
-//=======================================Printing titles in the title container=========================================//
+//================================================Printing titles in the title container=========================================//
 
 var titlecontainer = document.getElementById("titleslist");
 var titles = users[account()].titles;
@@ -162,22 +169,11 @@ function getraritycolor(title, type) {
 
 }
 
-//=========================Printing=================================//
-
+//===================================================Printing titles============================================================//
 
 
 for (r = 0; r < 6; r++) {
     
-    // p = document.createElement('p');
-    // p.innerHTML = raritydesc[r].toString();
-    // p.className = "text-center"
-    // // p.style.fontWeight = "bold"
-    // p.style.borderBottom = "5px solid black"
-
-    
-    // titlecontainer.appendChild(p);
-
-
     for (i = 0; i < titles.length; i++) {
 
         if (rarity[r].indexOf(titles[i]) != -1) {
@@ -222,7 +218,7 @@ for (r = 0; r < 6; r++) {
 }
 
 
-//Recent Activities
+//========================================================Recent Activities============================================================/
 var activitycontainer = document.getElementById("activites")
 
 for (q = users[account()].messages.length - 1; q > -1; q--) {
@@ -248,7 +244,7 @@ for (q = users[account()].messages.length - 1; q > -1; q--) {
     }
 }
 
-//Friend system
+//=======================================================Friend system============================================================//
 
 function acceptfriend(name) {
 
@@ -330,7 +326,7 @@ function findmessage(msg) {
     }
 }
 
-//Printing friend in profile
+//===========================================================Printing friend in profile================================================//
 
 for (f = 0; f < users[account()].friends.length; f++) {
     (function (orange) {
@@ -364,7 +360,7 @@ for (f = 0; f < users[account()].friends.length; f++) {
     })(f);
 }
 
-//Printing Badges in profile
+//========================================Printing Badges in profile==================================================================//
 
 for (b = 0; b < users[account()].availablepictures.length; b++) {
     (function (kiwi) {
@@ -453,14 +449,16 @@ for(p = 0; p < planlist.length; p++){
     })(p);
 }
 
-function findtodo(id){
-    for(t = 0; t < planlist.length; t++){
-        if(id == `${planlist[t].day}${planlist[t].timeStart}${planlist[t].timeEnd}${planlist[t].TDL}${planlist[t].remark}`){
-            return t
-        }
-        
-    }
-}
+//==========================================================Quiz done============================================================//
+
+quizmade = document.getElementById("quizmade")
+quizmade.innerHTML = users[account()].quizmade
+
+
+
+
+
+
 
 //Testing stuff and graveyard
 

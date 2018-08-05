@@ -180,6 +180,7 @@ function sendrequest() {
         requestbutton.disabled = true;
         users[account()].requestsent.push(users[visituser].username);
         
+        //This is to make a button along with the notification
         users[visituser].messages.push(`<p id='friendrequest${String(users[account()].username)}'> ${String(users[account()].username)} has sent a friend request. Accept? </p> <button class='btn btn-success' id='friendbutton${String(users[account()].username)}' onclick='acceptfriend("${String(users[account()].username)}")'>Yes</button> <button class='btn btn-success' id='friendbuttonno${String(users[account()].username)}' onclick='rejectfriend("${String(users[account()].username)}")'>No</button>`);
         localStorage.setItem("users", JSON.stringify(users));
 
@@ -316,4 +317,9 @@ if(users[visituser].highscore == undefined || users[visituser].highscore == null
 else{
     highestscore.innerHTML = users[visituser].highscore
 }
+
+//==========================================================Quiz done============================================================//
+
+quizmade = document.getElementById("quizmade")
+quizmade.innerHTML = users[visituser].quizmade
 

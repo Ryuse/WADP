@@ -4,7 +4,8 @@
 }
 body {
 	background-color: rgb(218, 218, 218);
-	background-image: url("../images/Backgrounds/Greenwhite2.png")
+    background-image: url("../images/Backgrounds/Greenwhite2.png");
+    background-attachment: fixed;
 }	
 #container{
     margin-top:12vh;
