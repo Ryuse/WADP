@@ -1,4 +1,4 @@
-div[class="well questbg"]{
+div[class="card-body questbg"]{
   background-color: rgb(189, 245, 189)
 }
 #progressbar {
@@ -7,4 +7,5 @@ div[class="well questbg"]{
   position: fixed;
   left: 50%;
   margin: -10px 0 0 -250px;
+  z-index: 1;
 }

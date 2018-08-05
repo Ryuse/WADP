@@ -6,8 +6,9 @@ function setAttributes(el, attrs) {
 
 //when user click a quiz the playcount will increase by 1
 
-var playcount = 0;
+
 function playcount(){
+  var playcount = 0;
   playcount+=1;
-  document.querySelector(".playcount");
+  document.querySelector(".playcount").innerHTML = playcount;
 }
