@@ -1,30 +1,45 @@
-//Progress bar increase on scrolling down
+var answers = ["op1","op4","op3","op1","op1"], 
+    correct = answers.length;
 
-$(window).load(function(){
-    $(window).scroll(function() {
-      var wintop = $(window).scrollTop(), docheight = $('article').height(), winheight = $(window).height();
-      console.log(wintop);
-      var totalScroll = (wintop/(docheight-winheight))*100;
-      console.log("total scroll" + totalScroll);
-      $(".progress-bar").css("width",totalScroll+"%");
-    });
-  
-  });
-  var score=0;
-  var wrong=0;
+function getCheckedValue( radioName ){
+    var radios = document.getElementsByName( radioName ); // Get radio group by-name
+    for(var y=0; y<radios.length; y++)
+      if(radios[y].checked) return radios[y].value; // return the checked value
+}
 
-// //This function compares the user input answers with the set answers
-// var submit = function(){
-//     var comp = localStorage.getItem("quiz",JSON.parse(storeall));
-// }
-// //if set answer==user input answer, score==1 else wrong+=1
-// var compare = function(){
-    
-// }
-// //when user clicks like button, increases favs by 1
-// var favcount = function(){
-  
-// }
-// //gets set quiz name from localstorage and puts into title header at id "titletext"
-// document.getElementById("nameholder").innerHTML = localStorage.getItem();
+function getScore(){
+  var score = 0;
+  for (var i=0; i<correct; i++)
+    if(getCheckedValue("quest"+i)===answers[i]) score += 1; // increment only
+  return score;
+}
 
+function returnScore(){
+  alert("Your score is "+ getScore() +"/"+ correct+", keep trying!");
+}
+var answers2 = ["op1","op3","op4","op2","op1"], 
+    correct2 = answers2.length;
+
+function getScore2(){
+  var score = 0;
+  for (var i=0; i<correct2; i++)
+    if(getCheckedValue("quest"+i)===answers2[i]) score += 1; // increment only
+  return score;
+}
+
+function returnScore2(){
+  alert("Your score is "+ getScore2() +"/"+ correct2+", keep trying!");
+}
+var answers3 = ["op4","op1","op2","op1","op4"], 
+    correct3 = answers3.length;
+
+function getScore3(){
+  var score = 0;
+  for (var i=0; i<correct3; i++)
+    if(getCheckedValue("quest"+i)===answers3[i]) score += 1; // increment only
+  return score;
+}
+
+function returnScore3(){
+  alert("Your score is "+ getScore2() +"/"+ correct3+", keep trying!");
+}
