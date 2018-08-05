@@ -8,7 +8,6 @@ function account() {
     }
 }
 
-quizzes = JSON.parse(localStorage.getItem("quizzes"));
 
 quizzes = JSON.parse(localStorage.getItem("quizzes"));
 
