@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Reusequiz</title>
+    <link href="../Images/logo.png" rel="icon">
+    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
+    <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <a href="Quizlist.html">
+                <button class="btn btn-md btn-success">Back</button>
+            </a>
+        </div>
+    </div>
+    <div class="card card-block">
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 1:</h4>
+            <p class="text-left">What can be reused in the following?</p>
+            <input type="radio" name="quest0" value="op1">Milk jugs
+            <br>
+            <input type="radio" name="quest0" value="op2">Food
+            <br>
+            <input type="radio" name="quest0" value="op3">Silica gel packets
+            <br>
+            <input type="radio" name="quest0" value="op4">All of the above
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 2:</h4>
+            <p class="text-left">What do silica gel packets do?</p>
+            <input type="radio" name="quest1" value="op1">Prevent moisture and mildew
+            <br>
+            <input type="radio" name="quest1" value="op2">Prevent allergies
+            <br>
+            <input type="radio" name="quest1" value="op3">Prevent diseases
+            <br>
+            <input type="radio" name="quest1" value="op4">Preserve the taste of food
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 3:</h4>
+            <p class="text-left">Can some seemingly useless items be used as decoration?</p>
+            <input type="radio" name="quest2" value="op1">Definitely!!
+            <br>
+            <input type="radio" name="quest2" value="op2">Nah...
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 4:</h4>
+            <p class="text-left">What is the difference between reusing and recycling?</p>
+            <input type="radio" name="quest3" value="op1">Recycling is the reduction of waste
+            <br>
+            <input type="radio" name="quest3" value="op2">Recyclable items should be thrown in recycling bins
+            <br>
+            <input type="radio" name="quest3" value="op3">Reusing is the reduction of waste
+            <br>
+            <input type="radio" name="quest3" value="op4">Breaking down of the product is needed
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 5:</h4>
+            <p class="text-left">How can ricewater (Water used to wash rice) be reused?</p>
+            <input type="radio" name="quest4" value="op1">To water plants
+            <br>
+            <input type="radio" name="quest4" value="op2">To wash the floor
+            <br>
+        </div>
+        <input type="submit" name="save" class="btn btn-info" onclick="returnScore5()" value="View Results">
+    </div>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/TriviaQuizzes.js"></script>
+</body>
+
+</html>

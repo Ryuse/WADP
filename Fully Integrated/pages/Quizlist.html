@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Quizlist</title>
+    <link href="../Images/logo.png" rel="icon">
+    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/TriviaQuizlist.css" rel="stylesheet" type="text/css">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- The quizlist -->
+    <div class="well row justify-content-center" id="quizlist">
+        <h1 class="text-center text-success"> Quiz list</h1>
+
+
+        <!-- Quiz display -->
+        <!-- when the amount of quizzes reach the page's height limit create another page eg.google -->
+        <div class="quizlist_undefined">
+            <div class="quizlist_content">
+                <div class="pages">
+                    <div class="quizlist_items">
+                        <div class="quizlist_items_row">
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Airquiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="https://guardian.ng/wp-content/uploads/2018/06/Air-pollution.-Photo-The-Asian-Age..jpeg" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Air pollution
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Waterquiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="https://www.straitstimes.com/sites/default/files/articles/2016/08/30/38_39523797_-_17_08_2016_-_pakistan-dailylife_.jpg"
+                                                class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Water pollution
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quizlist_items_row">
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Landquiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="https://pixfeeds.com/images/topic/8609/1200-8609-land-pollution-photo2.jpg" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Land pollution
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Reducequiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="http://www.capitalregionrecycling.com/Libraries/Logos/11_less.sflb.ashx" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Reduce
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quizlist_items_row">
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Reusequiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="https://s-i.huffpost.com/gen/1108213/images/o-REUSE-PAPER-CUPS-facebook.jpg" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Reuse
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                            <!-- the div above contains everything from the image to the done by -->
+                            <!-- needs to be replicated and appended to quizlist_content after a user creates a quiz -->
+                            <div class="quizlist_item">
+                                <div class="quizlist_panel">
+                                    <div class="quizlist_panel_panel">
+                                        <a href="Recyclequiz.html" class="quizlist_panel_header" onclick="playcount()">
+                                            <!-- image replace with user inputted url from create quiz -->
+                                            <img src="http://mediaroom.wm.com/wp-content/uploads/2016/04/Recycle-More-or-Better-blog-pic-555x375-555x300.png" class="quizlist_images">
+                                            <div class="quizlist_panel_image_overlay">
+                                            </div>
+                                            <div class="quiz_title">
+                                                <div class="title_text">
+                                                    <!-- replace this with user's set title -->
+                                                    Recycle
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="quiz_panel_content">
+                                            <div class="content_row">
+                                                <div class="source_box">
+                                                    <div class="user">
+                                                        <!-- users username goes after the done by: -->
+                                                        Done by: InDeCent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quizlist_panel_shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="WADP Trivia.html">
+                <button class="btn btn-md btn-success">Back</button>
+            </a>
+    </div>
+    <!-- <script src="login.js"></script> -->
+    <script src="../js/TriviaQuizlist.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

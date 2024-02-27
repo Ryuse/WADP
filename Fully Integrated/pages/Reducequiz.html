@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Reducequiz</title>
+    <link href="../Images/logo.png" rel="icon">
+    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
+    <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <a href="Quizlist.html">
+                <button class="btn btn-md btn-success">Back</button>
+            </a>
+        </div>
+    </div>
+    <div class="card card-block">
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 1:</h4>
+            <p class="text-left">Which of the following is a simple step to reduce?</p>
+            <input type="radio" name="quest0" value="op1">Using plastic bags
+            <br>
+            <input type="radio" name="quest0" value="op2">Make a meal plan
+            <br>
+            <input type="radio" name="quest0" value="op3">Buying water bottles
+            <br>
+            <input type="radio" name="quest0" value="op4">Use disposable items
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 2:</h4>
+            <p class="text-left">What is NOT recommended to reduce waste?</p>
+            <input type="radio" name="quest1" value="op1">Buying Water bottles
+            <br>
+            <input type="radio" name="quest1" value="op2">Buying durable water bottles
+            <br>
+            <input type="radio" name="quest1" value="op3">Using reusable bags
+            <br>
+            <input type="radio" name="quest1" value="op4">All of the above
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 3:</h4>
+            <p class="text-left">Why do plastic bags contribute to waste?</p>
+            <input type="radio" name="quest2" value="op1">They are used one-time
+            <br>
+            <input type="radio" name="quest2" value="op2">They are disposable
+            <br>
+            <input type="radio" name="quest2" value="op3">They are non-biodegradable
+            <br>
+            <input type="radio" name="quest2" value="op4">All of the above
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 4:</h4>
+            <p class="text-left">Why must we buy high quality items and learn to repair them?</p>
+            <input type="radio" name="quest3" value="op1">So we save money in the long term
+            <br>
+            <input type="radio" name="quest3" value="op2">They are durable
+            <br>
+            <input type="radio" name="quest3" value="op3">So we can reuse them after they are fixed
+            <br>
+            <input type="radio" name="quest3" value="op4">None of the above
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 5:</h4>
+            <p class="text-left">Do learning the 3Rs help in reducing?</p>
+            <input type="radio" name="quest4" value="op1">Yes
+            <br>
+            <input type="radio" name="quest4" value="op2">No
+            <br>
+        </div>
+        <input type="submit" name="save" class="btn btn-info" onclick="returnScore4()" value="View Results">
+    </div>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/TriviaQuizzes.js"></script>
+</body>
+
+</html>

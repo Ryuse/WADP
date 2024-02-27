@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Recyclequiz</title>
+    <link href="../Images/logo.png" rel="icon">
+    <!-- <link href="WADP project CSS.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/Scrollbar.css" rel="stylesheet" type="text/css">
+    <link href="../Css/TriviaQuizzes.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <a href="Quizlist.html">
+                <button class="btn btn-md btn-success">Back</button>
+            </a>
+        </div>
+    </div>
+    <div class="card card-block">
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 1:</h4>
+            <p class="text-left">What can recycling reduce?</p>
+            <input type="radio" name="quest0" value="op1">Energy usage
+            <br>
+            <input type="radio" name="quest0" value="op2">Water pollution
+            <br>
+            <input type="radio" name="quest0" value="op3">Air pollution
+            <br>
+            <input type="radio" name="quest0" value="op4">All of the above
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 2:</h4>
+            <p class="text-left">Which of the following are recyclable?</p>
+            <input type="radio" name="quest1" value="op1">Glass
+            <br>
+            <input type="radio" name="quest1" value="op2">All of them!
+            <br>
+            <input type="radio" name="quest1" value="op3">Food
+            <br>
+            <input type="radio" name="quest1" value="op4">Clothes
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 3:</h4>
+            <p class="text-left">Which of the following is the correct order of recycling?</p>
+            <input type="radio" name="quest2" value="op1">Cleaned, Sorted, Reprocessed
+            <br>
+            <input type="radio" name="quest2" value="op2">Reprocessed, Sorted, Cleaned
+            <br>
+            <input type="radio" name="quest2" value="op3">Sorted, Cleaned, Reprocessed
+            <br>
+            <input type="radio" name="quest2" value="op4">Cleaned, Reprocessed, Sorted
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 4:</h4>
+            <p class="text-left">Where can we put recyclable waste to be collected?</p>
+            <input type="radio" name="quest3" value="op1">Collection centers
+            <br>
+            <input type="radio" name="quest3" value="op2">In the dustbin
+            <br>
+            <input type="radio" name="quest3" value="op3">The curbside
+            <br>
+            <input type="radio" name="quest3" value="op4">Options 1 and 3
+            <br>
+        </div>
+        <div class="card-body questbg">
+            <h4 class="text-left">Question 5:</h4>
+            <p class="text-left">Recycling is the process where....</p>
+            <input type="radio" name="quest4" value="op1">Old items are used for another purpose
+            <br>
+            <input type="radio" name="quest4" value="op2">Old items are proccessed to be made into new ones
+            <br>
+        </div>
+        <input type="submit" name="save" class="btn btn-info" onclick="returnScore6()" value="View Results">
+    </div>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/TriviaQuizzes.js"></script>
+</body>
+
+</html>
